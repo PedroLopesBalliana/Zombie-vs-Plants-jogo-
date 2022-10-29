@@ -1,4 +1,5 @@
 #include "ClasseJogo.h"
+
 ClasseJogo::ClasseJogo():
 	window(sf::VideoMode(1000, 800), "SFML works!")
 {
