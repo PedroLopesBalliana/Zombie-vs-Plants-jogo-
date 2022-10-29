@@ -4,6 +4,7 @@ ClasseJogo::ClasseJogo():
 	window(sf::VideoMode(1000, 800), "SFML works!")
 {
     jogador1.setWindow(&window);
+    inimigo1.setWindow(&window);
     Executar();
 }
 void ClasseJogo::Executar()
@@ -20,6 +21,7 @@ void ClasseJogo::Executar()
         jogador1.move();
         window.clear();
         jogador1.draw();
+        inimigo1.draw();
         window.display();
     }
 }

@@ -143,8 +143,10 @@
     <ClCompile Include="jogo.cpp" />
     <ClCompile Include="Entidade.cpp" />
     <ClCompile Include="Jogador.cpp" />
+    <ClCompile Include="Inimigo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Inimigo.h" />
     <ClInclude Include="Jogador.h" />
     <ClInclude Include="ClasseJogo.h" />
     <ClInclude Include="Entidade.h" />
