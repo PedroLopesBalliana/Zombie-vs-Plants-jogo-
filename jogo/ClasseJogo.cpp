@@ -24,5 +24,7 @@ void ClasseJogo::Executar()
 }
 ClasseJogo::~ClasseJogo()
 {
-
+    std::cout << "teste git" << std::endl;
+    std::cout << "teste git" << std::endl;
+    std::cout << "teste git" << std::endl;
 }
