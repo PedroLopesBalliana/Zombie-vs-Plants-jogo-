@@ -15,4 +15,5 @@ void Entidade::setWindow(sf::RenderWindow* window)
 void Entidade::draw()
 {
 	window->draw(body);
+	std::cout << "teste git" << std::endl;
 }
