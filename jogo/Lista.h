@@ -36,14 +36,14 @@ public:
 		if (pPrimeiro == nullptr)
 		{
 			pPrimeiro = new Elemento<TL>;
-			pPrimeiro.setItem(item);
+			pPrimeiro->setItem(item);
 			pUltimo = pPrimeiro;
 		}
 		else
 		{
-			Elemento <TL>* temp = new Elemento <TL>*;
+			Elemento <TL>* temp = new Elemento <TL>;
 			temp->setItem(item);
-			pUltimo->getpProximo(temp);
+			pUltimo->setpProximo(temp);
 			pUltimo = temp;
 		}
 		len++;

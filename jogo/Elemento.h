@@ -3,7 +3,7 @@ template <class TE>class Elemento
 {
 private:
 	Elemento<TE>* pProximo;
-	TE item;
+	TE* item;
 public:
 	Elemento();
 	~Elemento();

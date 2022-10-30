@@ -5,7 +5,7 @@ ClasseJogo::ClasseJogo():
 {
     jogador1 = new Jogador();
     jogador1->setWindow(&window);
-    fase1 = new Fase(jogador1);
+    fase1 = new Fase(jogador1, &window);
     LEs = fase1->getListaEntidades();
     Executar();
 }
