@@ -3,8 +3,10 @@
 ClasseJogo::ClasseJogo():
 	window(sf::VideoMode(1000, 800), "SFML works!")
 {
-    jogador1.setWindow(&window);
-    inimigo1.setWindow(&window);
+    jogador1 = new Jogador();
+    jogador1->setWindow(&window);
+    fase1 = new Fase(jogador1);
+    LEs = fase1->getListaEntidades();
     Executar();
 }
 void ClasseJogo::Executar()
@@ -18,10 +20,13 @@ void ClasseJogo::Executar()
                 window.close();
         }
 
-        jogador1.move();
+        jogador1->move();
         window.clear();
-        jogador1.draw();
-        inimigo1.draw();
+        for (int i = 0; i < LEs->LEs.getLen(); i++)
+        {
+            Entidade* temp = LEs->LEs.getItem(i);
+            temp->draw();
+        }
         window.display();
     }
 }
