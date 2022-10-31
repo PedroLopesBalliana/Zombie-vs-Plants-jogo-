@@ -5,6 +5,6 @@ class ListaEntidades
 {
 public:
 	Lista<Entidade> LEs;
-private:
-
+	ListaEntidades();
+	~ListaEntidades();
 };

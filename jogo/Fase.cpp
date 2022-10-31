@@ -5,8 +5,8 @@ Fase::Fase(Jogador* j1, sf::RenderWindow* window)
 	this->window = window;
 	this->j1 = j1;
 	listaEntidades = new ListaEntidades();
+	listainimigos = new ListaInimigos();
 	i1 = new Inimigo();
-	listaInimigos.push_back(*i1);
 	ob1 = new Obstaculo();
 	ob1->setWindow(window);
 	i1->setWindow(window);
@@ -18,15 +18,13 @@ Fase::~Fase()
 }
 void Fase::inicializaElementos()
 {
-	list <Inimigo>::iterator itt3;
-
 	listaEntidades->LEs.push(ob1);
 	listaEntidades->LEs.push(j1);
-	for(itt3 = listaInimigos.begin(); itt3!=listaInimigos.end();itt3++)
+	listainimigos->LEs.push(i1);
+	for (int i = 0; i < listainimigos->LEs.getLen(); i++)
 	{
-		Inimigo tempIni ;
-		tempIni =(*itt3);
-		listaEntidades->LEs.push(&tempIni);
+		Entidade* temp = listainimigos->LEs.getItem(i);
+		listaEntidades->LEs.push(temp);
 	}
 }
 

@@ -147,8 +147,10 @@
     <ClCompile Include="Inimigo.cpp" />
     <ClCompile Include="ListaEntidades.cpp" />
     <ClCompile Include="Obstaculo.cpp" />
+    <ClCompile Include="ListaInimigos.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ListaInimigos.h" />
     <ClInclude Include="Fase.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="Elemento.h" />
