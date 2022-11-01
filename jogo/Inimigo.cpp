@@ -1,10 +1,20 @@
 #include "Inimigo.h"
 Entidades::Personagens::Inimigo::Inimigo(): Entidade::Entidade()
 {
-	body.setFillColor(sf::Color::Magenta);
-	body.setPosition(sf::Vector2f(200.f, 200.f));
+	//body.setFillColor(sf::Color::Magenta);
+	if (!texture.loadFromFile("assets/Inimigos/AtiradorSprite.png"))
+	{
+		std::cout << "falhou a textura :(" << std::endl;
+	}
+	sprite.setTexture(texture);
+	sprite.scale(sf::Vector2f(2, 2));
+	sprite.setPosition(sf::Vector2f(200.f, 200.f));
 }
 Entidades::Personagens::Inimigo::~Inimigo()
 {
 
 }
+/*void Entidades::Personagens::Inimigo::draw()
+{
+	window->draw(inimigoSprite);
+}*/

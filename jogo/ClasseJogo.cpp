@@ -9,6 +9,8 @@ ClasseJogo::ClasseJogo():
     LEs = fase1->getListaEntidades();
     LOs = fase1->getListaObstaculos();
     LIs = fase1->getListaInimigos();
+    background = new Background();
+    background->setWindow(&window);
     Executar();
 }
 void ClasseJogo::Executar()
@@ -28,9 +30,10 @@ void ClasseJogo::Executar()
 void ClasseJogo::fase1Prin()
 {
     window.clear();
+    background->draw();
     for (int i = 0; i < LEs->LEs.getLen(); i++)
     {
-        Entidade* temp = LEs->LEs.getItem(i);
+        Entidades::Entidade* temp = LEs->LEs.getItem(i);
         temp->draw();
     }
     int flag = 0;
@@ -43,7 +46,7 @@ void ClasseJogo::fase1Prin()
         }
     }
     jogador1->move();
-    if (flag == 0)
+    if (jogador1->getY() < 200.0) // GRAVIDADE FALSA!! É MIGUÉ!! NAO É REAL! ARRUMAR DEPOIS
     {
         jogador1->gravidade();
     }

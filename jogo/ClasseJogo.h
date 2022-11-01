@@ -6,6 +6,7 @@
 #include "ListaInimigos.h"
 #include "Obstaculo.h"
 #include "ListaObstaculos.h"
+#include "Background.h"
 #include "Fase.h"
 
 class ClasseJogo
@@ -17,6 +18,7 @@ private:
 	ListaObstaculos* LOs;
 	ListaInimigos* LIs;
 	Fase* fase1;
+	Background* background;
 public:
 	ClasseJogo();
 	~ClasseJogo();
