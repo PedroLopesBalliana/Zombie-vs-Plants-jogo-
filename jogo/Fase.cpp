@@ -18,7 +18,13 @@ Fase::~Fase()
 }
 void Fase::inicializaElementos()
 {
-	listaEntidades->LEs.push(ob1);
+	for (int i = 1; i <= 20; i++)
+	{
+		ob1 = new Obstaculo();
+		ob1->setWindow(window);
+		ob1->setPosi((float)i*(100), 300.f);
+		listaEntidades->LEs.push(ob1);
+	}
 	listaEntidades->LEs.push(j1);
 	listainimigos->LEs.push(i1);
 	for (int i = 0; i < listainimigos->LEs.getLen(); i++)

@@ -11,5 +11,5 @@ Obstaculo::~Obstaculo()
 }
 void Obstaculo::setPosi(float x, float y)
 {
-	body.setPosition(sf::Vector2f(0.f, 100.f));
+	body.setPosition(sf::Vector2f(x, y));
 }

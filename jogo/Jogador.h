@@ -7,5 +7,4 @@ public:
 	Jogador();
 	~Jogador();
 	void move();
-
 };

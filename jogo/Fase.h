@@ -4,6 +4,7 @@
 #include "ListaEntidades.h"
 #include "ListaInimigos.h"
 #include "Obstaculo.h"
+#include "ListaObstaculos.h"
 #include <SFML/Graphics.hpp>
 
 using namespace std;
@@ -13,6 +14,7 @@ class Fase
 private:
 	ListaEntidades *listaEntidades;
 	ListaInimigos* listainimigos;
+	ListaObstaculos* listaObstaculos;
 	Inimigo* i1;
 	Jogador* j1;
 	Obstaculo* ob1;
