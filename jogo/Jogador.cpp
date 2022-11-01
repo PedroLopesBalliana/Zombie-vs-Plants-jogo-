@@ -5,6 +5,10 @@ Jogador::Jogador() :Entidade()
 Jogador::~Jogador()
 {
 }
+void Jogador::gravidade()
+{
+	body.move(sf::Vector2f(0.f, 0.2f));
+}
 void Jogador::move()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))

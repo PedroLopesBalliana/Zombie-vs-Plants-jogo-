@@ -7,7 +7,6 @@ Obstaculo::Obstaculo()
 }
 Obstaculo::~Obstaculo()
 {
-
 }
 void Obstaculo::setPosi(float x, float y)
 {

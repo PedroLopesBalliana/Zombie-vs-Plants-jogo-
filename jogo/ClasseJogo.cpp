@@ -7,6 +7,8 @@ ClasseJogo::ClasseJogo():
     jogador1->setWindow(&window);
     fase1 = new Fase(jogador1, &window);
     LEs = fase1->getListaEntidades();
+    LOs = fase1->getListaObstaculos();
+    LIs = fase1->getListaInimigos();
     Executar();
 }
 void ClasseJogo::Executar()
@@ -20,15 +22,32 @@ void ClasseJogo::Executar()
                 window.close();
         }
 
-        jogador1->move();
-        window.clear();
-        for (int i = 0; i < LEs->LEs.getLen(); i++)
-        {
-            Entidade* temp = LEs->LEs.getItem(i);
-            temp->draw();
-        }
-        window.display();
+        fase1Prin();
     }
+}
+void ClasseJogo::fase1Prin()
+{
+    window.clear();
+    for (int i = 0; i < LEs->LEs.getLen(); i++)
+    {
+        Entidade* temp = LEs->LEs.getItem(i);
+        temp->draw();
+    }
+    int flag = 0;
+    for (int i = 0; i < LOs->LOs.getLen(); i++)
+    {
+        Obstaculo* temp = LOs->LOs.getItem(i);
+        if (jogador1->getFronteiras() == temp->getFronteiras())
+        {
+            flag = 1;
+        }
+    }
+    jogador1->move();
+    if (flag == 0)
+    {
+        jogador1->gravidade();
+    }
+    window.display();
 }
 ClasseJogo::~ClasseJogo()
 {

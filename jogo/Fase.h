@@ -13,8 +13,8 @@ class Fase
 {
 private:
 	ListaEntidades *listaEntidades;
-	ListaInimigos* listainimigos;
-	ListaObstaculos* listaObstaculos;
+	ListaInimigos *listainimigos;
+	ListaObstaculos *listaObstaculos;
 	Inimigo* i1;
 	Jogador* j1;
 	Obstaculo* ob1;
@@ -24,4 +24,6 @@ public:
 	Fase(Jogador* j1, sf::RenderWindow* window);
 	~Fase();
 	ListaEntidades* getListaEntidades();
+	ListaInimigos* getListaInimigos();
+	ListaObstaculos* getListaObstaculos();
 };

@@ -12,6 +12,10 @@ void Entidade::setWindow(sf::RenderWindow* window)
 {
 	this->window = window;
 }
+sf::Vector2f Entidade::getFronteiras()
+{
+	return body.getPosition();
+}
 void Entidade::draw()
 {
 	window->draw(body);

@@ -10,4 +10,5 @@ public:
 	~Entidade();
 	void setWindow(sf::RenderWindow* window);
 	void draw();
+	sf::Vector2f getFronteiras();
 };

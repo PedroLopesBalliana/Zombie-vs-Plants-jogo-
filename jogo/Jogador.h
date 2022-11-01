@@ -7,4 +7,5 @@ public:
 	Jogador();
 	~Jogador();
 	void move();
+	void gravidade();
 };
