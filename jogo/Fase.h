@@ -5,25 +5,26 @@
 #include "ListaInimigos.h"
 #include "Obstaculo.h"
 #include "ListaObstaculos.h"
-#include <SFML/Graphics.hpp>
+#include "GerenciadorGrafico.h"
 
 using namespace std;
 
 class Fase
 {
-private:
+protected:
+	GerenciadorGrafico* gerenciadorGrafico;
 	ListaEntidades *listaEntidades;
 	ListaInimigos *listainimigos;
 	ListaObstaculos *listaObstaculos;
 	Inimigo* i1;
 	Jogador* j1;
 	Obstaculo* ob1;
-	void inicializaElementos();
-	sf::RenderWindow* window;
+	virtual void inicializaElementos();
 public:
-	Fase(Jogador* j1, sf::RenderWindow* window);
+	Fase();
 	~Fase();
 	ListaEntidades* getListaEntidades();
 	ListaInimigos* getListaInimigos();
 	ListaObstaculos* getListaObstaculos();
+	virtual void faseExecutar();
 };

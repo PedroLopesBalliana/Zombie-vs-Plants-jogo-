@@ -6,17 +6,15 @@
 #include "ListaInimigos.h"
 #include "Obstaculo.h"
 #include "ListaObstaculos.h"
-#include "Fase.h"
+#include "Fase1.h"
+#include "GerenciadorGrafico.h"
 
 class ClasseJogo
 {
 private:
-	sf::RenderWindow window;
+	GerenciadorGrafico gerenciadorGrafico;
 	Jogador *jogador1;
-	ListaEntidades* LEs;
-	ListaObstaculos* LOs;
-	ListaInimigos* LIs;
-	Fase* fase1;
+	Fase1* fase1;
 public:
 	ClasseJogo();
 	~ClasseJogo();

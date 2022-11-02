@@ -141,6 +141,8 @@
   <ItemGroup>
     <ClCompile Include="ClasseJogo.cpp" />
     <ClCompile Include="Fase.cpp" />
+    <ClCompile Include="Fase1.cpp" />
+    <ClCompile Include="GarenciadorGrafico.cpp" />
     <ClCompile Include="jogo.cpp" />
     <ClCompile Include="Entidade.cpp" />
     <ClCompile Include="Jogador.cpp" />
@@ -151,6 +153,8 @@
     <ClCompile Include="ListaInimigos.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Fase1.h" />
+    <ClInclude Include="GerenciadorGrafico.h" />
     <ClInclude Include="ListaInimigos.h" />
     <ClInclude Include="Fase.h" />
     <ClInclude Include="Lista.h" />
