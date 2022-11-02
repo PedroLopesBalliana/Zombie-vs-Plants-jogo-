@@ -13,6 +13,7 @@ Fase1::Fase1(Jogador* j1, GerenciadorGrafico* GE) :
 	ob1 = new Obstaculo();
 	i1->setWindow(gerenciadorGrafico->getWindow());
 	ob1->setWindow(gerenciadorGrafico->getWindow());
+	background = new Background();
 	this->j1->setWindow(gerenciadorGrafico->getWindow());
 	inicializaElementos();
 	faseExecutar();
@@ -47,6 +48,7 @@ void Fase1::faseExecutar()
 			if (event.type == sf::Event::Closed)
 				window_f->close();
 		}
+		background->draw();
 		window_f->clear();
 		j1->move();
 		j1->gravidade();

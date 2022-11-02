@@ -20,7 +20,7 @@ protected:
 	Entidades::Personagens::Inimigo* i1;
 	Jogador* j1;
 	Obstaculo* ob1;
-	Background background;
+	Background* background;
 	virtual void inicializaElementos();
 public:
 	Fase();

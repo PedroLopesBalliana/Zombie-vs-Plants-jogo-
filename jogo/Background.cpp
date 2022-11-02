@@ -1,6 +1,6 @@
 #include "Background.h"
 
-Background::Background()
+Background::Background(): Entidade()
 {
 	if (!texture.loadFromFile("assets/Bloco_Texturas/Floresta/Background.png"))
 	{
