@@ -16,7 +16,7 @@ protected:
 	ListaEntidades *listaEntidades;
 	ListaInimigos *listainimigos;
 	ListaObstaculos *listaObstaculos;
-	Inimigo* i1;
+	Entidades::Personagens::Inimigo* i1;
 	Jogador* j1;
 	Obstaculo* ob1;
 	virtual void inicializaElementos();
