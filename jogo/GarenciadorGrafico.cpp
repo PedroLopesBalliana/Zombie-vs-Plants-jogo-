@@ -9,7 +9,7 @@ void GerenciadorGrafico::setListaEntidades(ListaEntidades Le)
 	LE = Le;
 	for (int i = 0; i < LE.LEs.getLen(); i++)
 	{
-		Entidade* temp = LE.LEs.getItem(i);
+		Entidades::Entidade* temp = LE.LEs.getItem(i);
 		temp->setWindow(&window);
 	}
 }
@@ -22,7 +22,7 @@ void GerenciadorGrafico::desenharEntidades()
 {
 	for (int i = 0; i < LE.LEs.getLen(); i++)
 	{
-		Entidade* temp = LE.LEs.getItem(i);
+		Entidades::Entidade* temp = LE.LEs.getItem(i);
 		temp->draw();
 	}
 }

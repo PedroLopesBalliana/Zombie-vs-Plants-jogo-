@@ -9,7 +9,7 @@ Fase1::Fase1(Jogador* j1, GerenciadorGrafico* GE) :
 	listaEntidades = new ListaEntidades();
 	listainimigos = new ListaInimigos();
 	listaObstaculos = new ListaObstaculos();
-	i1 = new Inimigo();
+	i1 = new Entidades::Personagens::Inimigo();
 	ob1 = new Obstaculo();
 	i1->setWindow(gerenciadorGrafico->getWindow());
 	ob1->setWindow(gerenciadorGrafico->getWindow());
@@ -52,7 +52,7 @@ void Fase1::faseExecutar()
 		j1->gravidade();
 		for (int i = 0; i < listaEntidades->LEs.getLen(); i++)
 		{
-			Entidade* temp = listaEntidades->LEs.getItem(i);
+			Entidades::Entidade* temp = listaEntidades->LEs.getItem(i);
 			temp->draw();
 		}
 		window_f->display();
