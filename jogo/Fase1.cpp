@@ -7,8 +7,8 @@ Fase1::Fase1(Jogador* j1, GerenciadorGrafico* GE) :
 	this->j1 = j1;
 	setWindow(gerenciadorGrafico->getWindow());
 	listaEntidades = new ListaEntidades();
-	listainimigos = new ListaInimigos();
-	listaObstaculos = new ListaObstaculos();
+	//listainimigos = new ListaInimigos();
+	//listaObstaculos = new ListaObstaculos();
 	i1 = new Entidades::Personagens::Inimigo();
 	ob1 = new Obstaculo();
 	background = new Background();

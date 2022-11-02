@@ -15,8 +15,8 @@ class Fase
 protected:
 	GerenciadorGrafico* gerenciadorGrafico;
 	ListaEntidades *listaEntidades;
-	ListaInimigos *listainimigos;
-	ListaObstaculos *listaObstaculos;
+	//ListaInimigos *listainimigos;
+	//ListaObstaculos *listaObstaculos;
 	Entidades::Personagens::Inimigo* i1;
 	Jogador* j1;
 	Obstaculo* ob1;
@@ -26,7 +26,7 @@ public:
 	Fase();
 	~Fase();
 	ListaEntidades* getListaEntidades();
-	ListaInimigos* getListaInimigos();
-	ListaObstaculos* getListaObstaculos();
+	//ListaInimigos* getListaInimigos();
+	//ListaObstaculos* getListaObstaculos();
 	virtual void faseExecutar();
 };
