@@ -50,6 +50,7 @@ void Fase1::faseExecutar()
 		window_f->clear();
 		j1->move();
 		j1->gravidade();
+
 		for (int i = 0; i < listaEntidades->LEs.getLen(); i++)
 		{
 			Entidades::Entidade* temp = listaEntidades->LEs.getItem(i);

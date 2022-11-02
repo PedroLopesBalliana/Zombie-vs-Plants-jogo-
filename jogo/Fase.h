@@ -6,6 +6,7 @@
 #include "Obstaculo.h"
 #include "ListaObstaculos.h"
 #include "GerenciadorGrafico.h"
+#include "Background.h"
 
 using namespace std;
 

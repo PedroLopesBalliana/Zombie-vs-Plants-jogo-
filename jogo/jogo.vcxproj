@@ -154,6 +154,7 @@
     <ClCompile Include="ListaInimigos.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Background.h" />
     <ClInclude Include="Fase1.h" />
     <ClInclude Include="GerenciadorGrafico.h" />
     <ClInclude Include="ListaInimigos.h" />
