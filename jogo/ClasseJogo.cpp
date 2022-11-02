@@ -3,7 +3,7 @@
 ClasseJogo::ClasseJogo()
 {
     jogador1 = new Jogador();
-    fase1 = new Fase1(jogador1);
+    fase1 = new Fase1(jogador1, &gerenciadorGrafico);
 }
 void ClasseJogo::Executar()
 {

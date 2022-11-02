@@ -13,5 +13,6 @@ public:
 	~GerenciadorGrafico();
 	void setListaEntidades(ListaEntidades Le);
 	void desenharEntidades();
+	sf::RenderWindow* getWindow();
 };
 
