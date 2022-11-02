@@ -6,15 +6,12 @@ namespace Entidades
 	class Entidade
 	{
 	protected:
-		// sf::RectangleShape body;
 		sf::Texture texture;
 		sf::Sprite sprite;
-		sf::RenderWindow* window;
 	public:
 		Entidade();
 		~Entidade();
-		void setWindow(sf::RenderWindow* window);
-		void draw();
+		sf::Sprite getSprite();
 		sf::Vector2f getFronteiras();
 	};
 }

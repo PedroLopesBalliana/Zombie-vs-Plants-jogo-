@@ -7,11 +7,6 @@ GerenciadorGrafico::GerenciadorGrafico():
 void GerenciadorGrafico::setListaEntidades(ListaEntidades Le)
 {
 	LE = Le;
-	for (int i = 0; i < LE.LEs.getLen(); i++)
-	{
-		Entidades::Entidade* temp = LE.LEs.getItem(i);
-		temp->setWindow(&window);
-	}
 }
 GerenciadorGrafico::~GerenciadorGrafico()
 {
@@ -20,11 +15,14 @@ GerenciadorGrafico::~GerenciadorGrafico()
 
 void GerenciadorGrafico::desenharEntidades()
 {
+	window.clear();
 	for (int i = 0; i < LE.LEs.getLen(); i++)
 	{
+		
 		Entidades::Entidade* temp = LE.LEs.getItem(i);
-		temp->draw();
+		window.draw(temp->getSprite());
 	}
+	window.display();
 }
 sf::RenderWindow  *GerenciadorGrafico::getWindow()
 {
