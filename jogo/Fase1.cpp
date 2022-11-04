@@ -5,7 +5,7 @@ Fase1::Fase1(Jogador* j1, GerenciadorGrafico* GE) :
 {
 	gerenciadorGrafico = GE;
 	this->j1 = j1;
-	setWindow(gerenciadorGrafico->getWindow());
+	//setWindow(gerenciadorGrafico->getWindow());
 	listaEntidades = new ListaEntidades();
 	//listainimigos = new ListaInimigos();
 	//listaObstaculos = new ListaObstaculos();
@@ -20,10 +20,10 @@ Fase1::~Fase1()
 {
 
 }
-void Fase1::setWindow(sf::RenderWindow* window)
-{
-	this->window_f = window;
-}
+//void Fase1::setWindow(sf::RenderWindow* window)
+//{
+//	this->window_f = window;
+//}
 void Fase1::inicializaElementos()
 {
 	listaEntidades->LEs.push(background);
@@ -38,13 +38,13 @@ void Fase1::inicializaElementos()
 }
 void Fase1::faseExecutar()
 {
-	while (window_f->isOpen())
+	while (gerenciadorGrafico->getWindow()->isOpen())
 	{
 		sf::Event event;
-		while (window_f->pollEvent(event))
+		while (gerenciadorGrafico->getWindow()->pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
-				window_f->close();
+				gerenciadorGrafico->getWindow()->close();
 		}
 		j1->move();
 		j1->gravidade();

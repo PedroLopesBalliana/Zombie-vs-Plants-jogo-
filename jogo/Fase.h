@@ -28,5 +28,5 @@ public:
 	ListaEntidades* getListaEntidades();
 	//ListaInimigos* getListaInimigos();
 	//ListaObstaculos* getListaObstaculos();
-	virtual void faseExecutar();
+	virtual void faseExecutar() = 0;
 };
