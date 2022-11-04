@@ -152,11 +152,13 @@
     <ClCompile Include="ListaObstaculos.cpp" />
     <ClCompile Include="Obstaculo.cpp" />
     <ClCompile Include="ListaInimigos.cpp" />
+    <ClCompile Include="GerenciadorColisoes.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
     <ClInclude Include="Fase1.h" />
     <ClInclude Include="GerenciadorGrafico.h" />
+    <ClInclude Include="GerenciadorColisoes.h" />
     <ClInclude Include="ListaInimigos.h" />
     <ClInclude Include="Fase.h" />
     <ClInclude Include="Lista.h" />

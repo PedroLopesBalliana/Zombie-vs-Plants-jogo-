@@ -7,6 +7,7 @@
 #include "ListaObstaculos.h"
 #include "GerenciadorGrafico.h"
 #include "Background.h"
+#include "GerenciadorColisoes.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ class Fase
 {
 protected:
 	GerenciadorGrafico* gerenciadorGrafico;
+	GerenciadorColisoes gerenciadorColisoes;
 	ListaEntidades *listaEntidades;
 	//ListaInimigos *listainimigos;
 	//ListaObstaculos *listaObstaculos;

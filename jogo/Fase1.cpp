@@ -32,7 +32,9 @@ void Fase1::inicializaElementos()
 		ob1 = new Obstaculo();
 		ob1->setPosi((float)i * (100), 300.f);
 		listaEntidades->LEs.push(ob1);
+		gerenciadorColisoes.getLOs().push_back(*ob1);
 	}
+	gerenciadorColisoes.getLIs().push_back(*i1);
 	listaEntidades->LEs.push(j1);
 	listaEntidades->LEs.push(i1);
 }
