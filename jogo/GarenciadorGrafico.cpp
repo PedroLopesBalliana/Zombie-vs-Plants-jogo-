@@ -13,18 +13,30 @@ GerenciadorGrafico::~GerenciadorGrafico()
 
 }
 
-void GerenciadorGrafico::desenharEntidades()
+void GerenciadorGrafico::desenharEntidades(sf::Sprite sp)
 {
-	window.clear();
-	for (int i = 0; i < LE.LEs.getLen(); i++)
-	{
-		
-		Entidades::Entidade* temp = LE.LEs.getItem(i);
-		window.draw(temp->getSprite());
-	}
-	window.display();
+	window.draw(sp);
 }
 sf::RenderWindow  *GerenciadorGrafico::getWindow()
 {
 	return &window;
+}
+void GerenciadorGrafico::limpaJanela()
+{
+	window.clear();
+}
+void GerenciadorGrafico::displayJanela()
+{
+	window.display();
+}
+bool GerenciadorGrafico::pegarJanela()
+{
+	if (window.isOpen() == true)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

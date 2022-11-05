@@ -1,13 +1,12 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Ente.h"
 namespace Entidades
 {
-	class Entidade
+	class Entidade : public Ente
 	{
 	protected:
-		sf::Texture texture;
-		sf::Sprite sprite;
 	public:
 		Entidade();
 		~Entidade();

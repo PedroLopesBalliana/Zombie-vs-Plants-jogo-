@@ -8,27 +8,22 @@
 #include "GerenciadorGrafico.h"
 #include "Background.h"
 #include "GerenciadorColisoes.h"
+#include "Ente.h"
 
 using namespace std;
 
-class Fase
+class Fase : public Ente
 {
 protected:
-	GerenciadorGrafico* gerenciadorGrafico;
 	GerenciadorColisoes gerenciadorColisoes;
 	ListaEntidades *listaEntidades;
-	//ListaInimigos *listainimigos;
-	//ListaObstaculos *listaObstaculos;
 	Entidades::Personagens::Inimigo* i1;
 	Jogador* j1;
 	Obstaculo* ob1;
-	Background* background;
 	virtual void inicializaElementos();
 public:
 	Fase();
 	~Fase();
 	ListaEntidades* getListaEntidades();
-	//ListaInimigos* getListaInimigos();
-	//ListaObstaculos* getListaObstaculos();
-	virtual void faseExecutar() = 0;
+	void executar()=0;
 };

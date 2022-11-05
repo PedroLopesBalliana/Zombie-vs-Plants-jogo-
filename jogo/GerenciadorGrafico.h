@@ -12,7 +12,10 @@ public:
 	GerenciadorGrafico();
 	~GerenciadorGrafico();
 	void setListaEntidades(ListaEntidades Le);
-	void desenharEntidades();
+	void desenharEntidades(sf::Sprite sp);
 	sf::RenderWindow* getWindow();
+	void limpaJanela();
+	void displayJanela();
+	bool pegarJanela();
 };
 

@@ -1,7 +1,6 @@
 #include "Inimigo.h"
 Entidades::Personagens::Inimigo::Inimigo(): Entidade::Entidade()
 {
-	//body.setFillColor(sf::Color::Magenta);
 	if (!texture.loadFromFile("assets/Inimigos/AtiradorSprite.png"))
 	{
 		std::cout << "falhou a textura :(" << std::endl;
@@ -14,7 +13,3 @@ Entidades::Personagens::Inimigo::~Inimigo()
 {
 
 }
-/*void Entidades::Personagens::Inimigo::draw()
-{
-	window->draw(inimigoSprite);
-}*/
