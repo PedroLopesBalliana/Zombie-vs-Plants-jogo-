@@ -37,6 +37,7 @@ void Fase1::inicializaElementos()
 }
 void Fase1::executar()
 {
+
 	while (geren_graf->pegarJanela())
 	{
 		sf::Event event;
