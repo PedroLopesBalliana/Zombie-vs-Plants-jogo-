@@ -10,13 +10,16 @@ Ente::~Ente()
 }
 void Ente::executar()
 {
-	this->imprimirSe();
 }
 void Ente::imprimirSe()
 {
-	geren_graf->desenharEntidades(sprite);
+	geren_graf->desenharEntidades(getSprite());
 }
 void Ente::setGerenciadorGrafico(GerenciadorGrafico* gR)
 {
 	geren_graf = gR;
+}
+sf::Sprite Ente::getSprite()
+{
+	return sprite;
 }
