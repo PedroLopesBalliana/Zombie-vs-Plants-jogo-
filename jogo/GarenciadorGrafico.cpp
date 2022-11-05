@@ -3,6 +3,7 @@
 GerenciadorGrafico::GerenciadorGrafico():
 	window(sf::VideoMode(1000, 800), "Jogo")
 {
+	limpaJanela();
 }
 GerenciadorGrafico::~GerenciadorGrafico()
 {
@@ -11,6 +12,11 @@ GerenciadorGrafico::~GerenciadorGrafico()
 
 void GerenciadorGrafico::desenharEntidades(sf::Sprite sp)
 {
+	if (sp.getTexture() == NULL)
+	{
+		printf("FODEU");
+		return;
+	}
 	window.draw(sp);
 }
 sf::RenderWindow  *GerenciadorGrafico::getWindow()
@@ -36,3 +42,4 @@ bool GerenciadorGrafico::pegarJanela()
 		return false;
 	}
 }
+

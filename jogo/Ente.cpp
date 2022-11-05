@@ -1,8 +1,7 @@
 #include "Ente.h"
 
-Ente::Ente()
+Ente::Ente() : geren_graf(NULL)
 {
-	sprite.setPosition(sf::Vector2f(100.f, 100.f));
 }
 Ente::~Ente()
 {
@@ -13,7 +12,7 @@ void Ente::executar()
 }
 void Ente::imprimirSe()
 {
-	geren_graf->desenharEntidades(getSprite());
+	geren_graf->desenharEntidades(sprite);
 }
 void Ente::setGerenciadorGrafico(GerenciadorGrafico* gR)
 {
