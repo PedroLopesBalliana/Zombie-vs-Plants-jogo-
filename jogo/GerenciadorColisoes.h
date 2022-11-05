@@ -7,11 +7,11 @@
 class GerenciadorColisoes
 {
 private:
-	std::vector<Entidades::Personagens::Inimigo> LIs;
+	std::vector<Inimigo> LIs;
 	std::list<Obstaculo> LOs;
 public:
 	GerenciadorColisoes();
 	~GerenciadorColisoes();
-	std::vector<Entidades::Personagens::Inimigo> getLIs();
+	std::vector<Inimigo> getLIs();
 	std::list<Obstaculo> getLOs();
 };

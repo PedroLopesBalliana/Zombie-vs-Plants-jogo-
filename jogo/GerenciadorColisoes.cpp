@@ -8,7 +8,7 @@ GerenciadorColisoes::~GerenciadorColisoes()
 {
 
 }
-std::vector<Entidades::Personagens::Inimigo> GerenciadorColisoes::getLIs()
+std::vector<Inimigo> GerenciadorColisoes::getLIs()
 {
 	return LIs;
 }

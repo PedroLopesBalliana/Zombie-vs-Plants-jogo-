@@ -6,7 +6,6 @@
 #include "Obstaculo.h"
 #include "ListaObstaculos.h"
 #include "GerenciadorGrafico.h"
-#include "Background.h"
 #include "GerenciadorColisoes.h"
 #include "Ente.h"
 
@@ -17,7 +16,7 @@ class Fase : public Ente
 protected:
 	GerenciadorColisoes gerenciadorColisoes;
 	ListaEntidades *listaEntidades;
-	Entidades::Personagens::Inimigo* i1;
+	Inimigo* i1;
 	Jogador* j1;
 	Obstaculo* ob1;
 	virtual void inicializaElementos();

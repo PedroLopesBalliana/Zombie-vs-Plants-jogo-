@@ -1,6 +1,6 @@
 #pragma once
 #include "Entidade.h"
-using namespace Entidades; // ficou muito estranho Entidades::Entidade::Entidade() por exemplo
+ // ficou muito estranho Entidades::Entidade::Entidade() por exemplo
 Entidade::Entidade():Ente()
 {
 }

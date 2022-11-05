@@ -1,5 +1,5 @@
 #include "Inimigo.h"
-Entidades::Personagens::Inimigo::Inimigo(): Entidade::Entidade()
+Inimigo::Inimigo(): Entidade::Entidade()
 {
 	if (!texture.loadFromFile("assets/Inimigos/AtiradorSprite.png"))
 	{
@@ -9,7 +9,7 @@ Entidades::Personagens::Inimigo::Inimigo(): Entidade::Entidade()
 	sprite.scale(sf::Vector2f(2, 2));
 	sprite.setPosition(sf::Vector2f(200.f, 200.f));
 }
-Entidades::Personagens::Inimigo::~Inimigo()
+Inimigo::~Inimigo()
 {
 
 }

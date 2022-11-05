@@ -14,5 +14,4 @@ public:
 	virtual void executar();
 	void imprimirSe();
 	void setGerenciadorGrafico(GerenciadorGrafico* gR);
-
 };

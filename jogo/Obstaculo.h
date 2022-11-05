@@ -1,6 +1,6 @@
 #pragma once
 #include "Entidade.h"
-class Obstaculo : public Entidades::Entidade
+class Obstaculo : public Entidade
 {
 private:
 public:

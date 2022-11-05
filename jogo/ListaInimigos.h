@@ -4,7 +4,7 @@
 class ListaInimigos
 {
 public:
-	Lista<Entidades::Personagens::Inimigo> LEs;
+	Lista<Inimigo> LEs;
 	ListaInimigos();
 	~ListaInimigos();
 };

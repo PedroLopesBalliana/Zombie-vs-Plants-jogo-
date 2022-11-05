@@ -1,5 +1,4 @@
 #include "Fase1.h"
-using namespace Entidades;
 
 Fase1::Fase1(Jogador* j1, GerenciadorGrafico* GE) : 
 	Fase()
@@ -14,7 +13,7 @@ Fase1::Fase1(Jogador* j1, GerenciadorGrafico* GE) :
 	geren_graf = GE;
 	this->j1 = j1;
 	listaEntidades = new ListaEntidades();
-	i1 = new Entidades::Personagens::Inimigo();
+	i1 = new Inimigo();
 	ob1 = new Obstaculo();
 	inicializaElementos();
 	executar();

@@ -2,8 +2,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Ente.h"
-namespace Entidades
-{
 	class Entidade : public Ente
 	{
 	protected:
@@ -13,4 +11,3 @@ namespace Entidades
 		sf::Sprite getSprite();
 		sf::Vector2f getFronteiras();
 	};
-}

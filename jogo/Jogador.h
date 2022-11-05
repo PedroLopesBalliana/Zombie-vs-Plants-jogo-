@@ -1,6 +1,6 @@
 #pragma once
 #include "Entidade.h"
-class Jogador :public Entidades::Entidade
+class Jogador :public Entidade
 {
 private:
 	bool facingLeft;
