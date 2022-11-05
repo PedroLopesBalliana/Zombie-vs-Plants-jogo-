@@ -44,9 +44,7 @@ void Jogador::move()
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && !pulou)
 	{
-		sprite.move(sf::Vector2f(0.0f, -100.f));;
 		pulou = true;
-		
 	}
 	//else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) // gravidade fake
 	//{
@@ -59,10 +57,16 @@ float Jogador::getY()
 }
 void Jogador::corrigir(float height)
 {
-		sprite.move(sf::Vector2f(0.f, -height));
-		pulou = false;
+	sprite.move(sf::Vector2f(0.f, -height));
+	pulou = false;
+	jump = -50.f;
 }
 void Jogador::flutua()
 {
 
+}
+void Jogador::pula()
+{
+	sprite.move(sf::Vector2f(0.f, jump));
+	jump = jump / 2;
 }

@@ -6,8 +6,10 @@ class Jogador :public Entidade
 {
 private:
 	bool facingLeft;
-	bool pulou;
+	float jump;
+	sf::Vector2f velocity;
 public:
+	bool pulou;
 	Jogador();
 	~Jogador();
 	void move();
@@ -15,4 +17,5 @@ public:
 	void corrigir(float height);
 	void gravidade();
 	void flutua();
+	void pula();
 };

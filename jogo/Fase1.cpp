@@ -54,6 +54,10 @@ void Fase1::executar()
 		}
 		imprimirSe();
 		j1->move();
+		if (j1->pulou)
+		{
+			j1->pula();
+		}
 		j1->gravidade();
 		gerenciadorColisoes.percorrer();
 		for(int i = 0; i < listaEntidades->LEs.getLen(); i++)
