@@ -13,3 +13,12 @@ Inimigo::~Inimigo()
 {
 
 }
+void Inimigo::gravidade()
+{
+	sprite.move(sf::Vector2f(0.f, 0.15f));
+	flutua();
+}
+void Inimigo::flutua()
+{
+	sprite.move(sf::Vector2f(0.f, -0.15f));
+}

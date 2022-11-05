@@ -16,7 +16,7 @@ protected:
 	ListaEntidades *listaEntidades;
 	Inimigo* i1;
 	Jogador* j1;
-	Obstaculo* ob1;
+	Obstaculo*ob1, * obteste;
 	virtual void inicializaElementos();
 public:
 	Fase();

@@ -1,14 +1,18 @@
 #pragma once
 #include "Entidade.h"
+#include <windows.h>
+
 class Jogador :public Entidade
 {
 private:
 	bool facingLeft;
+	bool pulou;
 public:
 	Jogador();
 	~Jogador();
 	void move();
-	void gravidade();
 	float getY();
-
+	void corrigir(float height);
+	void gravidade();
+	void flutua();
 };

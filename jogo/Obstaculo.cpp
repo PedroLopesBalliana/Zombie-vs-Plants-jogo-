@@ -17,3 +17,12 @@ void Obstaculo::setPosi(float x, float y)
 {
 	sprite.setPosition(sf::Vector2f(x, y));
 }
+void Obstaculo::gravidade()
+{
+	sprite.move(sf::Vector2f(0.f, 0.15f));
+	flutua();
+}
+void Obstaculo::flutua()
+{
+	sprite.move(sf::Vector2f(0.f, -0.15f));
+}

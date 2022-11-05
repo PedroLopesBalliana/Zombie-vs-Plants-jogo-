@@ -1,11 +1,12 @@
 #pragma once
 #include "Entidade.h"
-		class Inimigo : public Entidade
-		{
-		private:
+class Inimigo : public Entidade
+{
+private:
 
-		public:
-			Inimigo();
-			~Inimigo();
-
-		};
+public:
+	Inimigo();
+	~Inimigo();
+	void gravidade();
+	void flutua();
+};

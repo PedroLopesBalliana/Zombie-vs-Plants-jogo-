@@ -1,7 +1,8 @@
 #include "Fase1.h"
 
 Fase1::Fase1(Jogador* j1, GerenciadorGrafico* GE) : 
-	Fase()
+	Fase(),
+	bloco(sf::Vector2f(100.f, 100.f))
 {
 	if (!texture.loadFromFile("assets/Bloco_Texturas/Floresta/Background.png"))
 	{
@@ -16,6 +17,7 @@ Fase1::Fase1(Jogador* j1, GerenciadorGrafico* GE) :
 	i1 = new Inimigo();
 	ob1 = new Obstaculo();
 	inicializaElementos();
+
 	executar();
 }
 Fase1::~Fase1()
@@ -24,17 +26,17 @@ Fase1::~Fase1()
 }
 void Fase1::inicializaElementos()
 {
-	for (int i = 1; i <= 20; i++)
+	for (int i = 0; i <= 20; i++)
 	{
 		ob1 = new Obstaculo();
 		ob1->setGerenciadorGrafico(geren_graf);
 		ob1->setPosi((float)i * (100), 300.f);
 		listaEntidades->LEs.push(ob1);
-		gerenciadorColisoes.getLOs().push_back(*ob1);
+		gerenciadorColisoes.push(ob1);
 	}
+	gerenciadorColisoes.setJogador(j1);
 	j1->setGerenciadorGrafico(geren_graf);
 	i1->setGerenciadorGrafico(geren_graf);
-	gerenciadorColisoes.getLIs().push_back(*i1);
 	listaEntidades->LEs.push(j1);
 	listaEntidades->LEs.push(i1);
 }
@@ -53,10 +55,13 @@ void Fase1::executar()
 		imprimirSe();
 		j1->move();
 		j1->gravidade();
+		gerenciadorColisoes.percorrer();
 		for(int i = 0; i < listaEntidades->LEs.getLen(); i++)
 		{
 			Entidade* temp = listaEntidades->LEs.getItem(i);
+			temp->gravidade();
 			temp->imprimirSe();
+			
 		}
 		geren_graf->displayJanela();
 	}

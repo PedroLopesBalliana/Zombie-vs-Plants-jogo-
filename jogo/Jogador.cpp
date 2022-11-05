@@ -1,5 +1,5 @@
 #include "Jogador.h"
-Jogador::Jogador() :Entidade()
+Jogador::Jogador() :Entidade(), pulou(false)
 {
 	if (!texture.loadFromFile("assets/Zumbi_Jogador/zombieSprite.png"))
 	{
@@ -15,7 +15,8 @@ Jogador::~Jogador()
 }
 void Jogador::gravidade()
 {
-	sprite.move(sf::Vector2f(0.f, 0.3f));
+	sprite.move(sf::Vector2f(0.f, 0.05f));
+	flutua();
 }
 void Jogador::move()
 {
@@ -41,9 +42,11 @@ void Jogador::move()
 			facingLeft = true;
 		}
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && !pulou)
 	{
-		sprite.move(sf::Vector2f(0.f, -0.5f));
+		sprite.move(sf::Vector2f(0.0f, -100.f));;
+		pulou = true;
+		
 	}
 	//else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) // gravidade fake
 	//{
@@ -53,4 +56,13 @@ void Jogador::move()
 float Jogador::getY()
 {
 	return sprite.getPosition().y;
+}
+void Jogador::corrigir(float height)
+{
+		sprite.move(sf::Vector2f(0.f, -height));
+		pulou = false;
+}
+void Jogador::flutua()
+{
+
 }

@@ -7,4 +7,6 @@ public:
 	Obstaculo();
 	~Obstaculo();
 	void setPosi(float x, float y);
+	void gravidade();
+	void flutua();
 };

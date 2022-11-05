@@ -12,11 +12,6 @@ GerenciadorGrafico::~GerenciadorGrafico()
 
 void GerenciadorGrafico::desenharEntidades(sf::Sprite sp)
 {
-	if (sp.getTexture() == NULL)
-	{
-		printf("FODEU");
-		return;
-	}
 	window.draw(sp);
 }
 sf::RenderWindow  *GerenciadorGrafico::getWindow()
