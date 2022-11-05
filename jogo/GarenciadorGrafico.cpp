@@ -4,10 +4,6 @@ GerenciadorGrafico::GerenciadorGrafico():
 	window(sf::VideoMode(1000, 800), "Jogo")
 {
 }
-void GerenciadorGrafico::setListaEntidades(ListaEntidades Le)
-{
-	LE = Le;
-}
 GerenciadorGrafico::~GerenciadorGrafico()
 {
 

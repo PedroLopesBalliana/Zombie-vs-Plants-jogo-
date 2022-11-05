@@ -45,10 +45,11 @@ void Fase1::executar()
 			if (event.type == sf::Event::Closed)
 				geren_graf->getWindow()->close();
 		}
-		this->executar();
+		//this->executar();
 		j1->move();
 		j1->gravidade();
-		for (int i = 0; i < listaEntidades->LEs.getLen(); i++)
+		//for (int i = 0; i < listaEntidades->LEs.getLen(); i++)
+		for (int i = 0; i < 5; i++)
 		{
 			Entidade* temp = listaEntidades->LEs.getItem(i);
 			temp->executar();

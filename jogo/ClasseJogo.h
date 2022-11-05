@@ -3,9 +3,7 @@
 #include "Jogador.h"
 #include "Inimigo.h"
 #include "ListaEntidades.h"
-#include "ListaInimigos.h"
 #include "Obstaculo.h"
-#include "ListaObstaculos.h"
 #include "Fase1.h"
 #include "GerenciadorGrafico.h"
 

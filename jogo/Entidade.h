@@ -1,5 +1,4 @@
 #pragma once
-#include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Ente.h"
 	class Entidade : public Ente
