@@ -41,8 +41,8 @@ void Inimigo2::mover()
 		sprite.scale(-1, 1);
 	}
 	if (!facingLeft)
-		sprite.move(sf::Vector2f(-0.1f, 0.f));
+		sprite.move(sf::Vector2f(-0.3f, 0.f));
 	else
-		sprite.move(sf::Vector2f(0.1f, 0.f));
+		sprite.move(sf::Vector2f(0.3f, 0.f));
 }
 
