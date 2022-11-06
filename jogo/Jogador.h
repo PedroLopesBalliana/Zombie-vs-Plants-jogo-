@@ -7,8 +7,6 @@ class Jogador :public Entidade
 private:
 	bool facingLeft;
 	float jump;
-	sf::Vector2f velocidadeV;
-	float velocidade;
 public:
 	bool pulou;
 	Jogador();

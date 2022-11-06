@@ -4,6 +4,8 @@
 	class Entidade : public Ente
 	{
 	protected:
+		sf::Vector2f velocidadeV;
+		float velocidade;
 	public:
 		Entidade();
 		~Entidade();
