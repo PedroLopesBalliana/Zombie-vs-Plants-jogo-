@@ -17,14 +17,7 @@ Projetil::~Projetil()
 }
 void Projetil::executar(float deltaTempo, sf::Vector2f posicao)
 {
-	if (true)
-	{
-		gravidade(deltaTempo);
-	}
-	else
-	{
-		atirar(posicao);
-	}
+	gravidade(deltaTempo);
 	if (sprite.getPosition().y > 750.f)
 	{
 		sprite.setPosition(posicao);
@@ -32,8 +25,4 @@ void Projetil::executar(float deltaTempo, sf::Vector2f posicao)
 	}
 	sprite.move(velocidadeV * deltaTempo);
 	imprimirSe();
-}
-void Projetil::atirar(sf::Vector2f posicao)
-{
-	sprite.setPosition(posicao);
 }

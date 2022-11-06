@@ -11,8 +11,8 @@ class GerenciadorColisoes
 private:
 	std::vector<Inimigo*> LIs;
 	std::list<Obstaculo*> LOs;
+	std::list<Projetil*> LPs;
 	Jogador* jogador;
-	Obstaculo* obstaculo;
 	sf::FloatRect sect;
 
 public:
@@ -20,13 +20,16 @@ public:
 	~GerenciadorColisoes();
 	std::vector<Inimigo*> getLIs();
 	std::list<Obstaculo*> getLOs();
+	std::list<Projetil*> getLPs();
 	void setJogador(Jogador *jog);
-	void setObstaculo(Obstaculo* ob);
 	void checaColisao(Obstaculo* ob);
 	void checaColisaoInimigo(Inimigo* ob);
+	void checaColisaoProjetil(Projetil* ob);
 	void percorrer();
 	void percorrerObstaculo();
 	void percorrerInimigo();
+	void percorrerProjetil();
 	void pushObstaculo(Obstaculo* ob);
 	void pushInimigo(Inimigo* in);
+	void pushProjetil(Projetil* pr);
 };

@@ -12,5 +12,5 @@ public:
 	void move(float deltaTime);
 	void corrigir(float height, float side);
 	void executar(float deltaTempo);
-	void operator++();
+	void operator--();
 };

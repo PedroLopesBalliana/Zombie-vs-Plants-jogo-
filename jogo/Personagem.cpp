@@ -16,3 +16,7 @@ void Personagem::executar(float deltaTempo)
 {
 
 }
+bool Personagem::getSentido()
+{
+	return facingLeft;
+}

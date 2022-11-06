@@ -18,7 +18,7 @@ protected:
 	Atirador* i1;
 	Jogador* j1;
 	Bulbassauro* i2;
-	Obstaculo*ob1, * obteste;
+	Obstaculo* ob1;
 	Projetil* pr;
 	virtual void inicializaElementos();
 public:

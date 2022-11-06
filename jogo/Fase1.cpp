@@ -46,6 +46,7 @@ void Fase1::inicializaElementos()
 	listaEntidades->LEs.push(pr);
 	i1->setProjetil(pr);
 	gerenciadorColisoes.pushInimigo(i2);
+	gerenciadorColisoes.pushProjetil(pr);
 }
 void Fase1::executar()
 {

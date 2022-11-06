@@ -1,6 +1,6 @@
 #include "GerenciadorColisoes.h"
 
-GerenciadorColisoes::GerenciadorColisoes() : jogador(NULL), obstaculo(NULL)
+GerenciadorColisoes::GerenciadorColisoes() : jogador(NULL)
 {
 
 }
@@ -16,13 +16,13 @@ std::list<Obstaculo*> GerenciadorColisoes::getLOs()
 {
 	return LOs;
 }
+std::list<Projetil*> GerenciadorColisoes::getLPs()
+{
+	return LPs;
+}
 void GerenciadorColisoes::setJogador(Jogador *jog)
 {
 	jogador = jog;
-}
-void GerenciadorColisoes::setObstaculo(Obstaculo* ob)
-{
-	obstaculo = ob;
 }
 void GerenciadorColisoes::checaColisao(Obstaculo* ob)
 {
@@ -35,14 +35,26 @@ void GerenciadorColisoes::checaColisaoInimigo(Inimigo* ob)
 {
 	if (ob->getSpriteBounds().intersects(jogador->getSpriteBounds()))
 	{
-		jogador->operator++();
+		jogador->operator--();
 		jogador->corrigir(100.f, 0.f);
+	}
+}
+void GerenciadorColisoes::checaColisaoProjetil(Projetil* ob)
+{
+	if (ob->getSpriteBounds().intersects(jogador->getSpriteBounds()))
+	{
+		jogador->operator--();
+		if(jogador->getSentido())
+			jogador->corrigir(0.f, 100.f);
+		else
+			jogador->corrigir(0.f, -100.f);
 	}
 }
 void GerenciadorColisoes::percorrer()
 {
 	percorrerObstaculo();
 	percorrerInimigo();
+	percorrerProjetil();
 }
 void GerenciadorColisoes::percorrerObstaculo()
 {
@@ -51,6 +63,16 @@ void GerenciadorColisoes::percorrerObstaculo()
 	while (it != LOs.end())
 	{
 		checaColisao(*it);
+		it++;
+	}
+}
+void GerenciadorColisoes::percorrerProjetil()
+{
+	std::list<Projetil*>::iterator it;
+	it = LPs.begin();
+	while (it != LPs.end())
+	{
+		checaColisaoProjetil(*it);
 		it++;
 	}
 }
@@ -71,4 +93,8 @@ void GerenciadorColisoes::pushObstaculo(Obstaculo* ob)
 void GerenciadorColisoes::pushInimigo(Inimigo* in)
 {
 	LIs.push_back(in);
+}
+void GerenciadorColisoes::pushProjetil(Projetil* pr)
+{
+	LPs.push_back(pr);
 }

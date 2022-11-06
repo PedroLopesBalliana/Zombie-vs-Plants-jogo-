@@ -58,7 +58,7 @@ void Jogador::executar(float deltaTempo)
 	imprimirSe();
 	gravidade(deltaTempo);
 }
-void Jogador::operator++()
+void Jogador::operator--()
 {
 	printf("jogador num_vidas : %d \n", num_vidas);
 	num_vidas--;

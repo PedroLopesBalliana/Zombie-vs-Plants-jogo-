@@ -13,4 +13,5 @@ public:
 	~Personagem();
 	virtual void move(float deltaTime);
 	virtual void executar(float deltaTempo);
+	bool getSentido();
 };
