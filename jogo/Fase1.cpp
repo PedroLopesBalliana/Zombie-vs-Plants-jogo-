@@ -33,7 +33,7 @@ void Fase1::inicializaElementos()
 		ob1->setGerenciadorGrafico(geren_graf);
 		ob1->setPosi((float)i * (100), 750.f);
 		listaEntidades->LEs.push(ob1);
-		gerenciadorColisoes.push(ob1);
+		gerenciadorColisoes.pushObstaculo(ob1);
 	}
 	gerenciadorColisoes.setJogador(j1);
 	j1->setGerenciadorGrafico(geren_graf);
@@ -41,6 +41,7 @@ void Fase1::inicializaElementos()
 	listaEntidades->LEs.push(j1);
 	listaEntidades->LEs.push(i1);
 	listaEntidades->LEs.push(i2);
+	gerenciadorColisoes.pushInimigo(i2);
 }
 void Fase1::executar()
 {

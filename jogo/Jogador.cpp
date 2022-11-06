@@ -1,5 +1,5 @@
 #include "Jogador.h"
-Jogador::Jogador() :Entidade(), pulou(false)
+Jogador::Jogador() :Entidade(), pulou(false), num_vidas(100)
 {
 	if (!texture.loadFromFile("assets/Zumbi_Jogador/zombieSprite.png"))
 	{
@@ -53,9 +53,10 @@ float Jogador::getY()
 {
 	return sprite.getPosition().y;
 }
-void Jogador::corrigir(float height)
+void Jogador::corrigir(float height, float side)
 {
-	sprite.move(sf::Vector2f(0.f, -height));
+	sprite.move(sf::Vector2f(side, -height ));
+	velocidadeV.y = 0.f;
 	pulou = false;
 }
 void Jogador::flutua()
@@ -76,4 +77,10 @@ void Jogador::executar(float deltaTempo)
 	move(deltaTempo);
 	imprimirSe();
 	gravidade(deltaTempo);
+}
+void Jogador::operator++()
+{
+	printf("jogador num_vidas : %d \n", num_vidas);
+	num_vidas--;
+	printf("jogador num_vidas : %d \n", num_vidas);
 }
