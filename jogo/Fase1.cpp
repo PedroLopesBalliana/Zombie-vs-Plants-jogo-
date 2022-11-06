@@ -16,8 +16,8 @@ Fase1::Fase1(Jogador* j1, GerenciadorGrafico* GE) :
 	listaEntidades = new ListaEntidades();
 	i1 = new Inimigo();
 	ob1 = new Obstaculo();
+	i2 = new Inimigo2();
 	inicializaElementos();
-
 	executar();
 }
 Fase1::~Fase1()
@@ -26,6 +26,7 @@ Fase1::~Fase1()
 }
 void Fase1::inicializaElementos()
 {
+	i2->setGerenciadorGrafico(geren_graf);
 	for (int i = 0; i <= 20; i++)
 	{
 		ob1 = new Obstaculo();
@@ -39,6 +40,7 @@ void Fase1::inicializaElementos()
 	i1->setGerenciadorGrafico(geren_graf);
 	listaEntidades->LEs.push(j1);
 	listaEntidades->LEs.push(i1);
+	listaEntidades->LEs.push(i2);
 }
 void Fase1::executar()
 {

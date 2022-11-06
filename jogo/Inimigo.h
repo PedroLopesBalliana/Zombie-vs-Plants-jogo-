@@ -3,15 +3,15 @@
 #include "Projetil.h"
 class Inimigo : public Entidade
 {
-private:
+protected:
 	bool facingLeft;
 	bool goingUp;
 	Projetil* tiro;
 public:
 	Inimigo();
 	~Inimigo();
-	void gravidade(float DeltaTempo);
-	void flutua();
-	void executar(float deltaTempo);
-	void mover();
+	virtual void gravidade(float DeltaTempo);
+	virtual void flutua();
+	virtual void executar(float deltaTempo);
+	virtual void mover();
 };

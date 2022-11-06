@@ -6,6 +6,7 @@
 #include "GerenciadorGrafico.h"
 #include "GerenciadorColisoes.h"
 #include "Ente.h"
+#include "Inimigo2.h"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ protected:
 	ListaEntidades *listaEntidades;
 	Inimigo* i1;
 	Jogador* j1;
+	Inimigo2* i2;
 	Obstaculo*ob1, * obteste;
 	virtual void inicializaElementos();
 public:
