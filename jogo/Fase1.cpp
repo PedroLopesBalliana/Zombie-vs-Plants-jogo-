@@ -30,7 +30,7 @@ void Fase1::inicializaElementos()
 	{
 		ob1 = new Obstaculo();
 		ob1->setGerenciadorGrafico(geren_graf);
-		ob1->setPosi((float)i * (100), 300.f);
+		ob1->setPosi((float)i * (100), 750.f);
 		listaEntidades->LEs.push(ob1);
 		gerenciadorColisoes.push(ob1);
 	}

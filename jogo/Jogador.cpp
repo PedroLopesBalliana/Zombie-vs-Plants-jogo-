@@ -16,7 +16,7 @@ Jogador::~Jogador()
 }
 void Jogador::gravidade(float deltaTempo)
 {
-	velocidadeV.y = 981.0f * deltaTempo;
+	velocidadeV.y += 981.0f * deltaTempo;
 }
 void Jogador::move(float deltaTempo)
 {
@@ -48,9 +48,6 @@ void Jogador::move(float deltaTempo)
 		velocidadeV.y = -sqrtf(2.0f * 981.0f * 100.0f);
 	}
 	sprite.move(velocidadeV * deltaTempo);
-
-	velocidadeV.y += 981.0f * deltaTempo;
-	imprimirSe();
 }
 float Jogador::getY()
 {
@@ -60,7 +57,6 @@ void Jogador::corrigir(float height)
 {
 	sprite.move(sf::Vector2f(0.f, -height));
 	pulou = false;
-	//jump = -50.f;
 }
 void Jogador::flutua()
 {
@@ -78,5 +74,6 @@ void Jogador::executar(float deltaTempo)
 		pula();
 	}
 	move(deltaTempo);
-	//gravidade();
+	imprimirSe();
+	gravidade(deltaTempo);
 }
