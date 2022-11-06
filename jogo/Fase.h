@@ -2,11 +2,11 @@
 #include "Jogador.h"
 #include "Atirador.h"
 #include "ListaEntidades.h"
-#include "Obstaculo.h"
 #include "GerenciadorGrafico.h"
 #include "GerenciadorColisoes.h"
 #include "Ente.h"
 #include "Bulbassauro.h"
+#include "Grama.h"
 
 using namespace std;
 
@@ -18,7 +18,7 @@ protected:
 	Atirador* i1;
 	Jogador* j1;
 	Bulbassauro* i2;
-	Obstaculo* ob1;
+	Grama* gr;
 	Projetil* pr;
 	virtual void inicializaElementos();
 public:

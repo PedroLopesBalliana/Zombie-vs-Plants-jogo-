@@ -15,7 +15,7 @@ Fase1::Fase1(Jogador* j1, GerenciadorGrafico* GE) :
 	this->j1 = j1;
 	listaEntidades = new ListaEntidades();
 	i1 = new Atirador();
-	ob1 = new Obstaculo();
+	gr = new Grama();
 	i2 = new Bulbassauro();
 	pr = new Projetil();
 	inicializaElementos();
@@ -30,11 +30,11 @@ void Fase1::inicializaElementos()
 	i2->setGerenciadorGrafico(geren_graf);
 	for (int i = 0; i <= 20; i++)
 	{
-		ob1 = new Obstaculo();
-		ob1->setGerenciadorGrafico(geren_graf);
-		ob1->setPosi((float)i * (100), 750.f);
-		listaEntidades->LEs.push(ob1);
-		gerenciadorColisoes.pushObstaculo(ob1);
+		gr = new Grama();
+		gr->setGerenciadorGrafico(geren_graf);
+		gr->setPosi((float)i * (100), 750.f);
+		listaEntidades->LEs.push(gr);
+		gerenciadorColisoes.pushObstaculo(gr);
 	}
 	gerenciadorColisoes.setJogador(j1);
 	j1->setGerenciadorGrafico(geren_graf);

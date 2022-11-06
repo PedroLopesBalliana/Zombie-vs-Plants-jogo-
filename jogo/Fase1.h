@@ -8,8 +8,6 @@ public:
 	~Fase1();
 	void inicializaElementos();
 	void executar();
-
-
 	sf::RectangleShape bloco;
 	sf::FloatRect sect;
 };

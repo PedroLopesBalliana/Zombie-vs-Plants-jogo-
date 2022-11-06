@@ -6,7 +6,7 @@ private:
 public:
 	Obstaculo();
 	~Obstaculo();
-	void setPosi(float x, float y);
-	void flutua(float deltaTempo);
-	void executar(float deltaTempo);
+	virtual void setPosi(float x, float y);
+	virtual void flutua(float deltaTempo);
+	virtual void executar(float deltaTempo);
 };

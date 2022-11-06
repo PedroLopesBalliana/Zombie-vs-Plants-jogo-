@@ -146,6 +146,7 @@
     <ClCompile Include="Fase1.cpp" />
     <ClCompile Include="GarenciadorGrafico.cpp" />
     <ClCompile Include="Bulbassauro.cpp" />
+    <ClCompile Include="Grama.cpp" />
     <ClCompile Include="jogo.cpp" />
     <ClCompile Include="Entidade.cpp" />
     <ClCompile Include="Jogador.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="GerenciadorColisoes.h" />
     <ClInclude Include="Fase.h" />
     <ClInclude Include="Bulbassauro.h" />
+    <ClInclude Include="Grama.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="Elemento.h" />
     <ClInclude Include="Inimigo.h" />
