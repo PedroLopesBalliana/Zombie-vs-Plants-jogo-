@@ -36,7 +36,7 @@ void GerenciadorColisoes::checaColisaoInimigo(Inimigo* ob)
 	if (ob->getSpriteBounds().intersects(jogador->getSpriteBounds()))
 	{
 		jogador->operator++();
-		jogador->corrigir(200.f, 200.f);
+		jogador->corrigir(100.f, 0.f);
 	}
 }
 void GerenciadorColisoes::percorrer()
