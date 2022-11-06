@@ -42,9 +42,11 @@ void Fase1::inicializaElementos()
 }
 void Fase1::executar()
 {
-
+	float deltaTempo = 0.0f;
+	sf::Clock clock;
 	while (geren_graf->pegarJanela())
 	{
+		deltaTempo = clock.restart().asSeconds();
 		geren_graf->limpaJanela();
 		sf::Event event;
 		while (geren_graf->getWindow()->pollEvent(event))
@@ -52,20 +54,13 @@ void Fase1::executar()
 			if (event.type == sf::Event::Closed)
 				geren_graf->getWindow()->close();
 		}
+		 //imprimirSe até o percorrer
 		imprimirSe();
-		j1->move();
-		if (j1->pulou)
-		{
-			j1->pula();
-		}
-		j1->gravidade();
-		gerenciadorColisoes.percorrer();
 		for(int i = 0; i < listaEntidades->LEs.getLen(); i++)
 		{
+			gerenciadorColisoes.percorrer();
 			Entidade* temp = listaEntidades->LEs.getItem(i);
-			temp->gravidade();
-			temp->imprimirSe();
-			
+			temp->executar(deltaTempo);
 		}
 		geren_graf->displayJanela();
 	}

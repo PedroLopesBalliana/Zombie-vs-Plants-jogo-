@@ -7,15 +7,17 @@ class Jogador :public Entidade
 private:
 	bool facingLeft;
 	float jump;
-	sf::Vector2f velocity;
+	sf::Vector2f velocidadeV;
+	float velocidade;
 public:
 	bool pulou;
 	Jogador();
 	~Jogador();
-	void move();
+	void move(float deltaTime);
 	float getY();
 	void corrigir(float height);
-	void gravidade();
+	void gravidade(float DeltaTempo);
 	void flutua();
 	void pula();
+	void executar(float deltaTempo);
 };

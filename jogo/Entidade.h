@@ -10,6 +10,7 @@
 		sf::Sprite getSprite();
 		sf::Vector2f getFronteiras();
 		sf::FloatRect getSpriteBounds();
-		virtual void gravidade();
+		virtual void gravidade(float DeltaTempo);
 		virtual void flutua();
+		virtual void executar(float deltaTempo);
 	};

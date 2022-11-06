@@ -7,6 +7,7 @@ private:
 public:
 	Inimigo();
 	~Inimigo();
-	void gravidade();
+	void gravidade(float DeltaTempo);
 	void flutua();
+	void executar(float deltaTempo);
 };

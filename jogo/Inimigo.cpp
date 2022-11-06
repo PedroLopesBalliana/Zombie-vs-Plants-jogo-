@@ -13,7 +13,7 @@ Inimigo::~Inimigo()
 {
 
 }
-void Inimigo::gravidade()
+void Inimigo::gravidade(float deltaTempo)
 {
 	sprite.move(sf::Vector2f(0.f, 0.15f));
 	flutua();
@@ -21,4 +21,9 @@ void Inimigo::gravidade()
 void Inimigo::flutua()
 {
 	sprite.move(sf::Vector2f(0.f, -0.15f));
+}
+void Inimigo::executar(float deltaTempo)
+{
+	gravidade(deltaTempo);
+	imprimirSe();
 }

@@ -20,11 +20,15 @@ sf::FloatRect Entidade::getSpriteBounds()
 {
 	return sprite.getGlobalBounds();
 }
-void Entidade::gravidade()
+void Entidade::gravidade(float deltaTempo)
 {
 
 }
 void Entidade::flutua()
+{
+
+}
+void Entidade::executar(float deltaTempo)
 {
 
 }

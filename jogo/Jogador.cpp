@@ -7,22 +7,24 @@ Jogador::Jogador() :Entidade(), pulou(false)
 	}
 	sprite.setTexture(texture);
 	sprite.scale(sf::Vector2f(2, 2));
-	sprite.setPosition(sf::Vector2f(200.f, 200.f));
+	sprite.setPosition(sf::Vector2f(200.f, 100.f));
 	facingLeft = true;
+	velocidade = 300.0f;
 }
 Jogador::~Jogador()
 {
 }
-void Jogador::gravidade()
+void Jogador::gravidade(float deltaTempo)
 {
-	sprite.move(sf::Vector2f(0.f, 0.05f));
-	flutua();
+	velocidadeV.y = 981.0f * deltaTempo;
 }
-void Jogador::move()
+void Jogador::move(float deltaTempo)
 {
+	velocidadeV.x = 0.5f;
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
-		sprite.move(sf::Vector2f(0.1f, 0.f));
+		velocidadeV.x += velocidade;
 		if (facingLeft)
 		{
 			sprite.scale(-1, 1);
@@ -32,24 +34,23 @@ void Jogador::move()
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
-
-		sprite.move(sf::Vector2f(-0.1f, 0.f));
+		velocidadeV.x -= velocidade;
 		if (!facingLeft)
 		{
 			sprite.move(sf::Vector2f(-50.0f, 0.0f));
 			sprite.scale(-1, 1);
-			sprite.move(sf::Vector2f(5.0f, 0.f));
 			facingLeft = true;
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && !pulou)
 	{
 		pulou = true;
+		velocidadeV.y = -sqrtf(2.0f * 981.0f * 100.0f);
 	}
-	//else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) // gravidade fake
-	//{
-	//	sprite.move(sf::Vector2f(0.f, 0.5f));
-	//}
+	sprite.move(velocidadeV * deltaTempo);
+
+	velocidadeV.y += 981.0f * deltaTempo;
+	imprimirSe();
 }
 float Jogador::getY()
 {
@@ -59,7 +60,7 @@ void Jogador::corrigir(float height)
 {
 	sprite.move(sf::Vector2f(0.f, -height));
 	pulou = false;
-	jump = -50.f;
+	//jump = -50.f;
 }
 void Jogador::flutua()
 {
@@ -69,4 +70,13 @@ void Jogador::pula()
 {
 	sprite.move(sf::Vector2f(0.f, jump));
 	jump = jump / 2;
+}
+void Jogador::executar(float deltaTempo)
+{
+	if (pulou)
+	{
+		pula();
+	}
+	move(deltaTempo);
+	//gravidade();
 }
