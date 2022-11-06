@@ -7,7 +7,6 @@ private:
 public:
 	Projetil();
 	~Projetil();
-	void executar(float deltaTempo);
-	void gravidade(float deltaTempo);
+	void executar(float deltaTempo, sf::Vector2f posicao);
 	void atirar(sf::Vector2f posicao);
 };

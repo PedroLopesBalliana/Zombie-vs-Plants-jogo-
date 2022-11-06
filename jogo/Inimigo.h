@@ -1,16 +1,13 @@
 #pragma once
-#include "Entidade.h"
+#include "Personagem.h"
 #include "Projetil.h"
-class Inimigo : public Entidade
+class Inimigo : public Personagem
 {
 protected:
-	bool facingLeft;
 	bool goingUp;
-	Projetil* tiro;
 public:
 	Inimigo();
 	~Inimigo();
-	virtual void gravidade(float DeltaTempo);
 	virtual void flutua();
 	virtual void executar(float deltaTempo);
 	virtual void mover();

@@ -1,5 +1,5 @@
-#include "Inimigo2.h"
-Inimigo2::Inimigo2():Entidade(), facingLeft(false)
+#include "Bulbassauro.h"
+Bulbassauro::Bulbassauro(): Inimigo()
 {
 	if (!texture.loadFromFile("assets/Inimigos/bublbassauroSprite.png"))
 	{
@@ -9,26 +9,17 @@ Inimigo2::Inimigo2():Entidade(), facingLeft(false)
 	sprite.scale(sf::Vector2f(2, 2));
 	sprite.setPosition(sf::Vector2f(700.f, 685.f));
 }
-Inimigo2::~Inimigo2()
+Bulbassauro::~Bulbassauro()
 {
 
 }
-void Inimigo2::gravidade(float DeltaTempo)
-{
-	sprite.move(sf::Vector2f(0.f, 0.15f));
-	flutua();
-}
-void Inimigo2::flutua()
-{
-	sprite.move(sf::Vector2f(0.f, -0.15f));
-}
-void Inimigo2::executar(float deltaTempo)
+void Bulbassauro::executar(float deltaTempo)
 {
 	gravidade(deltaTempo);
 	imprimirSe();
 	mover();
 }
-void Inimigo2::mover()
+void Bulbassauro::mover()
 {
 	if (sprite.getPosition().x < 100 && !facingLeft)
 	{

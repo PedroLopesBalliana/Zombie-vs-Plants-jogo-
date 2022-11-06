@@ -14,9 +14,10 @@ Fase1::Fase1(Jogador* j1, GerenciadorGrafico* GE) :
 	geren_graf = GE;
 	this->j1 = j1;
 	listaEntidades = new ListaEntidades();
-	i1 = new Inimigo();
+	i1 = new Atirador();
 	ob1 = new Obstaculo();
-	i2 = new Inimigo2();
+	i2 = new Bulbassauro();
+	pr = new Projetil();
 	inicializaElementos();
 	executar();
 }
@@ -41,6 +42,9 @@ void Fase1::inicializaElementos()
 	listaEntidades->LEs.push(j1);
 	listaEntidades->LEs.push(i1);
 	listaEntidades->LEs.push(i2);
+	pr->setGerenciadorGrafico(geren_graf);
+	listaEntidades->LEs.push(pr);
+	i1->setProjetil(pr);
 	gerenciadorColisoes.pushInimigo(i2);
 }
 void Fase1::executar()

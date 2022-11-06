@@ -8,10 +8,10 @@ Entidade::~Entidade()
 {
 
 }
-sf::Vector2f Entidade::getFronteiras()
-{
-	return sprite.getPosition();
-}
+//sf::Vector2f Entidade::getFronteiras()
+//{
+//	return sprite.getPosition();
+//}
 sf::Sprite Entidade::getSprite()
 {
 	return sprite;
@@ -22,11 +22,7 @@ sf::FloatRect Entidade::getSpriteBounds()
 }
 void Entidade::gravidade(float deltaTempo)
 {
-
-}
-void Entidade::flutua()
-{
-
+	velocidadeV.y += 981.0f * deltaTempo;
 }
 void Entidade::executar(float deltaTempo)
 {

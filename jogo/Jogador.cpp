@@ -1,5 +1,5 @@
 #include "Jogador.h"
-Jogador::Jogador() :Entidade(), pulou(false), num_vidas(100)
+Jogador::Jogador() :Personagem(), pulou(false)
 {
 	if (!texture.loadFromFile("assets/Zumbi_Jogador/zombieSprite.png"))
 	{
@@ -10,13 +10,10 @@ Jogador::Jogador() :Entidade(), pulou(false), num_vidas(100)
 	sprite.setPosition(sf::Vector2f(200.f, 100.f));
 	facingLeft = true;
 	velocidade = 300.0f;
+	num_vidas = 100;
 }
 Jogador::~Jogador()
 {
-}
-void Jogador::gravidade(float deltaTempo)
-{
-	velocidadeV.y += 981.0f * deltaTempo;
 }
 void Jogador::move(float deltaTempo)
 {
@@ -49,31 +46,14 @@ void Jogador::move(float deltaTempo)
 	}
 	sprite.move(velocidadeV * deltaTempo);
 }
-float Jogador::getY()
-{
-	return sprite.getPosition().y;
-}
 void Jogador::corrigir(float height, float side)
 {
 	sprite.move(sf::Vector2f(side, -height ));
 	velocidadeV.y = 0.f;
 	pulou = false;
 }
-void Jogador::flutua()
-{
-
-}
-void Jogador::pula()
-{
-	sprite.move(sf::Vector2f(0.f, jump));
-	jump = jump / 2;
-}
 void Jogador::executar(float deltaTempo)
 {
-	if (pulou)
-	{
-		pula();
-	}
 	move(deltaTempo);
 	imprimirSe();
 	gravidade(deltaTempo);

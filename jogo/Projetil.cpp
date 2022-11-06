@@ -8,20 +8,30 @@ Projetil::Projetil()
 	}
 	sprite.setTexture(texture);
 	sprite.scale(sf::Vector2f(2, 2));
-	sprite.setPosition(sf::Vector2f(1100.f, 1100.f));
-	velocidade = 0.0f;
+	sprite.setPosition(sf::Vector2f(700.f, 100.f));
+	velocidadeV.y = 50.0f;
 }
 Projetil::~Projetil()
 {
 
 }
-void Projetil::executar(float deltaTempo)
+void Projetil::executar(float deltaTempo, sf::Vector2f posicao)
 {
-
-}
-void Projetil::gravidade(float deltaTempo)
-{
-	velocidadeV.y += 981.0f * deltaTempo;
+	if (true)
+	{
+		gravidade(deltaTempo);
+	}
+	else
+	{
+		atirar(posicao);
+	}
+	if (sprite.getPosition().y > 750.f)
+	{
+		sprite.setPosition(posicao);
+		velocidadeV.y = 50.0f;
+	}
+	sprite.move(velocidadeV * deltaTempo);
+	imprimirSe();
 }
 void Projetil::atirar(sf::Vector2f posicao)
 {

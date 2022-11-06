@@ -17,17 +17,13 @@ void Obstaculo::setPosi(float x, float y)
 {
 	sprite.setPosition(sf::Vector2f(x, y));
 }
-void Obstaculo::gravidade(float deltaTempo)
+void Obstaculo::flutua(float deltaTempo)
 {
-	sprite.move(sf::Vector2f(0.f, 0.15f));
-	flutua();
-}
-void Obstaculo::flutua()
-{
-	sprite.move(sf::Vector2f(0.f, -0.15f));
+	velocidadeV.y -= 981.0f * deltaTempo;
 }
 void Obstaculo::executar(float deltaTempo)
 {
 	gravidade(deltaTempo);
 	imprimirSe();
+	flutua(deltaTempo);
 }

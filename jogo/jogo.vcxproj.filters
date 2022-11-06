@@ -54,7 +54,13 @@
     <ClCompile Include="Projetil.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Inimigo2.cpp">
+    <ClCompile Include="Bulbassauro.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Personagem.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Atirador.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -101,7 +107,13 @@
     <ClInclude Include="Projetil.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Inimigo2.h">
+    <ClInclude Include="Bulbassauro.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Personagem.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Atirador.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
