@@ -35,7 +35,7 @@ void Fase1::inicializaElementos()
 		{
 			esp = new Espinhos();
 			esp->setGerenciadorGrafico(geren_graf);
-			esp->setPosi((float)i * (100), 750.f);
+			esp->setPosi((float)i * (100), 740.f);
 			listaEntidades->LEs.push(esp);
 			gerenciadorColisoes.pushObstaculo(esp);
 		}
@@ -48,6 +48,8 @@ void Fase1::inicializaElementos()
 			gerenciadorColisoes.pushObstaculo(gr);
 		}
 	}
+
+
 
 
 	gerenciadorColisoes.setJogador(j1);
