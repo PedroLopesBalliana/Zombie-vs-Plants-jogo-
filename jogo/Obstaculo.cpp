@@ -1,6 +1,6 @@
 #include "Obstaculo.h"
 
-Obstaculo::Obstaculo()
+Obstaculo::Obstaculo(): danoso(false)
 {
 	if (!texture.loadFromFile("assets/Bloco_Texturas/Floresta/Grama3.png"))
 	{
@@ -26,4 +26,8 @@ void Obstaculo::executar(float deltaTempo)
 	gravidade(deltaTempo);
 	imprimirSe();
 	flutua(deltaTempo);
+}
+bool Obstaculo::getDanoso()
+{
+	return danoso;
 }
