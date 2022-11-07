@@ -2,7 +2,7 @@
 
 Grama::Grama()
 {
-	if (!texture.loadFromFile("assets/Bloco_Texturas/Floresta/Grama2.png"))
+	if (!texture.loadFromFile("assets/Bloco_Texturas/Floresta/Grama3.png"))
 	{
 		std::cout << "falhou a textura :(" << std::endl;
 	}
