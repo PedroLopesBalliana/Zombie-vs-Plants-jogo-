@@ -12,10 +12,6 @@ Grama::Grama()
 Grama::~Grama()
 {
 }
-void Grama::setPosi(float x, float y)
-{
-	sprite.setPosition(sf::Vector2f(x, y));
-}
 void Grama::flutua(float deltaTempo)
 {
 	velocidadeV.y -= 981.0f * deltaTempo;

@@ -12,10 +12,7 @@ Entidade::~Entidade()
 //{
 //	return sprite.getPosition();
 //}
-sf::Sprite Entidade::getSprite()
-{
-	return sprite;
-}
+
 sf::FloatRect Entidade::getSpriteBounds()
 {
 	return sprite.getGlobalBounds();

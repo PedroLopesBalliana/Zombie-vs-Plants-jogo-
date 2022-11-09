@@ -18,9 +18,9 @@ private:
 public:
 	GerenciadorColisoes();
 	~GerenciadorColisoes();
-	std::vector<Inimigo*> getLIs();
-	std::list<Obstaculo*> getLOs();
-	std::list<Projetil*> getLPs();
+	//std::vector<Inimigo*> getLIs();
+	//std::list<Obstaculo*> getLOs();
+	//std::list<Projetil*> getLPs();
 	void setJogador(Jogador *jog);
 	void checaColisao(Obstaculo* ob);
 	void checaColisaoInimigo(Inimigo* ob);

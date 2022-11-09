@@ -8,7 +8,7 @@ GerenciadorColisoes::~GerenciadorColisoes()
 {
 
 }
-std::vector<Inimigo*> GerenciadorColisoes::getLIs()
+/*std::vector<Inimigo*> GerenciadorColisoes::getLIs()
 {
 	return LIs;
 }
@@ -19,7 +19,7 @@ std::list<Obstaculo*> GerenciadorColisoes::getLOs()
 std::list<Projetil*> GerenciadorColisoes::getLPs()
 {
 	return LPs;
-}
+}*/
 void GerenciadorColisoes::setJogador(Jogador *jog)
 {
 	jogador = jog;
