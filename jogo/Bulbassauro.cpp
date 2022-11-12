@@ -39,8 +39,8 @@ void Bulbassauro::mover()
 		sprite.scale(-1, 1);
 	}
 	if (!facingLeft)
-		sprite.move(sf::Vector2f(-0.3f * raiva, 0.f));
+		sprite.move(sf::Vector2f(-3.0f * raiva, 0.f));
 	else
-		sprite.move(sf::Vector2f(0.3f * raiva, 0.f));
+		sprite.move(sf::Vector2f(3.0f * raiva, 0.f));
 }
 

@@ -4,6 +4,7 @@ GerenciadorGrafico::GerenciadorGrafico():
 	window(sf::VideoMode(1000, 800), "Jogo")
 {
 	limpaJanela();
+	window.setFramerateLimit(60);
 }
 GerenciadorGrafico::~GerenciadorGrafico()
 {

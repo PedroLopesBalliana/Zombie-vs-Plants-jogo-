@@ -41,9 +41,16 @@ void GerenciadorColisoes::checaColisaoInimigo(Inimigo* ob)
 {
 	if (ob->getSpriteBounds().intersects(jogador->getSpriteBounds()))
 	{
-		jogador->operator--();
-		jogador->corrigir(100.f, 0.f);
-		ob->executar(1.0f);
+		if (jogador->getAtacando())
+		{
+			printf("morreu ! \n");
+		}
+		else
+		{
+			jogador->operator--();
+			jogador->corrigir(100.f, 0.f);
+			ob->executar(1.0f);
+		}
 	}
 }
 void GerenciadorColisoes::checaColisaoProjetil(Projetil* ob)

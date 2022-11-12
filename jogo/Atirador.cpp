@@ -43,13 +43,13 @@ void Atirador::mover()
 		goingUp = false;
 	}
 	if (!facingLeft)
-		sprite.move(sf::Vector2f(-0.1f, 0.f));
+		sprite.move(sf::Vector2f(-3.f, 0.f));
 	else
-		sprite.move(sf::Vector2f(0.1f, 0.f));
+		sprite.move(sf::Vector2f(3.f, 0.f));
 	if (!goingUp)
-		sprite.move(sf::Vector2f(0.f, 0.05f));
+		sprite.move(sf::Vector2f(0.f, 1.5f));
 	else
-		sprite.move(sf::Vector2f(0.f, -0.05f));
+		sprite.move(sf::Vector2f(0.f, -1.5f));
 }
 void Atirador::setProjetil(Projetil* pr)
 {

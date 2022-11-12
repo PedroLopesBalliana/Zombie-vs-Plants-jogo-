@@ -1,7 +1,11 @@
 #include "Jogador.h"
-Jogador::Jogador() :Personagem(), pulou(false)
+Jogador::Jogador() :Personagem(), pulou(false), charge(50), atacando(false)
 {
 	if (!texture.loadFromFile("assets/Zumbi_Jogador/zombieSprite.png"))
+	{
+		std::cout << "falhou a textura :(" << std::endl;
+	}
+	if (!ataque.loadFromFile("assets/Zumbi_Jogador/zombieattack.png"))
 	{
 		std::cout << "falhou a textura :(" << std::endl;
 	}
@@ -44,6 +48,11 @@ void Jogador::move(float deltaTempo)
 		pulou = true;
 		velocidadeV.y = -sqrtf(2.0f * 981.0f * 100.0f);
 	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z) && charge == 50)
+	{
+		atacar();
+	}
+
 	sprite.move(velocidadeV * deltaTempo);
 }
 void Jogador::corrigir(float height, float side)
@@ -57,9 +66,30 @@ void Jogador::executar(float deltaTempo)
 	move(deltaTempo);
 	imprimirSe();
 	gravidade(deltaTempo);
+	if (charge < 50)
+	{
+		charge++;
+	}
+	if (charge == 50)
+	{
+		sprite.setTexture(texture);
+		atacando = false;
+	}
+	printf("charge %d \n", charge);
 }
 void Jogador::operator--()
 {
 	num_vidas--;
 	printf("jogador num_vidas : %d \n", num_vidas);
+}
+
+void Jogador::atacar()
+{
+	sprite.setTexture(ataque);
+	atacando = true;
+	charge = 0;
+}
+bool Jogador::getAtacando()
+{
+	return atacando;
 }
