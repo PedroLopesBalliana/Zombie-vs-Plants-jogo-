@@ -1,13 +1,40 @@
 #pragma once
-#include "Elemento.h"
 
 template <class TL>class Lista
 {
-private:
-	Elemento <TL>* pPrimeiro;
-	Elemento <TL>* pUltimo;
-	int len;
 public:
+	template <class TE>class Elemento
+	{
+	private:
+		Elemento<TE>* pProximo;
+		TE* item;
+	public:
+		Elemento()
+		{
+			pProximo = nullptr;
+			item = nullptr;
+		}
+		~Elemento()
+		{
+
+		}
+		void setpProximo(Elemento<TE>* pProx)
+		{
+			this->pProximo = pProx;
+		}
+		void setItem(TE* item)
+		{
+			this->item = item;
+		}
+		Elemento<TE>* getpProximo()
+		{
+			return pProximo;
+		}
+		TE* getItem()
+		{
+			return item;
+		}
+	};
 	Lista();
 	~Lista();
 	int getLen()
@@ -74,6 +101,10 @@ public:
 		delete temp;
 		len--;
 	}
+private:
+	Elemento <TL>* pPrimeiro;
+	Elemento <TL>* pUltimo;
+	int len;
 };
 
 template<class TL>
