@@ -48,7 +48,7 @@ void Jogador::move(float deltaTempo)
 		pulou = true;
 		velocidadeV.y = -sqrtf(2.0f * 981.0f * 100.0f);
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z) && charge == 50)
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z) && charge == 100)
 	{
 		atacar();
 	}
@@ -66,16 +66,16 @@ void Jogador::executar(float deltaTempo)
 	move(deltaTempo);
 	imprimirSe();
 	gravidade(deltaTempo);
-	if (charge < 50)
+	if (charge < 100)
 	{
 		charge++;
+		printf("charge %d \n", charge);
 	}
 	if (charge == 50)
 	{
 		sprite.setTexture(texture);
 		atacando = false;
 	}
-	printf("charge %d \n", charge);
 }
 void Jogador::operator--()
 {
