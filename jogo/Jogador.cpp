@@ -7,7 +7,7 @@ Jogador::Jogador() :Personagem(), pulou(false)
 	}
 	sprite.setTexture(texture);
 	sprite.scale(sf::Vector2f(2, 2));
-	sprite.setPosition(sf::Vector2f(200.f, 100.f));
+	sprite.setPosition(sf::Vector2f(200.f, 0.f));
 	facingLeft = true;
 	velocidade = 300.0f;
 	num_vidas = 100;
@@ -60,7 +60,6 @@ void Jogador::executar(float deltaTempo)
 }
 void Jogador::operator--()
 {
-	printf("jogador num_vidas : %d \n", num_vidas);
 	num_vidas--;
 	printf("jogador num_vidas : %d \n", num_vidas);
 }

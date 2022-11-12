@@ -3,6 +3,7 @@
 class Bulbassauro : public Inimigo
 {
 private:
+	float raiva;
 public:
 	Bulbassauro();
 	~Bulbassauro();

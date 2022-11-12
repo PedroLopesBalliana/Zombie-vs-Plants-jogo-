@@ -8,6 +8,7 @@ Bulbassauro::Bulbassauro(): Inimigo()
 	sprite.setTexture(texture);
 	sprite.scale(sf::Vector2f(2, 2));
 	sprite.setPosition(sf::Vector2f(700.f, 685.f));
+	raiva = 1.0;
 }
 Bulbassauro::~Bulbassauro()
 {
@@ -15,9 +16,15 @@ Bulbassauro::~Bulbassauro()
 }
 void Bulbassauro::executar(float deltaTempo)
 {
+	if (deltaTempo == 1.0f)
+	{
+		raiva = raiva + 0.5;
+	}
 	gravidade(deltaTempo);
 	imprimirSe();
 	mover();
+	if (raiva > 3.0)
+		raiva = 1.0;
 }
 void Bulbassauro::mover()
 {
@@ -32,8 +39,8 @@ void Bulbassauro::mover()
 		sprite.scale(-1, 1);
 	}
 	if (!facingLeft)
-		sprite.move(sf::Vector2f(-0.3f, 0.f));
+		sprite.move(sf::Vector2f(-0.3f * raiva, 0.f));
 	else
-		sprite.move(sf::Vector2f(0.3f, 0.f));
+		sprite.move(sf::Vector2f(0.3f * raiva, 0.f));
 }
 

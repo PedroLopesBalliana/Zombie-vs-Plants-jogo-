@@ -8,6 +8,7 @@
 #include "Bulbassauro.h"
 #include "Grama.h"
 #include "Espinhos.h"
+#include "Fogo.h"
 
 using namespace std;
 
@@ -22,6 +23,7 @@ protected:
 	Grama* gr;
 	Projetil* pr;
 	Espinhos* esp;
+	Fogo* fogo;
 	virtual void inicializaElementos();
 public:
 	Fase();

@@ -19,6 +19,7 @@ Fase1::Fase1(Jogador* j1, GerenciadorGrafico* GE) :
 	i2 = new Bulbassauro();
 	pr = new Projetil();
 	esp = new Espinhos();
+	fogo = new Fogo();
 	inicializaElementos();
 	executar();
 }
@@ -31,23 +32,22 @@ void Fase1::inicializaElementos()
 	i2->setGerenciadorGrafico(geren_graf);
 	for (int i = 0; i <= 20; i++)
 	{
-		if (i > 3 && i < 6)
-		{
-			esp = new Espinhos();
-			esp->setGerenciadorGrafico(geren_graf);
-			esp->setPosi((float)i * (100), 740.f);
-			listaEntidades->LEs.push(esp);
-			gerenciadorColisoes.pushObstaculo(esp);
-		}
-		else
-		{
 			gr = new Grama();
 			gr->setGerenciadorGrafico(geren_graf);
 			gr->setPosi((float)i * (100), 750.f);
 			listaEntidades->LEs.push(gr);
 			gerenciadorColisoes.pushObstaculo(gr);
-		}
 	}
+
+	esp->setGerenciadorGrafico(geren_graf);
+	esp->setPosi(400.f, 740.f);
+	listaEntidades->LEs.push(esp);
+	gerenciadorColisoes.pushObstaculo(esp);
+
+	fogo->setGerenciadorGrafico(geren_graf);
+	fogo->setPosi(700.f, 680.f);
+	listaEntidades->LEs.push(fogo);
+	gerenciadorColisoes.pushObstaculo(fogo);
 
 
 

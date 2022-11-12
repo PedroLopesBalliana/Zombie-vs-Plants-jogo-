@@ -28,11 +28,12 @@ void GerenciadorColisoes::checaColisao(Obstaculo* ob)
 {
 	if (ob->getSpriteBounds().intersects(jogador->getSpriteBounds(), sect))
 	{
-
 		jogador->corrigir(sect.height, 0.f);
 		if (ob->getDanoso() == true)
 		{
 			jogador->operator--();
+			jogador->corrigir(100.f, 0.f);
+			ob->executar(1.0f);
 		}
 	}
 }
@@ -42,6 +43,7 @@ void GerenciadorColisoes::checaColisaoInimigo(Inimigo* ob)
 	{
 		jogador->operator--();
 		jogador->corrigir(100.f, 0.f);
+		ob->executar(1.0f);
 	}
 }
 void GerenciadorColisoes::checaColisaoProjetil(Projetil* ob)
