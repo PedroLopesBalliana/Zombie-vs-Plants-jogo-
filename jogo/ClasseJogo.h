@@ -6,6 +6,7 @@
 #include "Obstaculo.h"
 #include "Fase1.h"
 #include "GerenciadorGrafico.h"
+#include "Menu.h"
 
 class ClasseJogo
 {
@@ -13,6 +14,7 @@ private:
 	GerenciadorGrafico gerenciadorGrafico;
 	Jogador *jogador1;
 	Fase1* fase1;
+	Menu* menu;
 public:
 	ClasseJogo();
 	~ClasseJogo();
