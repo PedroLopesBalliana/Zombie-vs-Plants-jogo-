@@ -81,12 +81,8 @@ void Fase1::executar()
 		}
 		 //imprimirSe até o percorrer
 		imprimirSe();
-		for(int i = 0; i < listaEntidades->LEs.getLen(); i++)
-		{
-			gerenciadorColisoes.percorrer();
-			Entidade* temp = listaEntidades->LEs.getItem(i);
-			temp->executar(deltaTempo);
-		}
+		gerenciadorColisoes.percorrer();
+		listaEntidades->percorrerSe(deltaTempo);
 		geren_graf->displayJanela();
 	}
 }

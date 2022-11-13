@@ -154,6 +154,7 @@
     <ClCompile Include="Jogador.cpp" />
     <ClCompile Include="Inimigo.cpp" />
     <ClCompile Include="ListaEntidades.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Obstaculo.cpp" />
     <ClCompile Include="GerenciadorColisoes.cpp" />
     <ClCompile Include="Personagem.cpp" />
@@ -171,12 +172,12 @@
     <ClInclude Include="Bulbassauro.h" />
     <ClInclude Include="Grama.h" />
     <ClInclude Include="Lista.h" />
-    <ClInclude Include="Elemento.h" />
     <ClInclude Include="Inimigo.h" />
     <ClInclude Include="Jogador.h" />
     <ClInclude Include="ClasseJogo.h" />
     <ClInclude Include="Entidade.h" />
     <ClInclude Include="ListaEntidades.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Obstaculo.h" />
     <ClInclude Include="Personagem.h" />
     <ClInclude Include="Projetil.h" />
