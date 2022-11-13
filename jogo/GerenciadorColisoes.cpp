@@ -28,7 +28,32 @@ void GerenciadorColisoes::checaColisao(Obstaculo* ob)
 {
 	if (ob->getSpriteBounds().intersects(jogador->getSpriteBounds(), sect))
 	{
-		jogador->corrigir(sect.height, 0.f);
+		printf(" \n top %f  \n left %f \n x %f \n y %f \n", sect.top, sect.left, ob->getSprite().getPosition().x, ob->getSprite().getPosition().y);
+		if (sect.height < sect.width)
+		{
+			if (sect.top - ob->getSprite().getPosition().y > ob->getSpriteBounds().height / 2)
+			{
+				jogador->corrigir(-sect.height, 0.f);
+			}
+			else
+			{
+				jogador->corrigir(sect.height, 0.f);
+			}
+		}
+		else
+		{
+			if (sect.left - ob->getSprite().getPosition().x > ob->getSpriteBounds().width / 2)
+			{
+				printf("bateu pela direita");
+				jogador->corrigir(0.f, sect.width);
+			}
+			else
+			{
+				printf("bateu pela esquerda");
+				jogador->corrigir(0.f, -sect.width);
+			}
+		}
+	
 		if (ob->getDanoso() == true)
 		{
 			jogador->operator--();
