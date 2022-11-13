@@ -32,6 +32,14 @@ void Fase1::inicializaElementos()
 	i2->setGerenciadorGrafico(geren_graf);
 	for (int i = 0; i <= 20; i++)
 	{
+		if (i == 0)
+		{
+			gr = new Grama();
+			gr->setGerenciadorGrafico(geren_graf);
+			gr->setPosi(400.f, 400.f);
+			listaEntidades->LEs.push(gr);
+			gerenciadorColisoes.pushObstaculo(gr);
+		}
 			gr = new Grama();
 			gr->setGerenciadorGrafico(geren_graf);
 			gr->setPosi((float)i * (100), 750.f);

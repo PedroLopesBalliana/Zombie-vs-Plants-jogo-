@@ -44,12 +44,10 @@ void GerenciadorColisoes::checaColisao(Obstaculo* ob)
 		{
 			if (sect.left - ob->getSprite().getPosition().x > ob->getSpriteBounds().width / 2)
 			{
-				printf("bateu pela direita");
 				jogador->corrigir(0.f, sect.width);
 			}
 			else
 			{
-				printf("bateu pela esquerda");
 				jogador->corrigir(0.f, -sect.width);
 			}
 		}
