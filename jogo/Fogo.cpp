@@ -7,7 +7,7 @@ Fogo::Fogo() : labareda(0.5)
 		std::cout << "falhou a textura :(" << std::endl;
 	}
 	sprite.setTexture(texture);
-	sprite.scale(sf::Vector2f(0.5, 0.5));
+	sprite.scale(sf::Vector2f(0.25, 0.25));
 	sprite.setPosition(sf::Vector2f(700.f, 450.f));
 	danoso = true;
 }

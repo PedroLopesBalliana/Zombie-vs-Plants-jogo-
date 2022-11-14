@@ -14,9 +14,9 @@ Fase1::Fase1(Jogador* j1, GerenciadorGrafico* GE) :
 	geren_graf = GE;
 	this->j1 = j1;
 	listaEntidades = new ListaEntidades();
-	i1 = new Atirador();
+	ati = new Atirador();
 	gr = new Grama();
-	i2 = new Bulbassauro();
+	bulb = new Bulbassauro();
 	pr = new Projetil();
 	esp = new Espinhos();
 	fogo = new Fogo();
@@ -29,23 +29,46 @@ Fase1::~Fase1()
 }
 void Fase1::inicializaElementos()
 {
-	i2->setGerenciadorGrafico(geren_graf);
 	for (int i = 0; i <= 20; i++)
 	{
-		if (i == 0)
-		{
 			gr = new Grama();
 			gr->setGerenciadorGrafico(geren_graf);
-			gr->setPosi(400.f, 400.f);
-			listaEntidades->LEs.push(gr);
-			gerenciadorColisoes.pushObstaculo(gr);
-		}
-			gr = new Grama();
-			gr->setGerenciadorGrafico(geren_graf);
-			gr->setPosi((float)i * (100), 750.f);
+			gr->setPosi((float)i * (50), 750.f);
 			listaEntidades->LEs.push(gr);
 			gerenciadorColisoes.pushObstaculo(gr);
 	}
+
+	//Plataformas
+
+	gr = new Grama();
+	gr->scaleSprite(3.f, 0.5f);
+	gr->setGerenciadorGrafico(geren_graf);
+	gr->setPosi(100.f, 600.f);
+	listaEntidades->LEs.push(gr);
+	gerenciadorColisoes.pushObstaculo(gr);
+
+	gr = new Grama();
+	gr->scaleSprite(0.5f, 2.f);
+	gr->setGerenciadorGrafico(geren_graf);
+	gr->setPosi(500.f, 350.f);
+	listaEntidades->LEs.push(gr);
+	gerenciadorColisoes.pushObstaculo(gr);
+
+	gr = new Grama();
+	gr->scaleSprite(0.5f, 0.5f);
+	gr->setGerenciadorGrafico(geren_graf);
+	gr->setPosi(600.f, 600.f);
+	listaEntidades->LEs.push(gr);
+	gerenciadorColisoes.pushObstaculo(gr);
+
+	gr = new Grama();
+	gr->scaleSprite(1.5f, 0.3f);
+	gr->setGerenciadorGrafico(geren_graf);
+	gr->setPosi(750.f, 650.f);
+	listaEntidades->LEs.push(gr);
+	gerenciadorColisoes.pushObstaculo(gr);
+
+	//Obstaculos
 
 	esp->setGerenciadorGrafico(geren_graf);
 	esp->setPosi(400.f, 740.f);
@@ -59,19 +82,50 @@ void Fase1::inicializaElementos()
 
 
 
+	//Jogador 
 
 	gerenciadorColisoes.setJogador(j1);
 	j1->setGerenciadorGrafico(geren_graf);
-
-	i1->setGerenciadorGrafico(geren_graf);
 	listaEntidades->LEs.push(j1);
-	listaEntidades->LEs.push(i1);
-	listaEntidades->LEs.push(i2);
+
+	//Inimigos
+
+	ati->setGerenciadorGrafico(geren_graf);
+	ati->setProjetil(pr);
+	ati->setTipo(1);
+	listaEntidades->LEs.push(ati);
+	gerenciadorColisoes.pushInimigo(ati);
 	pr->setGerenciadorGrafico(geren_graf);
-	listaEntidades->LEs.push(pr);
-	i1->setProjetil(pr);
-	gerenciadorColisoes.pushInimigo(i2);
 	gerenciadorColisoes.pushProjetil(pr);
+
+	ati = new Atirador();
+	pr = new Projetil();
+	ati->setGerenciadorGrafico(geren_graf);
+	ati->setPosi(50.f, 400.f);
+	ati->setProjetil(pr);
+	ati->setTipo(2);
+	listaEntidades->LEs.push(ati);
+	gerenciadorColisoes.pushInimigo(ati);
+	pr->setGerenciadorGrafico(geren_graf);
+	gerenciadorColisoes.pushProjetil(pr);
+
+	ati = new Atirador();
+	pr = new Projetil();
+	ati->setGerenciadorGrafico(geren_graf);
+	ati->setPosi(950.f, 400.f);
+	ati->setProjetil(pr);
+	ati->setTipo(3);
+	gerenciadorColisoes.pushInimigo(ati);
+	listaEntidades->LEs.push(ati);
+	pr->setGerenciadorGrafico(geren_graf);
+	gerenciadorColisoes.pushProjetil(pr);
+	
+
+	bulb->setGerenciadorGrafico(geren_graf);
+	bulb->setPosi(750.f, 715.f);
+	listaEntidades->LEs.push(bulb);
+	gerenciadorColisoes.pushInimigo(bulb);
+
 }
 void Fase1::executar()
 {

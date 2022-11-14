@@ -1,7 +1,7 @@
 #include "Inimigo.h"
-Inimigo::Inimigo(): Personagem()
+Inimigo::Inimigo(): Personagem(), goingUp(false)
 {
-
+	num_vidas = 1;
 }
 Inimigo::~Inimigo()
 {
@@ -18,4 +18,8 @@ void Inimigo::executar(float deltaTempo)
 void Inimigo::mover()
 {
 	
+}
+void Inimigo::setTipo(int ti)
+{
+	tipo = ti;
 }

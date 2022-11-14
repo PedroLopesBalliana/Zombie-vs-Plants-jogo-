@@ -7,7 +7,6 @@ protected:
 public:
 	Obstaculo();
 	~Obstaculo();
-	virtual void setPosi(float x, float y);
 	virtual void flutua(float deltaTempo);
 	virtual void executar(float deltaTempo);
 	virtual bool getDanoso();

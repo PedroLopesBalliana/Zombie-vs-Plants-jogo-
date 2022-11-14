@@ -20,3 +20,8 @@ bool Personagem::getSentido()
 {
 	return facingLeft;
 }
+void Personagem::operator--()
+{
+	num_vidas--;
+	printf(" personagem vida %d ", num_vidas);
+}

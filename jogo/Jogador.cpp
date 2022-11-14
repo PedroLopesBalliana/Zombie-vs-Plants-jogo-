@@ -10,7 +10,7 @@ Jogador::Jogador() :Personagem(), pulou(false), charge(50), atacando(false)
 		std::cout << "falhou a textura :(" << std::endl;
 	}
 	sprite.setTexture(texture);
-	sprite.scale(sf::Vector2f(2, 2));
+	sprite.scale(sf::Vector2f(1, 1));
 	sprite.setPosition(sf::Vector2f(200.f, 0.f));
 	facingLeft = true;
 	velocidade = 300.0f;
@@ -63,24 +63,22 @@ void Jogador::corrigir(float height, float side)
 }
 void Jogador::executar(float deltaTempo)
 {
-	move(deltaTempo);
-	imprimirSe();
-	gravidade(deltaTempo);
-	if (charge < 100)
-	{
-		charge++;
-		printf("charge %d \n", charge);
-	}
-	if (charge == 50)
-	{
-		sprite.setTexture(texture);
-		atacando = false;
-	}
+		move(deltaTempo);
+		imprimirSe();
+		gravidade(deltaTempo);
+		if (charge < 100)
+		{
+			charge++;
+		}
+		if (charge == 25)
+		{
+			sprite.setTexture(texture);
+			atacando = false;
+		}
 }
 void Jogador::operator--()
 {
 	num_vidas--;
-	printf("jogador num_vidas : %d \n", num_vidas);
 }
 
 void Jogador::atacar()

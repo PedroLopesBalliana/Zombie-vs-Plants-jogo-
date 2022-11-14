@@ -7,5 +7,5 @@ private:
 public:
 	Projetil();
 	~Projetil();
-	void executar(float deltaTempo, sf::Vector2f posicao);
+	void executar(float deltaTempo, sf::Vector2f posicao, float forca);
 };

@@ -28,7 +28,6 @@ void GerenciadorColisoes::checaColisao(Obstaculo* ob)
 {
 	if (ob->getSpriteBounds().intersects(jogador->getSpriteBounds(), sect))
 	{
-		printf(" \n top %f  \n left %f \n x %f \n y %f \n", sect.top, sect.left, ob->getSprite().getPosition().x, ob->getSprite().getPosition().y);
 		if (sect.height < sect.width)
 		{
 			if (sect.top - ob->getSprite().getPosition().y > ob->getSpriteBounds().height / 2)
@@ -66,7 +65,7 @@ void GerenciadorColisoes::checaColisaoInimigo(Inimigo* ob)
 	{
 		if (jogador->getAtacando())
 		{
-			printf("morreu ! \n");
+			ob->operator--();
 		}
 		else
 		{

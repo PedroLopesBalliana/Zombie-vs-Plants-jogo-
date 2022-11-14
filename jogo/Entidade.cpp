@@ -28,3 +28,11 @@ void Entidade::executar(float deltaTempo)
 {
 
 }
+void Entidade::scaleSprite(float x, float y)
+{
+	sprite.scale(x, y);
+}
+void Entidade::setPosi(float x, float y)
+{
+	sprite.setPosition(sf::Vector2f(x, y));
+}

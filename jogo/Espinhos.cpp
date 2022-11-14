@@ -7,7 +7,7 @@ Espinhos::Espinhos()
 		std::cout << "falhou a textura :(" << std::endl;
 	}
 	sprite.setTexture(texture);
-	sprite.scale(sf::Vector2f(1, 0.5));
+	sprite.scale(sf::Vector2f(0.5, 0.25));
 	sprite.setPosition(sf::Vector2f(300.f, 100.f));
 }
 Espinhos::~Espinhos()

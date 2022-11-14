@@ -17,9 +17,9 @@ class Fase : public Ente
 protected:
 	GerenciadorColisoes gerenciadorColisoes;
 	ListaEntidades *listaEntidades;
-	Atirador* i1;
+	Atirador* ati;
 	Jogador* j1;
-	Bulbassauro* i2;
+	Bulbassauro* bulb;
 	Grama* gr;
 	Projetil* pr;
 	Espinhos* esp;
