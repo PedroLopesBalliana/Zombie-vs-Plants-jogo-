@@ -14,5 +14,5 @@ public:
 	virtual void move(float deltaTime);
 	virtual void executar(float deltaTempo);
 	bool getSentido();
-	void operator--();
+	virtual void operator--();
 };

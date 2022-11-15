@@ -37,6 +37,8 @@ void GerenciadorColisoes::checaColisao(Obstaculo* ob)
 			else
 			{
 				jogador->corrigir(sect.height, 0.f);
+				ob->executar(1.0f);
+				jogador->setSpeed(ob->getTipo());
 			}
 		}
 		else

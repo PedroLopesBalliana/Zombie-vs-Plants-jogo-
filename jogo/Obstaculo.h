@@ -4,7 +4,6 @@ class Obstaculo : public Entidade
 {
 protected:
 	bool danoso;
-	int tipo;
 public:
 	Obstaculo();
 	~Obstaculo();

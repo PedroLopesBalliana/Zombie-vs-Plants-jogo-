@@ -26,4 +26,12 @@ void Grama::executar(float deltaTempo)
 	gravidade(deltaTempo);
 	imprimirSe();
 	flutua(deltaTempo);
+	if (deltaTempo == 1.0f)
+	{
+		aderencia++;
+	}
+}
+int Grama::getTipo()
+{
+	return aderencia;
 }

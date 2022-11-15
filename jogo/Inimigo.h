@@ -4,6 +4,8 @@
 #include "Jogador.h"
 class Inimigo : public Personagem
 {
+private:
+	static int quant;
 protected:
 	bool goingUp;
 	int tipo;
@@ -14,4 +16,6 @@ public:
 	virtual void executar(float deltaTempo);
 	virtual void mover(int tipo);
 	void setTipo(int ti);
+	static int getQuant();
+	void operator--();
 };

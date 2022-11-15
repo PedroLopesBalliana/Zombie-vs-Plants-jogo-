@@ -10,7 +10,6 @@ Fogo::Fogo() : labareda(0.5)
 	sprite.setScale(sf::Vector2f(1.0, 0.40));
 	sprite.setPosition(sf::Vector2f(700.f, 450.f));
 	danoso = true;
-	tipo = 2;
 }
 Fogo::~Fogo()
 {

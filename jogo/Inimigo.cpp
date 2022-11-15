@@ -1,7 +1,8 @@
 #include "Inimigo.h"
-Inimigo::Inimigo(): Personagem(), goingUp(false)
+Inimigo::Inimigo(): Personagem(), goingUp(false), tipo(0)
 {
 	num_vidas = 1;
+	quant++;
 }
 Inimigo::~Inimigo()
 {
@@ -23,3 +24,13 @@ void Inimigo::setTipo(int ti)
 {
 	tipo = ti;
 }
+int Inimigo::getQuant()
+{
+	return quant;
+}
+void Inimigo::operator--()
+{
+	num_vidas--;
+	quant--;
+}
+int Inimigo::quant = 0;

@@ -15,4 +15,5 @@
 		virtual void gravidade(float DeltaTempo);
 		virtual void executar(float deltaTempo);
 		void setPosi(float x, float y);
+		void setSpeed(float v);
 	};

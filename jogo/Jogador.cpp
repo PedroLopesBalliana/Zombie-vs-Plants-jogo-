@@ -13,7 +13,7 @@ Jogador::Jogador() :Personagem(), pulou(false), charge(50), atacando(false)
 	sprite.scale(sf::Vector2f(1, 1));
 	sprite.setPosition(sf::Vector2f(100.f, 700.f));
 	facingLeft = true;
-	velocidade = 300.0f;
+	velocidade = 300.f;
 	num_vidas = 100;
 }
 Jogador::~Jogador()
@@ -47,6 +47,7 @@ void Jogador::move(float deltaTempo)
 	{
 		pulou = true;
 		velocidadeV.y = -sqrtf(2.0f * 981.0f * 100.0f);
+		velocidade = 300.f;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z) && charge == 100)
 	{

@@ -36,3 +36,8 @@ void Entidade::setPosi(float x, float y)
 {
 	sprite.setPosition(sf::Vector2f(x, y));
 }
+void Entidade::setSpeed(float v)
+{
+	if(velocidade > 0)
+		velocidade = velocidade - (v / 50);
+}

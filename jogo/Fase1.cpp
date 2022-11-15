@@ -315,5 +315,13 @@ void Fase1::executar()
 		gerenciadorColisoes.percorrer();
 		listaEntidades->percorrerSe(deltaTempo);
 		geren_graf->displayJanela();
+		if (Inimigo::getQuant() == 0)
+		{
+			printf("venceu! \n");
+		}
+		else
+		{
+			printf("quantidade de inimigos vivos: %d \n", Inimigo::getQuant());
+		}
 	}
 }
