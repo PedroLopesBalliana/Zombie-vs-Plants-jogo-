@@ -1,6 +1,7 @@
 #pragma once
 #include "Personagem.h"
 #include "Projetil.h"
+#include "Jogador.h"
 class Inimigo : public Personagem
 {
 protected:
@@ -11,6 +12,6 @@ public:
 	~Inimigo();
 	virtual void flutua();
 	virtual void executar(float deltaTempo);
-	virtual void mover();
+	virtual void mover(int tipo);
 	void setTipo(int ti);
 };

@@ -11,7 +11,7 @@ Jogador::Jogador() :Personagem(), pulou(false), charge(50), atacando(false)
 	}
 	sprite.setTexture(texture);
 	sprite.scale(sf::Vector2f(1, 1));
-	sprite.setPosition(sf::Vector2f(200.f, 0.f));
+	sprite.setPosition(sf::Vector2f(100.f, 700.f));
 	facingLeft = true;
 	velocidade = 300.0f;
 	num_vidas = 100;
@@ -75,10 +75,6 @@ void Jogador::executar(float deltaTempo)
 			sprite.setTexture(texture);
 			atacando = false;
 		}
-}
-void Jogador::operator--()
-{
-	num_vidas--;
 }
 
 void Jogador::atacar()

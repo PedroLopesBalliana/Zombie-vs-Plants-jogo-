@@ -21,3 +21,7 @@ bool Obstaculo::getDanoso()
 {
 	return danoso;
 }
+int Obstaculo::getTipo()
+{
+	return tipo;
+}

@@ -23,5 +23,5 @@ bool Personagem::getSentido()
 void Personagem::operator--()
 {
 	num_vidas--;
-	printf(" personagem vida %d ", num_vidas);
+	printf(" personagem vida %d \n", num_vidas);
 }

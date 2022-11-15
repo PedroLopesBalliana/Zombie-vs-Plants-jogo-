@@ -8,6 +8,7 @@ public:
 	Fogo();
 	~Fogo();
 	void executar(float deltaTempo);
+	int getTipo();
 
 
 };

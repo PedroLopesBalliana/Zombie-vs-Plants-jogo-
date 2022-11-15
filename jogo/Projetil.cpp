@@ -21,7 +21,7 @@ void Projetil::executar(float deltaTempo, sf::Vector2f posicao, float forca)
 	if (sprite.getPosition().y > 750.f)
 	{
 		sprite.setPosition(posicao);
-		velocidadeV.y = -abs(forca);
+		velocidadeV.y = -(abs(forca)/2);
 		velocidadeV.x = forca;
 	}
 	sprite.move(velocidadeV * deltaTempo);

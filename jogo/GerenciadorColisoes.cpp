@@ -56,6 +56,13 @@ void GerenciadorColisoes::checaColisao(Obstaculo* ob)
 			jogador->operator--();
 			jogador->corrigir(100.f, 0.f);
 			ob->executar(1.0f);
+			if (ob->getTipo() >= 2)
+			{
+				for (int i = ob->getTipo(); i >= 0; i--)
+				{
+					jogador->operator--();
+				}
+			}
 		}
 	}
 }

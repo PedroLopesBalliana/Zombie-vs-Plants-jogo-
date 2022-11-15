@@ -35,12 +35,12 @@ void Bulbassauro::executar(float deltaTempo)
 }
 void Bulbassauro::mover()
 {
-	if (sprite.getPosition().x < 500 && !facingLeft)
+	if (sprite.getPosition().x < limEsq && !facingLeft)
 	{
 		facingLeft = true;
 		sprite.scale(-1, 1);
 	}
-	if (sprite.getPosition().x > 900 && facingLeft)
+	if (sprite.getPosition().x > limDir && facingLeft)
 	{
 		facingLeft = false;
 		sprite.scale(-1, 1);
@@ -49,5 +49,11 @@ void Bulbassauro::mover()
 		sprite.move(sf::Vector2f(-3.0f * raiva, 0.f));
 	else
 		sprite.move(sf::Vector2f(3.0f * raiva, 0.f));
+}
+
+void Bulbassauro::setLimites(float esq, float dir)
+{
+	limEsq = esq;
+	limDir = dir;
 }
 

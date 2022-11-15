@@ -38,6 +38,7 @@ void Atirador::executar(float deltaTempo)
 	else
 	{
 		sprite.move(sf::Vector2f(1000, 1000));
+		tiro->executar(deltaTempo, sprite.getPosition(), -250.f);
 	}
 }
 void Atirador::mover()
