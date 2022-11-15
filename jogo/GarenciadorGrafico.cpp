@@ -10,7 +10,6 @@ GerenciadorGrafico::~GerenciadorGrafico()
 {
 
 }
-
 void GerenciadorGrafico::desenharEntidades(sf::Sprite sp)
 {
 	window.draw(sp);
@@ -38,4 +37,5 @@ bool GerenciadorGrafico::pegarJanela()
 		return false;
 	}
 }
+
 
