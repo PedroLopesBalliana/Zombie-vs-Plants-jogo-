@@ -2,7 +2,8 @@
 #include <iostream>
 
 
-Menu::Menu(GerenciadorGrafico* ge):botaoFase1(), botaoFase2(), botaoRanking()
+Menu::Menu(GerenciadorGrafico* ge):botaoFase1(), 
+botaoFase2(), botaoRanking(), corrigir_coord(), aux(0.f,30.f)
 {
 	if (!texture.loadFromFile("assets/Menu/MenuBg1.png"))
 	{
@@ -15,6 +16,7 @@ Menu::Menu(GerenciadorGrafico* ge):botaoFase1(), botaoFase2(), botaoRanking()
 	botaoFase1.mudarPosi(200, 100);
 	botaoFase2.mudarPosi(200, 210);
 	botaoRanking.mudarPosi(260, 320);
+
 
 	setGerenciadorGrafico(ge);
 	executar();
@@ -42,21 +44,29 @@ void Menu::executar()
 		}
 		geren_graf->limpaJanela();
 		corrigir_coord = static_cast<sf::Vector2f>(geren_graf->getWindow()->getPosition());
+		corrigir_coord += aux;
 		posi_mouse = sf::Mouse::getPosition();
 		mouse_coord = geren_graf->getWindow()->mapPixelToCoords(posi_mouse);
 		mouse_coord -= corrigir_coord;
 		
-		if (botaoFase2.getRect().getGlobalBounds().contains(mouse_coord))
-		{
-			printf("cu inferno \n");
-		}
 		if (botaoFase1.getRect().getGlobalBounds().contains(mouse_coord))
 		{
-			printf("cu cu \n");
+			if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{ 
+				jogador1 = new Jogador();
+				fase1 = new Fase1(jogador1, geren_graf);
+			}
+				
+		}
+		if (botaoFase2.getRect().getGlobalBounds().contains(mouse_coord))
+		{
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+				printf("Amando um carasselo\n");
 		}
 		if (botaoRanking.getRect().getGlobalBounds().contains(mouse_coord))
 		{
-			printf("cu pinto \n");
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+				printf("Laçando um aramelco\n");
 		}
 		imprimirSe();
 		desenharBotoes();
