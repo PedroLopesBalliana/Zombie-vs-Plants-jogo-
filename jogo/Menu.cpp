@@ -23,6 +23,12 @@ Menu::~Menu()
 {
 
 }
+void Menu::desenharBotoes()
+{
+	geren_graf->getWindow()->draw(botaoFase1.getRect());
+	geren_graf->getWindow()->draw(botaoFase2.getRect());
+	geren_graf->getWindow()->draw(botaoRanking.getRect());
+}
 void Menu::executar()
 {
 	while (geren_graf->pegarJanela())
@@ -35,10 +41,25 @@ void Menu::executar()
 				geren_graf->getWindow()->close();
 		}
 		geren_graf->limpaJanela();
+		corrigir_coord = static_cast<sf::Vector2f>(geren_graf->getWindow()->getPosition());
+		posi_mouse = sf::Mouse::getPosition();
+		mouse_coord = geren_graf->getWindow()->mapPixelToCoords(posi_mouse);
+		mouse_coord -= corrigir_coord;
+		
+		if (botaoFase2.getRect().getGlobalBounds().contains(mouse_coord))
+		{
+			printf("cu inferno \n");
+		}
+		if (botaoFase1.getRect().getGlobalBounds().contains(mouse_coord))
+		{
+			printf("cu cu \n");
+		}
+		if (botaoRanking.getRect().getGlobalBounds().contains(mouse_coord))
+		{
+			printf("cu pinto \n");
+		}
 		imprimirSe();
-		geren_graf->getWindow()->draw(botaoFase1.getRect());
-		geren_graf->getWindow()->draw(botaoFase2.getRect());
-		geren_graf->getWindow()->draw(botaoRanking.getRect());
+		desenharBotoes();
 		geren_graf->displayJanela();
 	}
 }

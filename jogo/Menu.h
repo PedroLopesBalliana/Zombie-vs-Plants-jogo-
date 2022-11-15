@@ -27,11 +27,15 @@ private:
 
 		}
 	};
+	sf::Vector2i posi_mouse;
+	sf::Vector2f mouse_coord;
+	sf::Vector2f corrigir_coord;
 	Botao botaoFase1;
 	Botao botaoFase2;
 	Botao botaoRanking;
 public:
 	Menu(GerenciadorGrafico* ge);
 	~Menu();
+	void desenharBotoes();
 	void executar();
 };
