@@ -24,21 +24,25 @@ void Atirador::executar(float deltaTempo)
 		mover();
 		if (tipo == 1)
 		{
-			tiro->executar(deltaTempo, sprite.getPosition(), 0.f);
+			tiro->setForca(0.f);
+			tiro->executar(deltaTempo, sprite.getPosition());
 		}
 		else if(tipo == 2)
 		{
-			tiro->executar(deltaTempo, sprite.getPosition(), 250.f);
+			tiro->setForca(250.f);
+			tiro->executar(deltaTempo, sprite.getPosition());
 		}
 		else if (tipo == 3)
 		{
-			tiro->executar(deltaTempo, sprite.getPosition(), -250.f);
+			tiro->setForca(-250.f);
+			tiro->executar(deltaTempo, sprite.getPosition());
 		}
 	}
 	else
 	{
 		sprite.move(sf::Vector2f(1000, 1000));
-		tiro->executar(deltaTempo, sprite.getPosition(), -250.f);
+		tiro->setForca(-250.f);
+		tiro->executar(deltaTempo, sprite.getPosition());
 	}
 }
 void Atirador::mover()

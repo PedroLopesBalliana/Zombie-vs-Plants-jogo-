@@ -15,7 +15,7 @@ Projetil::~Projetil()
 {
 
 }
-void Projetil::executar(float deltaTempo, sf::Vector2f posicao, float forca)
+void Projetil::executar(float deltaTempo, sf::Vector2f posicao)
 {
 	gravidade(deltaTempo);
 	if (sprite.getPosition().y > 750.f)
@@ -26,4 +26,8 @@ void Projetil::executar(float deltaTempo, sf::Vector2f posicao, float forca)
 	}
 	sprite.move(velocidadeV * deltaTempo);
 	imprimirSe();
+}
+void Projetil::setForca(float f)
+{
+	forca = f;
 }
