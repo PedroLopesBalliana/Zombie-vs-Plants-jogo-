@@ -7,12 +7,12 @@ protected:
 	static int id;
 	sf::Texture texture;
 	sf::Sprite sprite;
-	GerenciadorGrafico* geren_graf;
+	static GerenciadorGrafico* geren_graf;
 public:
 	Ente();
 	~Ente();
 	virtual void executar();
 	void imprimirSe();
-	void setGerenciadorGrafico(GerenciadorGrafico* gR);
+	void static setGerenciadorGrafico(GerenciadorGrafico* gR);
 	sf::Sprite getSprite();
 };

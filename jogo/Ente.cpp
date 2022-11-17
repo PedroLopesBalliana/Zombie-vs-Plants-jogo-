@@ -1,6 +1,6 @@
 #include "Ente.h"
 
-Ente::Ente() : geren_graf(NULL)
+Ente::Ente() 
 {
 }
 Ente::~Ente()
@@ -22,3 +22,4 @@ sf::Sprite Ente::getSprite()
 {
 	return sprite;
 }
+GerenciadorGrafico* Ente::geren_graf = NULL;
