@@ -1,6 +1,6 @@
 #include "Grama.h"
 
-Grama::Grama()
+Grama::Grama(): aderencia(0)
 {
 	if (!texture.loadFromFile("assets/Bloco_Texturas/Floresta/Grama3.png"))
 	{
@@ -9,6 +9,7 @@ Grama::Grama()
 	sprite.setTexture(texture);
 	sprite.scale(0.125f, 0.125f);
 	sprite.setPosition(sf::Vector2f(300.f, 100.f));
+
 }
 Grama::~Grama()
 {

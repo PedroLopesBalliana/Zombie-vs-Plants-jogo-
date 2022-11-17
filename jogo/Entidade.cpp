@@ -39,5 +39,5 @@ void Entidade::setPosi(float x, float y)
 void Entidade::setSpeed(float v)
 {
 	if(velocidade > 0)
-		velocidade = velocidade - (v / 50);
+		velocidade = velocidade - (v/50);
 }
