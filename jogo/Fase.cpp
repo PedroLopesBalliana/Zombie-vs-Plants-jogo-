@@ -15,4 +15,5 @@ ListaEntidades* Fase::getListaEntidades()
 }
 void Fase::executar()
 {
+
 }

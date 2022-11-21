@@ -1,7 +1,8 @@
 #pragma once
 #include "Ente.h"
-#include "Fase1.h"
+#include "Floresta.h"
 #include "Jogador.h"
+#include "Masmorra.h"
 
 class Menu : public Ente
 {
@@ -37,7 +38,9 @@ private:
 	Botao botaoFase2;
 	Botao botaoRanking;
 	Jogador *jogador1;
-	Fase1* fase1;
+	Jogador* jogador2;
+	Floresta* fase1;
+	Masmorra* fase2;
 public:
 	Menu(GerenciadorGrafico* ge);
 	~Menu();

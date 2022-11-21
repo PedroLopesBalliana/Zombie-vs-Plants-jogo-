@@ -41,3 +41,8 @@ void Entidade::setSpeed(float v)
 	if(velocidade > 0)
 		velocidade = velocidade - (v/50);
 }
+int Entidade::getPontuacao()
+{
+	return pontuacao;
+}
+int Entidade::pontuacao = 0;

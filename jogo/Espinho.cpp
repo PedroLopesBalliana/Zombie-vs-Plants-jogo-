@@ -1,5 +1,5 @@
-#include "Espinhos.h"
-Espinhos::Espinhos()
+#include "Espinho.h"
+Espinho::Espinho()
 {
 	danoso = true;
 	if (!texture.loadFromFile("assets/Obstaculos/Floresta/espinhos.png"))
@@ -11,11 +11,11 @@ Espinhos::Espinhos()
 	sprite.setPosition(sf::Vector2f(300.f, 100.f));
 	ferrao = 2;
 }
-Espinhos::~Espinhos()
+Espinho::~Espinho()
 {
 
 }
-void Espinhos::executar(float deltaTempo)
+void Espinho::executar(float deltaTempo)
 {
 	if (deltaTempo == 1.0f)
 	{
@@ -25,7 +25,7 @@ void Espinhos::executar(float deltaTempo)
 	imprimirSe();
 	flutua(deltaTempo);
 }
-int Espinhos::getTipo()
+int Espinho::getTipo()
 {
 	return ferrao;
 }

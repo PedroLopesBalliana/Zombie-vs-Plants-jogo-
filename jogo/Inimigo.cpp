@@ -32,5 +32,6 @@ void Inimigo::operator--()
 {
 	num_vidas--;
 	quant--;
+	pontuacao = pontuacao + 1000;
 }
 int Inimigo::quant = 0;

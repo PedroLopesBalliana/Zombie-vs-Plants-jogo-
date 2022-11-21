@@ -54,14 +54,19 @@ void Menu::executar()
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{ 
 				jogador1 = new Jogador();
-				fase1 = new Fase1(jogador1, geren_graf);
+				jogador2 = new Jogador();
+				fase1 = new Floresta(jogador1, jogador2, geren_graf);
 			}
 				
 		}
 		if (botaoFase2.getRect().getGlobalBounds().contains(mouse_coord))
 		{
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-				printf("Amando um carasselo\n");
+			{
+				jogador1 = new Jogador();
+				jogador2 = new Jogador();
+				fase2 = new Masmorra(jogador1, jogador2, geren_graf);
+			}
 		}
 		if (botaoRanking.getRect().getGlobalBounds().contains(mouse_coord))
 		{

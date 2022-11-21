@@ -4,7 +4,7 @@
 #include "Inimigo.h"
 #include "ListaEntidades.h"
 #include "Obstaculo.h"
-#include "Fase1.h"
+#include "Floresta.h"
 #include "GerenciadorGrafico.h"
 #include "Menu.h"
 
@@ -13,7 +13,8 @@ class ClasseJogo
 private:
 	GerenciadorGrafico gerenciadorGrafico;
 	Jogador *jogador1;
-	Fase1* fase1;
+	Jogador* jogador2;
+	Floresta* fase1;
 	Menu* menu;
 public:
 	ClasseJogo();

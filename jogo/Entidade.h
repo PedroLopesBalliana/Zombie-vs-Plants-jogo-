@@ -6,6 +6,7 @@
 	protected:
 		sf::Vector2f velocidadeV;
 		float velocidade;
+		static int pontuacao;
 	public:
 		Entidade();
 		~Entidade();
@@ -16,4 +17,5 @@
 		virtual void executar(float deltaTempo);
 		void setPosi(float x, float y);
 		void setSpeed(float v);
+		int getPontuacao();
 	};

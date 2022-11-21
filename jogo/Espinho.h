@@ -1,13 +1,13 @@
 #pragma once
 #include "Obstaculo.h"
 
-class Espinhos : public Obstaculo
+class Espinho : public Obstaculo
 {
 private:
 	int ferrao;
 public:
-	Espinhos();
-	~Espinhos();
+	Espinho();
+	~Espinho();
 	void executar(float deltaTempo);
 	int getTipo();
 };

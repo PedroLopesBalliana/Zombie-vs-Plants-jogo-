@@ -68,19 +68,19 @@ void GerenciadorColisoes::checaColisao(Obstaculo* ob)
 		}
 	}
 }
-void GerenciadorColisoes::checaColisaoInimigo(Inimigo* ob)
+void GerenciadorColisoes::checaColisaoInimigo(Inimigo* in)
 {
-	if (ob->getSpriteBounds().intersects(jogador->getSpriteBounds()))
+	if (in->getSpriteBounds().intersects(jogador->getSpriteBounds()))
 	{
 		if (jogador->getAtacando())
 		{
-			ob->operator--();
+			in->operator--();
 		}
 		else
 		{
 			jogador->operator--();
 			jogador->corrigir(50.f, 0.f);
-			ob->executar(1.0f);
+			in->executar(1.0f);
 		}
 	}
 }

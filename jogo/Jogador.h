@@ -9,6 +9,7 @@ private:
 	bool pulou;
 	bool atacando;
 	sf::Texture ataque;
+	bool movimento;
 public:
 	Jogador();
 	~Jogador();
@@ -17,4 +18,5 @@ public:
 	void executar(float deltaTempo);
 	void atacar();
 	bool getAtacando();
+	void setMovimento(bool mov);
 };
