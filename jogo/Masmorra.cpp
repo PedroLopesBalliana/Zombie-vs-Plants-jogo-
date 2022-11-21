@@ -119,6 +119,7 @@ void Masmorra::inicializaKefka()
 {
 	Ente = new Arvore();
 	listaEntidades->LEs.push(Ente);
+	gerenciadorColisoes.pushInimigo(Ente);
 }
 void Masmorra::executar()
 {
@@ -144,8 +145,8 @@ void Masmorra::executar()
 		geren_graf->displayJanela();
 		if (Inimigo::getQuant() == 0)
 		{
-			printf("venceu! \n");
+			//printf("venceu! \n");
 		}
-		printf("pontuacao %d\n", j1->getPontuacao());
+		//printf("pontuacao %d\n", j1->getPontuacao());
 	}
 }

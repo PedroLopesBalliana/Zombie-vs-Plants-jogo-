@@ -8,8 +8,8 @@ Arvore::Arvore() : Inimigo()
 		std::cout << "falhou a textura :(" << std::endl;
 	}
 	sprite.setTexture(texture);
-	sprite.scale(sf::Vector2f(5, 5));
-	sprite.setPosition(sf::Vector2f(500.f, 500.f));
+	sprite.scale(sf::Vector2f(1, 1));
+	sprite.setPosition(sf::Vector2f(0.f, 0.f));
 }
 Arvore::~Arvore()
 {
