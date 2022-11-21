@@ -16,6 +16,7 @@ Masmorra::Masmorra(Jogador* j1, Jogador* j2, GerenciadorGrafico* GE): Fase()
 	listaEntidades = new ListaEntidades();
 	srand(time(NULL));
 	inicializaElementos();
+	inicializaKefka();
 	executar();
 }
 Masmorra::~Masmorra()
@@ -104,8 +105,20 @@ void Masmorra::inicializaElementos()
 	listaEntidades->LEs.push(j1);
 	j2->setMovimento(false);
 	listaEntidades->LEs.push(j2);
-
 	inicializaPedra();
+}
+void Masmorra::inicializaAtirador()
+{
+
+}
+void Masmorra::inicializaFogo()
+{
+
+}
+void Masmorra::inicializaKefka()
+{
+	kefka = new Arvore();
+	listaEntidades->LEs.push(kefka);
 }
 void Masmorra::executar()
 {
