@@ -3,7 +3,7 @@
 
 Arvore::Arvore() : Inimigo()
 {
-	if (!texture.loadFromFile("assets/Inimigos/AtiradorSprite.png"))
+	if (!texture.loadFromFile("assets/Inimigos/Ente.png"))
 	{
 		std::cout << "falhou a textura :(" << std::endl;
 	}

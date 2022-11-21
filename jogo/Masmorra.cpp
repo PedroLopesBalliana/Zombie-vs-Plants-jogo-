@@ -117,8 +117,8 @@ void Masmorra::inicializaFogo()
 }
 void Masmorra::inicializaKefka()
 {
-	kefka = new Arvore();
-	listaEntidades->LEs.push(kefka);
+	Ente = new Arvore();
+	listaEntidades->LEs.push(Ente);
 }
 void Masmorra::executar()
 {

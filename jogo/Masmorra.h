@@ -7,7 +7,7 @@ class Masmorra : public Fase
 {
 private:
 	Pedra* pe;
-	Arvore* kefka;
+	Arvore* Ente;
 public:
 	Masmorra(Jogador* j1, Jogador* j2, GerenciadorGrafico* GE);
 	~Masmorra();
