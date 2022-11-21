@@ -16,8 +16,6 @@ botaoFase2(), botaoRanking(), corrigir_coord(), aux(0.f,30.f)
 	botaoFase1.mudarPosi(200, 100);
 	botaoFase2.mudarPosi(200, 210);
 	botaoRanking.mudarPosi(260, 320);
-
-
 	setGerenciadorGrafico(ge);
 	executar();
 }
