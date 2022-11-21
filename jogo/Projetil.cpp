@@ -30,4 +30,5 @@ void Projetil::executar(float deltaTempo, sf::Vector2f posicao)
 void Projetil::setForca(float f)
 {
 	forca = f;
+	printf("forca: %f \n", forca);
 }

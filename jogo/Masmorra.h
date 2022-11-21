@@ -8,6 +8,7 @@ class Masmorra : public Fase
 private:
 	Pedra* pe;
 	Arvore* Kefka;
+	Projetil* maca;
 public:
 	Masmorra(Jogador* j1, Jogador* j2, GerenciadorGrafico* GE);
 	~Masmorra();
