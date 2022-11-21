@@ -7,5 +7,6 @@ private:
 public:
 	Arvore();
 	~Arvore();
+	void executar(float deltaTempo);
 
 };
