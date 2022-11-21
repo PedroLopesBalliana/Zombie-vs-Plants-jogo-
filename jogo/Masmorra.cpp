@@ -118,6 +118,7 @@ void Masmorra::inicializaFogo()
 void Masmorra::inicializaKefka()
 {
 	Kefka = new Arvore();
+	Kefka->setLimites(250.f, 800.f);
 	listaEntidades->LEs.push(Kefka);
 	gerenciadorColisoes.pushInimigo(Kefka);
 }
