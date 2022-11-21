@@ -118,6 +118,10 @@ void Masmorra::inicializaFogo()
 void Masmorra::inicializaKefka()
 {
 	Kefka = new Arvore();
+	maca = new Projetil();
+	Kefka->setProjetil(maca);
+	listaEntidades->LEs.push(maca);
+	gerenciadorColisoes.pushProjetil(maca);
 	Kefka->setLimites(250.f, 800.f);
 	listaEntidades->LEs.push(Kefka);
 	gerenciadorColisoes.pushInimigo(Kefka);
