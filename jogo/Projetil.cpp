@@ -30,5 +30,13 @@ void Projetil::executar(float deltaTempo, sf::Vector2f posicao)
 void Projetil::setForca(float f)
 {
 	forca = f;
-	printf("forca: %f \n", forca);
+}
+void Projetil::setMaca()
+{
+	if (!texture.loadFromFile("assets/Inimigos/applee.png"))
+	{
+		std::cout << "falhou a textura :(" << std::endl;
+	}
+	sprite.setTexture(texture);
+	//sprite.scale(sf::Vector2f(3, 3));
 }

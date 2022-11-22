@@ -9,8 +9,10 @@ Arvore::Arvore() : Inimigo()
 	}
 	sprite.setTexture(texture);
 	sprite.scale(sf::Vector2f(0.5, 0.5));
-	sprite.setPosition(sf::Vector2f(500.f, 525.f));
+	sprite.setPosition(sf::Vector2f(300.f, 325.f));
 	facingLeft=false;
+	velocidadeV.y = 50.f;
+	velocidade = 300.f;
 }
 Arvore::~Arvore()
 {
@@ -40,10 +42,11 @@ void Arvore::mover()
 		sprite.move(sf::Vector2f(-3.0f, 0.f));
 	else
 		sprite.move(sf::Vector2f(3.0f, 0.f));
-	/*if (sprite.getPosition().y>900.f)
+	if (sprite.getPosition().y > 525.f)
 	{
 		pular();
-	}*/
+	}
+
 }
 void Arvore::setLimites(float esq, float dir)
 {
@@ -58,6 +61,7 @@ void Arvore::executar(float deltaTempo)
 	gravidade(deltaTempo);
 	imprimirSe();
 	mover();
+	sprite.move(velocidadeV * deltaTempo);
 	aux = rand() % 500;
 	if (rand() % 2)
 	{
@@ -81,5 +85,4 @@ void Arvore::executar(float deltaTempo)
 void Arvore::setProjetil(Projetil* pr)
 {
 	maca = pr;
-	mover();
 }

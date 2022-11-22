@@ -14,7 +14,7 @@ void Inimigo::flutua()
 }
 void Inimigo::executar(float deltaTempo)
 {
-	flutua();
+	//flutua();
 }
 void Inimigo::mover(int tipo)
 {

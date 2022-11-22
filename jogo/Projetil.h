@@ -10,4 +10,5 @@ public:
 	~Projetil();
 	void executar(float deltaTempo, sf::Vector2f posicao);
 	void setForca(float f);
+	void setMaca();
 };
