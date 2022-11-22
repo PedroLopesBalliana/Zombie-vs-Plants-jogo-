@@ -23,7 +23,6 @@ void Jogador::move(float deltaTempo)
 {
 	velocidadeV.x = 0.5f;
 
-
 	if (movimento)
 	{
 

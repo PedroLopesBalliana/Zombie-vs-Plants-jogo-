@@ -16,6 +16,10 @@ Arvore::~Arvore()
 {
 
 }
+void Arvore::pular()
+{
+	velocidadeV.y = -sqrtf(2.0f * 981.0f * 100.0f);
+}
 void Arvore::mover()
 {
 	if (sprite.getPosition().x < limEsq && !facingLeft)
@@ -23,17 +27,23 @@ void Arvore::mover()
 		facingLeft = true;
 		sprite.move(sf::Vector2f(200.0f, 0.f));
 		sprite.scale(-1, 1);
+		pular();
 	}
 	if (sprite.getPosition().x > limDir && facingLeft)
 	{
 		facingLeft = false;
 		sprite.move(sf::Vector2f(-200.0f, 0.f));
 		sprite.scale(-1, 1);
+		pular();
 	}
 	if (!facingLeft)
 		sprite.move(sf::Vector2f(-3.0f, 0.f));
 	else
 		sprite.move(sf::Vector2f(3.0f, 0.f));
+	/*if (sprite.getPosition().y>900.f)
+	{
+		pular();
+	}*/
 }
 void Arvore::setLimites(float esq, float dir)
 {
@@ -47,18 +57,26 @@ void Arvore::executar(float deltaTempo)
 	sf::Vector2f posi;
 	gravidade(deltaTempo);
 	imprimirSe();
+	mover();
 	aux = rand() % 500;
 	if (rand() % 2)
 	{
 		aux = -aux;
 	}
 	maca->setForca(aux);
-	centroX = sprite.getPosition().x + (sprite.getGlobalBounds().width / 2);
-	centroY = sprite.getPosition().y + (sprite.getGlobalBounds().height / 2);
+	if (facingLeft)
+	{
+		centroX = sprite.getPosition().x - (sprite.getGlobalBounds().width / 2);
+		centroY = sprite.getPosition().y + (sprite.getGlobalBounds().height / 2);
+	}
+	else
+	{
+		centroX = sprite.getPosition().x + (sprite.getGlobalBounds().width / 2);
+		centroY = sprite.getPosition().y + (sprite.getGlobalBounds().height / 2);
+	}
 	posi.x = centroX;
 	posi.y = centroY;
 	maca->executar(deltaTempo, posi);
-
 }
 void Arvore::setProjetil(Projetil* pr)
 {

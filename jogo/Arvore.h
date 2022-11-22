@@ -13,7 +13,7 @@ public:
 	~Arvore();
 	void executar(float deltaTempo);
 	void setProjetil(Projetil* pr);
-
+	void pular();
 	void mover();
 	void setLimites(float esq, float dir);
 };
