@@ -5,6 +5,7 @@ class Projetil : public Entidade
 {
 private:
 	float forca;
+	sf::Texture maca;
 public:
 	Projetil();
 	~Projetil();

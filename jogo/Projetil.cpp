@@ -6,6 +6,10 @@ Projetil::Projetil()
 	{
 		std::cout << "falhou a textura :(" << std::endl;
 	}
+	if (!maca.loadFromFile("assets/Inimigos/applee.png"))
+	{
+		std::cout << "falhou a textura :(" << std::endl;
+	}
 	sprite.setTexture(texture);
 	sprite.scale(sf::Vector2f(1.5, 1.5));
 	sprite.setPosition(sf::Vector2f(700.f, 100.f));
@@ -33,10 +37,6 @@ void Projetil::setForca(float f)
 }
 void Projetil::setMaca()
 {
-	if (!texture.loadFromFile("assets/Inimigos/applee.png"))
-	{
-		std::cout << "falhou a textura :(" << std::endl;
-	}
-	sprite.setTexture(texture);
-	//sprite.scale(sf::Vector2f(3, 3));
+	sprite.setTexture(maca);
+	sprite.scale(sf::Vector2f(3, 3));
 }

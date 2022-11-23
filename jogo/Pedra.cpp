@@ -1,8 +1,13 @@
+#pragma once
 #include "Pedra.h"
 
-Pedra::Pedra(): calor(0)
+Pedra::Pedra()
 {
 	if (!texture.loadFromFile("assets/Bloco_Texturas/Dungeon/Pedra2.png"))
+	{
+		std::cout << "falhou a textura :(" << std::endl;
+	}
+	if (!veneno.loadFromFile("assets/Bloco_Texturas/Dungeon/greenstone.png"))
 	{
 		std::cout << "falhou a textura :(" << std::endl;
 	}
@@ -18,12 +23,23 @@ void Pedra::executar(float deltaTempo)
 	gravidade(deltaTempo);
 	imprimirSe();
 	flutua(deltaTempo);
-	if (deltaTempo == 1.0f)
+	if (envenenado && danoso == false)
 	{
-		calor++;
+		sprite.setTexture(veneno);
+		danoso = true;
+	}
+	if (!envenenado)
+	{
+		sprite.setTexture(texture);
+		danoso = false;
 	}
 }
 int Pedra::getTipo()
 {
-	return calor;
+	return envenenado;
 }
+void Pedra::setVeneno(bool ven)
+{
+	envenenado = ven;
+}
+bool Pedra::envenenado = false;
