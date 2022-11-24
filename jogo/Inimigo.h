@@ -5,8 +5,8 @@
 class Inimigo : public Personagem
 {
 private:
-	static int quant;
 protected:
+	static int quant;
 	bool goingUp;
 	int tipo;
 public:

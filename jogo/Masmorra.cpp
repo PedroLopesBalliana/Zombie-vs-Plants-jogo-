@@ -123,7 +123,7 @@ void Masmorra::inicializaKefka()
 	Kefka->setProjetil(maca);
 	listaEntidades->LEs.push(maca);
 	gerenciadorColisoes.pushProjetil(maca);
-	Kefka->setLimites(200.f, 400.f);
+	Kefka->setLimites(200.f, 800.f);
 	listaEntidades->LEs.push(Kefka);
 	gerenciadorColisoes.pushInimigo(Kefka);
 }

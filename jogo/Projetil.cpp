@@ -2,11 +2,11 @@
 
 Projetil::Projetil()
 {
-	if (!texture.loadFromFile("assets/Inimigos/projetil.png"))
+	if (!texture.loadFromFile("assets/Inimigos/applee.png"))
 	{
 		std::cout << "falhou a textura :(" << std::endl;
 	}
-	if (!maca.loadFromFile("assets/Inimigos/applee.png"))
+	if (!maca.loadFromFile("assets/Inimigos/projetil.png"))
 	{
 		std::cout << "falhou a textura :(" << std::endl;
 	}
@@ -21,6 +21,7 @@ Projetil::~Projetil()
 }
 void Projetil::executar(float deltaTempo, sf::Vector2f posicao)
 {
+	//sprite.setTexture(maca);
 	gravidade(deltaTempo);
 	if (sprite.getPosition().y > 750.f)
 	{
@@ -38,5 +39,5 @@ void Projetil::setForca(float f)
 void Projetil::setMaca()
 {
 	sprite.setTexture(maca);
-	sprite.scale(sf::Vector2f(3, 3));
+	//sprite.scale(sf::Vector2f(3, 3));
 }

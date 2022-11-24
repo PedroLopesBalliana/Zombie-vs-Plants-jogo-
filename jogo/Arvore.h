@@ -19,4 +19,5 @@ public:
 	void pular();
 	void mover();
 	void setLimites(float esq, float dir);
+	void operator--();
 };
