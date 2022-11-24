@@ -1,11 +1,8 @@
 #include "ClasseJogo.h"
 
-ClasseJogo::ClasseJogo()
+ClasseJogo::ClasseJogo(): pGrafico(pGrafico->getGgr())
 {
-    menu = new Menu(&gerenciadorGrafico);
-    jogador1 = new Jogador();
-    jogador2 = new Jogador();
-    fase1 = new Floresta(jogador1, jogador2, &gerenciadorGrafico);
+    menu = new Menu(pGrafico);
 }
 void ClasseJogo::Executar()
 {

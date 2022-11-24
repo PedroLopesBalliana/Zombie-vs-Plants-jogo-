@@ -11,7 +11,7 @@
 class ClasseJogo
 {
 private:
-	GerenciadorGrafico gerenciadorGrafico;
+	GerenciadorGrafico* pGrafico;
 	Jogador *jogador1;
 	Jogador* jogador2;
 	Floresta* fase1;

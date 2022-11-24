@@ -283,7 +283,9 @@ void Floresta::executar()
 		geren_graf->displayJanela();
 		if (Inimigo::getQuant() == 0)
 		{
-			printf("venceu! \n");
+			j1->setPosi(100.f, 700.f);
+			j2->setPosi(100.f, 700.f);
+			fase2 = new Masmorra(j1, j2, geren_graf);
 		}
 		printf("pontuacao %d\n", j1->getPontuacao());
 	}

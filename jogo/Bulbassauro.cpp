@@ -20,7 +20,7 @@ void Bulbassauro::executar(float deltaTempo)
 	{
 		if (deltaTempo == 1.0f)
 		{
-			raiva = raiva + 0.5;
+			raiva = raiva + 0.5f;
 		}
 		gravidade(deltaTempo);
 		imprimirSe();

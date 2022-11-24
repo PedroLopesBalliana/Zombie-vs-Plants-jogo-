@@ -17,6 +17,7 @@ Arvore::Arvore() : Inimigo()
 	facingLeft=false;
 	velocidadeV.y = 50.f;
 	velocidade = 300.f;
+	num_vidas = 5;
 }
 Arvore::~Arvore()
 {

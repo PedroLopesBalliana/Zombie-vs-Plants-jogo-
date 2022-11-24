@@ -59,11 +59,11 @@ void Atirador::mover()
 			facingLeft = false;
 			sprite.scale(-1, 1);
 		}
-		if (sprite.getPosition().y > 200 && !goingUp)
+		if (sprite.getPosition().y > 100 && !goingUp)
 		{
 			goingUp = true;
 		}
-		if (sprite.getPosition().y < 100 && goingUp)
+		if (sprite.getPosition().y < 10 && goingUp)
 		{
 			goingUp = false;
 		}

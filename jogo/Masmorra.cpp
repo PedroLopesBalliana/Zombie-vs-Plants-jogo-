@@ -92,11 +92,40 @@ void Masmorra::inicializaPedra()
 	listaEntidades->LEs.push(pe);
 	gerenciadorColisoes.pushObstaculo(pe);
 
-	pe = new Pedra();
-	pe->scaleSprite(5.f, 0.5f);
-	pe->setPosi(250.f, 125.f);
-	listaEntidades->LEs.push(pe);
-	gerenciadorColisoes.pushObstaculo(pe);
+	if (rand() % 2)
+	{
+		pe = new Pedra();
+		pe->scaleSprite(2.f, 0.3f);
+		pe->setPosi(200.f, 125.f);
+		listaEntidades->LEs.push(pe);
+		gerenciadorColisoes.pushObstaculo(pe);
+
+		pe = new Pedra();
+		pe->scaleSprite(2.f, 0.3f);
+		pe->setPosi(550.f, 125.f);
+		listaEntidades->LEs.push(pe);
+		gerenciadorColisoes.pushObstaculo(pe);
+	}
+	else
+	{
+		pe = new Pedra();
+		pe->scaleSprite(1.f, 0.3f);
+		pe->setPosi(200.f, 125.f);
+		listaEntidades->LEs.push(pe);
+		gerenciadorColisoes.pushObstaculo(pe);
+
+		pe = new Pedra();
+		pe->scaleSprite(1.f, 0.3f);
+		pe->setPosi(400.f, 125.f);
+		listaEntidades->LEs.push(pe);
+		gerenciadorColisoes.pushObstaculo(pe);
+
+		pe = new Pedra();
+		pe->scaleSprite(1.f, 0.3f);
+		pe->setPosi(600.f, 125.f);
+		listaEntidades->LEs.push(pe);
+		gerenciadorColisoes.pushObstaculo(pe);
+	}
 }
 
 void Masmorra::inicializaElementos()
@@ -106,20 +135,62 @@ void Masmorra::inicializaElementos()
 	listaEntidades->LEs.push(j2);
 	inicializaPedra();
 	inicializaKefka();
+	inicializaAtirador();
+	inicializaFogo();
 }
 void Masmorra::inicializaAtirador()
 {
+	for (int i = 1; i < 4; i++)
+	{
+		ati = new Atirador();
+		pr = new Projetil();
+		ati->setProjetil(pr);
+		ati->setTipo(1);
+		ati->setPosi(100.f + (300.f * i), 20.f);
+		listaEntidades->LEs.push(ati);
+		gerenciadorColisoes.pushInimigo(ati);
+		gerenciadorColisoes.pushProjetil(pr);
 
+		if (rand() % 2)
+		{
+			ati = new Atirador();
+			pr = new Projetil();
+			ati->setProjetil(pr);
+			ati->setTipo(1);
+			ati->setPosi((200.f * i), 20.f);
+			listaEntidades->LEs.push(ati);
+			gerenciadorColisoes.pushInimigo(ati);
+			gerenciadorColisoes.pushProjetil(pr);
+		}
+	}
 }
 void Masmorra::inicializaFogo()
 {
+	fogo = new Fogo();
+	fogo->setPosi(800.f - (rand() % 2) * 650.f, 600.f);
+	listaEntidades->LEs.push(fogo);
+	gerenciadorColisoes.pushObstaculo(fogo);
 
+	fogo = new Fogo();
+	fogo->setPosi(850.f - (rand() % 2) * 750.f, 450.f);
+	listaEntidades->LEs.push(fogo);
+	gerenciadorColisoes.pushObstaculo(fogo);
+
+	fogo = new Fogo();
+	fogo->setPosi(900.f - (rand() % 2) * 850.f, 300.f);
+	listaEntidades->LEs.push(fogo);
+	gerenciadorColisoes.pushObstaculo(fogo);
+
+	fogo = new Fogo();
+	fogo->setPosi(950.f - (rand() % 2) * 950.f, 150.f);
+	listaEntidades->LEs.push(fogo);
+	gerenciadorColisoes.pushObstaculo(fogo);
 }
 void Masmorra::inicializaKefka()
 {
 	Kefka = new Arvore();
 	maca = new Projetil();
-	//maca->setMaca();
+	maca->setMaca();
 	Kefka->setProjetil(maca);
 	listaEntidades->LEs.push(maca);
 	gerenciadorColisoes.pushProjetil(maca);

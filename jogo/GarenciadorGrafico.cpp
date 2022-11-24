@@ -10,6 +10,15 @@ GerenciadorGrafico::~GerenciadorGrafico()
 {
 
 }
+
+GerenciadorGrafico* GerenciadorGrafico::getGgr()
+{
+	if (pGrafico == nullptr)
+	{
+		return new GerenciadorGrafico();
+	}
+	return pGrafico;
+}
 void GerenciadorGrafico::desenharEntidades(sf::Sprite sp)
 {
 	window.draw(sp);
@@ -37,5 +46,6 @@ bool GerenciadorGrafico::pegarJanela()
 		return false;
 	}
 }
+GerenciadorGrafico* GerenciadorGrafico::pGrafico = nullptr;
 
 

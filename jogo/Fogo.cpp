@@ -19,12 +19,12 @@ void Fogo::executar(float deltaTempo)
 {
 	if (deltaTempo == 1.0f)
 	{
-		labareda = labareda + 0.5;
+		labareda = labareda + 0.5f;
 		sprite.setScale(sf::Vector2f(labareda, 0.40));
 	}
 	if (labareda > 1.8)
 	{
-		labareda = 0.5;
+		labareda = 0.5f;
 		sprite.setScale(sf::Vector2f(1.0, 0.40));
 	}
 	gravidade(deltaTempo);
