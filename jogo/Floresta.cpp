@@ -1,8 +1,7 @@
 #include "Floresta.h"
 
 Floresta::Floresta(Jogador* j1, Jogador* j2, GerenciadorGrafico* GE) : 
-	Fase(),
-	bloco(sf::Vector2f(100.f, 100.f))
+	Fase()
 {
 	if (!texture.loadFromFile("assets/Bloco_Texturas/Floresta/Background.png"))
 	{

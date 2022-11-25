@@ -17,6 +17,4 @@ public:
 	void inicializaFogo();
 	void inicializaElementos();
 	void executar();
-	sf::RectangleShape bloco;
-	sf::FloatRect sect;
 };

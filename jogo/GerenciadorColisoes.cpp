@@ -56,7 +56,7 @@ void GerenciadorColisoes::checaColisao(Obstaculo* ob)
 		if (ob->getDanoso() == true)
 		{
 			jogador->operator--();
-			jogador->corrigir(50.f, 0.f);
+			jogador->corrigir(30.f, 0.f);
 			ob->executar(1.0f);
 			if (ob->getTipo() >= 2)
 			{
@@ -79,7 +79,7 @@ void GerenciadorColisoes::checaColisaoInimigo(Inimigo* in)
 		else
 		{
 			jogador->operator--();
-			jogador->corrigir(50.f, 0.f);
+			jogador->corrigir(30.f, 0.f);
 			in->executar(1.0f);
 		}
 	}
@@ -90,9 +90,9 @@ void GerenciadorColisoes::checaColisaoProjetil(Projetil* ob)
 	{
 		jogador->operator--();
 		if(jogador->getSentido())
-			jogador->corrigir(0.f, 50.f);
+			jogador->corrigir(0.f, 30.f);
 		else
-			jogador->corrigir(0.f, -50.f);
+			jogador->corrigir(0.f, -30.f);
 	}
 }
 void GerenciadorColisoes::percorrer()

@@ -2,22 +2,20 @@
 #include "Inimigo.h"
 #include "Projetil.h"
 #include "Pedra.h"
+#include "Atirador.h"
+#include "Bulbassauro.h"
 
-class Arvore : public Inimigo
+class Arvore : public Atirador, public Bulbassauro
 {
 private:
 	int charge;
-	Projetil* maca;
 	sf::Texture envenenar;
-	float limEsq;
-	float limDir;
 public:
 	Arvore();
 	~Arvore();
 	void executar(float deltaTempo);
-	void setProjetil(Projetil* pr);
+	void bossImprimirSe();
 	void pular();
 	void mover();
-	void setLimites(float esq, float dir);
 	void operator--();
 };

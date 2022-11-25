@@ -1,7 +1,7 @@
 #pragma once
 #include "Arvore.h"
 
-Arvore::Arvore() : Inimigo()
+Arvore::Arvore() : Inimigo(), Atirador(), Bulbassauro()
 {
 	if (!texture.loadFromFile("assets/Inimigos/Arvoreee.png"))
 	{
@@ -14,10 +14,10 @@ Arvore::Arvore() : Inimigo()
 	sprite.setTexture(texture);
 	sprite.scale(sf::Vector2f(0.75, 0.75));
 	sprite.setPosition(sf::Vector2f(300.f, 325.f));
-	facingLeft=false;
-	velocidadeV.y = 50.f;
-	velocidade = 300.f;
-	num_vidas = 5;
+	Personagem::facingLeft=false;
+	Entidade::velocidadeV.y = 50.f;
+	Entidade::velocidade = 300.f;
+	Personagem::num_vidas = 5;
 }
 Arvore::~Arvore()
 {
@@ -25,25 +25,25 @@ Arvore::~Arvore()
 }
 void Arvore::pular()
 {
-	velocidadeV.y = -sqrtf(2.0f * 981.0f * 500.0f);
+	Entidade::velocidadeV.y = -sqrtf(2.0f * 981.0f * 100.0f);
 }
 void Arvore::mover()
 {
-	if (sprite.getPosition().x < limEsq && !facingLeft)
+	if (sprite.getPosition().x < limEsq && !Personagem::facingLeft)
 	{
-		facingLeft = true;
+		Personagem::facingLeft = true;
 		sprite.move(sf::Vector2f(300.0f, 0.f));
 		sprite.scale(-1, 1);
 		//pular();
 	}
-	if (sprite.getPosition().x > limDir && facingLeft)
+	if (sprite.getPosition().x > limDir && Personagem::facingLeft)
 	{
-		facingLeft = false;
+		Personagem::facingLeft = false;
 		sprite.move(sf::Vector2f(-300.0f, 0.f));
 		sprite.scale(-1, 1);
 		//pular();
 	}
-	if (!facingLeft)
+	if (!Personagem::facingLeft)
 		sprite.move(sf::Vector2f(-3.0f, 0.f));
 	else
 		sprite.move(sf::Vector2f(3.0f, 0.f));
@@ -53,29 +53,25 @@ void Arvore::mover()
 	}
 
 }
-void Arvore::setLimites(float esq, float dir)
-{
-	limEsq = esq;
-	limDir = dir;
-}
 void Arvore::executar(float deltaTempo)
 {
-	if (num_vidas > 0)
+	if (Personagem::num_vidas > 0)
 	{
+		printf("sprite bounds %f \n %f \n", sprite.getGlobalBounds().height, sprite.getGlobalBounds().width);
 		float aux;
 		float centroX, centroY;
 		sf::Vector2f posi;
-		gravidade(deltaTempo);
-		imprimirSe();
+		Entidade::gravidade(deltaTempo);
+		bossImprimirSe();
 		mover();
-		sprite.move(velocidadeV * 0.01f);
+		sprite.move(Entidade::velocidadeV * 0.01f);
 		aux = rand() % 500;
 		if (rand() % 2)
 		{
 			aux = -aux;
 		}
-		maca->setForca(aux);
-		if (facingLeft)
+		tiro->setForca(aux);
+		if (Personagem::facingLeft)
 		{
 			centroX = sprite.getPosition().x - (sprite.getGlobalBounds().width / 2);
 			centroY = sprite.getPosition().y + (sprite.getGlobalBounds().height / 2);
@@ -87,7 +83,7 @@ void Arvore::executar(float deltaTempo)
 		}
 		posi.x = centroX;
 		posi.y = centroY;
-		maca->executar(deltaTempo, posi);
+		tiro->executar(deltaTempo, posi);
 		charge++;
 		if (charge == 500)
 		{
@@ -106,10 +102,7 @@ void Arvore::executar(float deltaTempo)
 		sprite.move(1000.f, 1000.f);
 	}
 }
-void Arvore::setProjetil(Projetil* pr)
-{
-	maca = pr;
-}
+
 void Arvore::operator--()
 {
 	if (quant > 1)
@@ -119,7 +112,11 @@ void Arvore::operator--()
 	}
 	else
 	{
-		num_vidas--;
+		Personagem::num_vidas--;
 		quant--;
 	}
+}
+void Arvore::bossImprimirSe()
+{
+	geren_graf->desenharEntidades(sprite);
 }

@@ -1,14 +1,14 @@
 #pragma once
 #include "Inimigo.h"
 #include "Projetil.h"
-class Atirador : public Inimigo
+class Atirador : virtual public Inimigo
 {
-private:
+protected:
 	Projetil* tiro;
 public:
 	Atirador();
 	~Atirador();
-	void executar(float deltaTempo);
-	void mover();
+	virtual void executar(float deltaTempo);
+	virtual void mover();
 	void setProjetil(Projetil* pr);
 };

@@ -134,7 +134,7 @@ void Masmorra::inicializaElementos()
 	j2->setMovimento(false);
 	listaEntidades->LEs.push(j2);
 	inicializaPedra();
-	inicializaKefka();
+	inicializaArvore();
 	inicializaAtirador();
 	inicializaFogo();
 }
@@ -186,17 +186,17 @@ void Masmorra::inicializaFogo()
 	listaEntidades->LEs.push(fogo);
 	gerenciadorColisoes.pushObstaculo(fogo);
 }
-void Masmorra::inicializaKefka()
+void Masmorra::inicializaArvore()
 {
-	Kefka = new Arvore();
+	arvore = new Arvore();
 	maca = new Projetil();
 	maca->setMaca();
-	Kefka->setProjetil(maca);
+	arvore->setProjetil(maca);
 	listaEntidades->LEs.push(maca);
 	gerenciadorColisoes.pushProjetil(maca);
-	Kefka->setLimites(200.f, 800.f);
-	listaEntidades->LEs.push(Kefka);
-	gerenciadorColisoes.pushInimigo(Kefka);
+	arvore->setLimites(200.f, 800.f);
+	listaEntidades->LEs.push(static_cast<Entidade*>(arvore));
+	gerenciadorColisoes.pushInimigo(static_cast<Inimigo*>(arvore));
 }
 void Masmorra::executar()
 {

@@ -7,17 +7,15 @@ class Masmorra : public Fase
 {
 private:
 	Pedra* pe;
-	Arvore* Kefka;
+	Arvore* arvore;
 	Projetil* maca;
 public:
 	Masmorra(Jogador* j1, Jogador* j2, GerenciadorGrafico* GE);
 	~Masmorra();
 	void inicializaAtirador();
 	void inicializaFogo();
-	void inicializaKefka();
+	void inicializaArvore();
 	void inicializaPedra();
 	void inicializaElementos();
-	sf::RectangleShape bloco;
-	sf::FloatRect sect;
 	void executar();
 };

@@ -14,7 +14,6 @@ private:
 	GerenciadorGrafico* pGrafico;
 	Jogador *jogador1;
 	Jogador* jogador2;
-	Floresta* fase1;
 	Menu* menu;
 public:
 	ClasseJogo();

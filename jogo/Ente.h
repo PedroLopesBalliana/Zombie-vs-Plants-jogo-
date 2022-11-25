@@ -4,7 +4,7 @@
 class Ente
 {
 protected:
-	static int id;
+	int id;
 	sf::Texture texture;
 	sf::Sprite sprite;
 	static GerenciadorGrafico* geren_graf;
