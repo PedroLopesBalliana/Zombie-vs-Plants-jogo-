@@ -18,4 +18,5 @@
 		void setPosi(float x, float y);
 		void setSpeed(float v);
 		int getPontuacao();
+		virtual void danificar();
 	};

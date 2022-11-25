@@ -45,4 +45,8 @@ int Entidade::getPontuacao()
 {
 	return pontuacao;
 }
+void Entidade::danificar()
+{
+
+}
 int Entidade::pontuacao = 0;

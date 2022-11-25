@@ -1,7 +1,7 @@
 #pragma once
 #include "Arvore.h"
 
-Arvore::Arvore() : Inimigo(), Atirador(), Bulbassauro()
+Arvore::Arvore() : Inimigo(), Bulbassauro(), Atirador()
 {
 	if (!texture.loadFromFile("assets/Inimigos/Arvoreee.png"))
 	{
@@ -11,7 +11,7 @@ Arvore::Arvore() : Inimigo(), Atirador(), Bulbassauro()
 	{
 		std::cout << "falhou a textura :(" << std::endl;
 	}
-	sprite.setTexture(texture);
+	sprite.setTexture(texture, true);
 	sprite.scale(sf::Vector2f(0.75, 0.75));
 	sprite.setPosition(sf::Vector2f(300.f, 325.f));
 	Personagem::facingLeft=false;
