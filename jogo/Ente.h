@@ -16,5 +16,5 @@ public:
 	virtual void executar();
 	void imprimirSe();
 	void static setGerenciadorGrafico(GerenciadorGrafico* gR);
-	sf::Sprite getSprite();
+	sf::Sprite getSprite() const;
 };

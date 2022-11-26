@@ -18,7 +18,7 @@ void Ente::setGerenciadorGrafico(GerenciadorGrafico* gR)
 {
 	geren_graf = gR;
 }
-sf::Sprite Ente::getSprite()
+sf::Sprite Ente::getSprite() const
 {
 	return sprite;
 }

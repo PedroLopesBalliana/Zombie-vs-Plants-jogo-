@@ -6,7 +6,6 @@ class Personagem :public Entidade
 {
 protected:
 	bool facingLeft;
-	float jump;
 	int num_vidas;
 public:
 	Personagem();
