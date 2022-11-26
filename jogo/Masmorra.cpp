@@ -188,15 +188,19 @@ void Masmorra::inicializaFogo()
 }
 void Masmorra::inicializaArvore()
 {
-	arvore = new Arvore();
-	maca = new Projetil();
-	maca->setMaca();
-	arvore->setProjetil(maca);
-	listaEntidades->LEs.push(maca);
-	gerenciadorColisoes.pushProjetil(maca);
-	arvore->setLimites(200.f, 800.f);
-	listaEntidades->LEs.push(static_cast<Entidade*>(arvore));
-	gerenciadorColisoes.pushInimigo(static_cast<Inimigo*>(arvore));
+	for (int i = 0; i < (rand() % 2) + 3; i++)
+	{
+		arvore = new Arvore();
+		maca = new Projetil();
+		maca->setMaca();
+		arvore->setPosi(300.f + (150.f * i), 325.f);
+		arvore->setProjetil(maca);
+		listaEntidades->LEs.push(maca);
+		gerenciadorColisoes.pushProjetil(maca);
+		arvore->setLimites(200.f, 800.f);
+		listaEntidades->LEs.push(static_cast<Entidade*>(arvore));
+		gerenciadorColisoes.pushInimigo(static_cast<Inimigo*>(arvore));
+	}
 }
 void Masmorra::executar()
 {

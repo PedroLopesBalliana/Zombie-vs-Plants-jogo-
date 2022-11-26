@@ -99,4 +99,8 @@ void Atirador::setProjetil(Projetil* pr)
 void Atirador::danificar(Jogador* jog)
 {
 	jog->operator--();
+	if (jog->getSentido())
+		jog->corrigir(10.f, 10.f);
+	else
+		jog->corrigir(10.f, -10.f);
 }

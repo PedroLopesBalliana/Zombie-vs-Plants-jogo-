@@ -19,12 +19,14 @@ void Grama::executar(float deltaTempo)
 	gravidade(deltaTempo);
 	imprimirSe();
 	flutua(deltaTempo);
-	if (deltaTempo == 1.0f)
-	{
-		aderencia++;
-	}
+	aderencia += 0.001;
 }
 int Grama::getTipo()
 {
 	return aderencia;
+}
+void Grama::danificar(Jogador* jog)
+{
+	aderencia++;
+	jog->setSpeed(aderencia);
 }

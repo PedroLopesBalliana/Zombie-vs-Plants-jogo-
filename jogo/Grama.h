@@ -10,4 +10,5 @@ public:
 	~Grama();
 	void executar(float deltaTempo);
 	int getTipo();
+	void danificar(Jogador* jog);
 };

@@ -20,7 +20,7 @@ void Fogo::executar(float deltaTempo)
 	gravidade(deltaTempo);
 	imprimirSe();
 	flutua(deltaTempo);
-	labareda += 0.01;
+	labareda += 0.001;
 }
 int Fogo::getTipo()
 {
@@ -39,4 +39,8 @@ void Fogo::danificar(Jogador* jog)
 	{
 		jog->operator--();
 	}
+	if (jog->getSentido())
+		jog->corrigir(40.f, 10.f);
+	else
+		jog->corrigir(40.f, -10.f);
 }

@@ -37,8 +37,7 @@ void GerenciadorColisoes::checaColisao(Obstaculo* ob)
 			else
 			{
 				jogador->corrigir(sect.height, 0.f);
-				ob->executar(1.0f);
-				jogador->setSpeed(ob->getTipo());
+				ob->danificar(jogador);
 			}
 		}
 		else
@@ -55,16 +54,7 @@ void GerenciadorColisoes::checaColisao(Obstaculo* ob)
 	
 		if (ob->getDanoso() == true)
 		{
-			jogador->operator--();
-			jogador->corrigir(30.f, 0.f);
-			ob->executar(1.0f);
-			if (ob->getTipo() >= 2)
-			{
-				for (int i = ob->getTipo(); i >= 0; i--)
-				{
-					jogador->operator--();
-				}
-			}
+			ob->danificar(jogador);
 		}
 	}
 }
@@ -78,9 +68,7 @@ void GerenciadorColisoes::checaColisaoInimigo(Inimigo* in)
 		}
 		else
 		{
-			jogador->operator--();
-			jogador->corrigir(30.f, 0.f);
-			in->executar(1.0f);
+			in->danificar(jogador);
 		}
 	}
 }
@@ -88,11 +76,7 @@ void GerenciadorColisoes::checaColisaoProjetil(Projetil* ob)
 {
 	if (ob->getSpriteBounds().intersects(jogador->getSpriteBounds()))
 	{
-		jogador->operator--();
-		if(jogador->getSentido())
-			jogador->corrigir(0.f, 30.f);
-		else
-			jogador->corrigir(0.f, -30.f);
+		ob->danificar(jogador);
 	}
 }
 void GerenciadorColisoes::percorrer()

@@ -12,12 +12,13 @@ Arvore::Arvore() : Inimigo(), Bulbassauro(), Atirador()
 		std::cout << "falhou a textura :(" << std::endl;
 	}
 	sprite.setTexture(texture, true);
-	sprite.scale(sf::Vector2f(0.75, 0.75));
+	sprite.scale(sf::Vector2f(0.5, 0.5));
 	sprite.setPosition(sf::Vector2f(300.f, 325.f));
 	Personagem::facingLeft=false;
 	Entidade::velocidadeV.y = 50.f;
 	Entidade::velocidade = 300.f;
 	Personagem::num_vidas = 5;
+	raiva = 1;
 }
 Arvore::~Arvore()
 {
@@ -25,7 +26,7 @@ Arvore::~Arvore()
 }
 void Arvore::pular()
 {
-	Entidade::velocidadeV.y = -sqrtf(2.0f * 981.0f * 100.0f);
+	Entidade::velocidadeV.y = -sqrtf(2.0f * 981.0f * (raiva * 100.0f));
 }
 void Arvore::mover()
 {
@@ -47,7 +48,7 @@ void Arvore::mover()
 		sprite.move(sf::Vector2f(-3.0f, 0.f));
 	else
 		sprite.move(sf::Vector2f(3.0f, 0.f));
-	if (sprite.getPosition().y > 425.f)
+	if (sprite.getPosition().y > 525.f)
 	{
 		pular();
 	}
@@ -57,7 +58,6 @@ void Arvore::executar(float deltaTempo)
 {
 	if (Personagem::num_vidas > 0)
 	{
-		printf("sprite bounds %f \n %f \n", sprite.getGlobalBounds().height, sprite.getGlobalBounds().width);
 		float aux;
 		float centroX, centroY;
 		sf::Vector2f posi;
@@ -100,12 +100,13 @@ void Arvore::executar(float deltaTempo)
 	else
 	{
 		sprite.move(1000.f, 1000.f);
+		tiro->executar(deltaTempo, sprite.getPosition());
 	}
 }
 
 void Arvore::operator--()
 {
-	if (quant > 1)
+	if (quant > 4)
 	{
 		sprite.setTexture(envenenar);
 		Pedra::setVeneno(true);
@@ -126,4 +127,9 @@ void Arvore::danificar(Jogador* jog)
 	{
 		jog->operator--();
 	}
+	if (jog->getSentido())
+		jog->corrigir(20.f, 50.f);
+	else
+		jog->corrigir(20.f, -50.f);
+	raiva += 0.5;
 }

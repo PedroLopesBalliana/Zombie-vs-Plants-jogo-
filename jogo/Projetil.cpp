@@ -41,9 +41,11 @@ void Projetil::setMaca()
 	sprite.setTexture(maca);
 	sprite.setScale(sf::Vector2f(0.5, 0.5));
 }
-
-//jogador->operator--();
-//if (jogador->getSentido())
-//jogador->corrigir(0.f, 30.f);
-//else
-//jogador->corrigir(0.f, -30.f);
+void Projetil::danificar(Jogador* jog)
+{
+	jog->operator--();
+	if (jog->getSentido())
+	jog->corrigir(0.f, 30.f);
+	else
+	jog->corrigir(0.f, -30.f);
+}
