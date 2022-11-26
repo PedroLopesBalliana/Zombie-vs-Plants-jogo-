@@ -1,6 +1,7 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include "GerenciadorGrafico.h"
+#include "Memoria.h"
 class Ente
 {
 protected:
@@ -8,6 +9,7 @@ protected:
 	sf::Texture texture;
 	sf::Sprite sprite;
 	static GerenciadorGrafico* geren_graf;
+	static Memoria memoria;
 public:
 	Ente();
 	~Ente();

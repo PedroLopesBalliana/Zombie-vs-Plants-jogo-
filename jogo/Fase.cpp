@@ -21,12 +21,17 @@ void Fase::setPontos()
 {
 	string nome;
 	int flag=0;
-	printf("Insira o nome do jogador 1:");
-	scanf_s("%s",&nome);
+	cout << "Insira o nome do jogador 1:";
+	cin >> nome;
 	pontuacoes.insert(pair<string, float>(nome, j1->getPontuacao()));
-	printf("Insira o nome do jogador 2:");
-	scanf_s("%s", &nome);
+	cout << "Insira o nome do jogador 2:";
+	cin >> nome;
 	pontuacoes.insert(pair<string, float>(nome, j2->getPontuacao()));
-	printf("nome jogador 1:%s",nome);
-
+	cout << "volte a tela do jogo :)";
+	for (map<string, float>::iterator it = pontuacoes.begin();
+		it != pontuacoes.end(); it++)
+	{
+		memoria.salvarPontos((*it).first, (*it).second);
+	}
+	//inserir função de salvamento de arquivo
 }
