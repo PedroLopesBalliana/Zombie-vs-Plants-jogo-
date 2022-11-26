@@ -20,7 +20,7 @@ void Espinho::executar(float deltaTempo)
 	gravidade(deltaTempo);
 	imprimirSe();
 	flutua(deltaTempo);
-	ferrao += 0.01;
+	ferrao += 0.001;
 }
 int Espinho::getTipo()
 {
@@ -29,4 +29,7 @@ int Espinho::getTipo()
 void Espinho::danificar(Jogador* jog)
 {
 	ferrao++;
+	for (int i = 0; i < ferrao; i++)
+		jog->operator--();
+	jog->corrigir(20.f, 0.f);
 }

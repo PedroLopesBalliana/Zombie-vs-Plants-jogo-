@@ -42,4 +42,12 @@ void Pedra::setVeneno(bool ven)
 {
 	envenenado = ven;
 }
+void Pedra::danificar(Jogador* jog)
+{
+	if (danoso)
+	{
+		jog->operator--();
+		jog->corrigir(10.f, 0.f);
+	}
+}
 bool Pedra::envenenado = false;

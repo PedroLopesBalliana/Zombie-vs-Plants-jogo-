@@ -12,4 +12,5 @@ public:
 	void executar(float deltaTempo);
 	int getTipo();
 	static void setVeneno(bool ven);
+	void danificar(Jogador* jog);
 };

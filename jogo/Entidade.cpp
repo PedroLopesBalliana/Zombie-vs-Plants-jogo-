@@ -1,8 +1,9 @@
 #pragma once
 #include "Entidade.h"
  // ficou muito estranho Entidades::Entidade::Entidade() por exemplo
-Entidade::Entidade():Ente()
+Entidade::Entidade():Ente(), gravid(981.f)
 {
+
 }
 Entidade::~Entidade()
 {
@@ -22,7 +23,7 @@ sf::FloatRect Entidade::getSpriteBounds()
 }
 void Entidade::gravidade(float deltaTempo)
 {
-	velocidadeV.y += 981.0f * deltaTempo;
+	velocidadeV.y += gravid * deltaTempo;
 }
 void Entidade::executar(float deltaTempo)
 {

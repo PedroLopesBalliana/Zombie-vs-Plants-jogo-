@@ -21,7 +21,7 @@ void Bulbassauro::executar(float deltaTempo)
 		gravidade(deltaTempo);
 		imprimirSe();
 		mover();
-		raiva += 0.01;
+		raiva += 0.001;
 	}
 	else
 	{
@@ -60,5 +60,9 @@ void Bulbassauro::danificar(Jogador* jog)
 	}
 	if (raiva > 3.0)
 		raiva = 1.0;
+	if (jog->getSentido())
+		jog->corrigir(10.f, 10.f);
+	else
+		jog->corrigir(10.f, -10.f);
 }
 
