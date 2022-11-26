@@ -26,7 +26,7 @@ Arvore::~Arvore()
 }
 void Arvore::pular()
 {
-	Entidade::velocidadeV.y = -sqrtf(2.0f * 981.0f * (raiva * 100.0f));
+	Entidade::velocidadeV.y = -sqrtf(2.0f * gravid * (raiva * 100.0f));
 }
 void Arvore::mover()
 {
@@ -35,14 +35,12 @@ void Arvore::mover()
 		Personagem::facingLeft = true;
 		sprite.move(sf::Vector2f(300.0f, 0.f));
 		sprite.scale(-1, 1);
-		//pular();
 	}
 	if (sprite.getPosition().x > limDir && Personagem::facingLeft)
 	{
 		Personagem::facingLeft = false;
 		sprite.move(sf::Vector2f(-300.0f, 0.f));
 		sprite.scale(-1, 1);
-		//pular();
 	}
 	if (!Personagem::facingLeft)
 		sprite.move(sf::Vector2f(-3.0f, 0.f));

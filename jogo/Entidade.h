@@ -7,6 +7,7 @@
 		sf::Vector2f velocidadeV;
 		float velocidade;
 		static int pontuacao;
+		float gravid;
 	public:
 		Entidade();
 		~Entidade();

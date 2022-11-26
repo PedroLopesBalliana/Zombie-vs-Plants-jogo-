@@ -49,7 +49,7 @@ void Jogador::move(float deltaTempo)
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && !pulou)
 		{
 			pulou = true;
-			velocidadeV.y = -sqrtf(2.0f * 981.0f * 100.0f);
+			velocidadeV.y = -sqrtf(2.0f * gravid * 100.0f);
 			velocidade = 300.f;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z) && charge == 100)
@@ -82,7 +82,7 @@ void Jogador::move(float deltaTempo)
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::I) && !pulou)
 		{
 			pulou = true;
-			velocidadeV.y = -sqrtf(2.0f * 981.0f * 100.0f);
+			velocidadeV.y = -sqrtf(2.0f * gravid * 100.0f);
 			velocidade = 300.f;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::M) && charge == 100)
