@@ -10,7 +10,7 @@ private:
 	Arvore* arvore;
 	Projetil* maca;
 public:
-	Masmorra(Jogador* j1, Jogador* j2, GerenciadorGrafico* GE);
+	Masmorra(Jogador* j1, Jogador* j2, Gerenciadores::GerenciadorGrafico* GE);
 	~Masmorra();
 	void inicializaAtirador();
 	void inicializaFogo();

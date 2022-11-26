@@ -8,7 +8,7 @@ private:
 	Espinho* esp;
 	Masmorra* fase2;
 public:
-	Floresta(Jogador* j1, Jogador* j2, GerenciadorGrafico* GE);
+	Floresta(Jogador* j1, Jogador* j2, Gerenciadores::GerenciadorGrafico* GE);
 	~Floresta();
 	void inicializaGrama();
 	void inicializaEspinhos();

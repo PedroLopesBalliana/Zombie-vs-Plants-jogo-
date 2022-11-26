@@ -11,8 +11,8 @@
 class ClasseJogo
 {
 private:
-	GerenciadorGrafico* pGrafico;
-	Jogador *jogador1;
+	Gerenciadores::GerenciadorGrafico* pGrafico;
+	Jogador* jogador1;
 	Jogador* jogador2;
 	Menu* menu;
 public:

@@ -1,6 +1,6 @@
 #include "Floresta.h"
 
-Floresta::Floresta(Jogador* j1, Jogador* j2, GerenciadorGrafico* GE) : 
+Floresta::Floresta(Jogador* j1, Jogador* j2, Gerenciadores::GerenciadorGrafico* GE) : 
 	Fase()
 {
 	if (!texture.loadFromFile("assets/Bloco_Texturas/Floresta/Background.png"))
