@@ -1,30 +1,30 @@
 #include "GerenciadorColisoes.h"
 
-GerenciadorColisoes::GerenciadorColisoes() : jogador(NULL)
+Gerenciadores::GerenciadorColisoes::GerenciadorColisoes() : jogador(NULL)
 {
 
 }
-GerenciadorColisoes::~GerenciadorColisoes()
+Gerenciadores::GerenciadorColisoes::~GerenciadorColisoes()
 {
 
 }
-std::vector<Inimigo*> GerenciadorColisoes::getLIs()
+std::vector<Inimigo*> Gerenciadores::GerenciadorColisoes::getLIs()
 {
 	return LIs;
 }
-std::list<Obstaculo*> GerenciadorColisoes::getLOs()
+std::list<Obstaculo*> Gerenciadores::GerenciadorColisoes::getLOs()
 {
 	return LOs;
 }
-std::list<Projetil*> GerenciadorColisoes::getLPs()
+std::list<Projetil*> Gerenciadores::GerenciadorColisoes::getLPs()
 {
 	return LPs;
 }
-void GerenciadorColisoes::setJogador(Jogador *jog)
+void Gerenciadores::GerenciadorColisoes::setJogador(Jogador *jog)
 {
 	jogador = jog;
 }
-void GerenciadorColisoes::checaColisao(Obstaculo* ob)
+void Gerenciadores::GerenciadorColisoes::checaColisao(Obstaculo* ob)
 {
 	if (ob->getSpriteBounds().intersects(jogador->getSpriteBounds(), sect))
 	{
@@ -58,13 +58,14 @@ void GerenciadorColisoes::checaColisao(Obstaculo* ob)
 		}
 	}
 }
-void GerenciadorColisoes::checaColisaoInimigo(Inimigo* in)
+void Gerenciadores::GerenciadorColisoes::checaColisaoInimigo(Inimigo* in)
 {
 	if (in->getSpriteBounds().intersects(jogador->getSpriteBounds()))
 	{
 		if (jogador->getAtacando())
 		{
 			in->operator--();
+			jogador->incrementaPontos();
 		}
 		else
 		{
@@ -72,20 +73,20 @@ void GerenciadorColisoes::checaColisaoInimigo(Inimigo* in)
 		}
 	}
 }
-void GerenciadorColisoes::checaColisaoProjetil(Projetil* ob)
+void Gerenciadores::GerenciadorColisoes::checaColisaoProjetil(Projetil* ob)
 {
 	if (ob->getSpriteBounds().intersects(jogador->getSpriteBounds()))
 	{
 		ob->danificar(jogador);
 	}
 }
-void GerenciadorColisoes::percorrer()
+void Gerenciadores::GerenciadorColisoes::percorrer()
 {
 	percorrerObstaculo();
 	percorrerInimigo();
 	percorrerProjetil();
 }
-void GerenciadorColisoes::percorrerObstaculo()
+void Gerenciadores::GerenciadorColisoes::percorrerObstaculo()
 {
 	std::list<Obstaculo*>::iterator it;
 	it = LOs.begin();
@@ -95,7 +96,7 @@ void GerenciadorColisoes::percorrerObstaculo()
 		it++;
 	}
 }
-void GerenciadorColisoes::percorrerProjetil()
+void Gerenciadores::GerenciadorColisoes::percorrerProjetil()
 {
 	std::list<Projetil*>::iterator it;
 	it = LPs.begin();
@@ -105,7 +106,7 @@ void GerenciadorColisoes::percorrerProjetil()
 		it++;
 	}
 }
-void GerenciadorColisoes::percorrerInimigo()
+void Gerenciadores::GerenciadorColisoes::percorrerInimigo()
 {
 	std::vector<Inimigo*>::iterator it;
 	it = LIs.begin();
@@ -115,15 +116,15 @@ void GerenciadorColisoes::percorrerInimigo()
 		it++;
 	}
 }
-void GerenciadorColisoes::pushObstaculo(Obstaculo* ob)
+void Gerenciadores::GerenciadorColisoes::pushObstaculo(Obstaculo* ob)
 {
 	LOs.push_back(ob);
 }
-void GerenciadorColisoes::pushInimigo(Inimigo* in)
+void Gerenciadores::GerenciadorColisoes::pushInimigo(Inimigo* in)
 {
 	LIs.push_back(in);
 }
-void GerenciadorColisoes::pushProjetil(Projetil* pr)
+void Gerenciadores::GerenciadorColisoes::pushProjetil(Projetil* pr)
 {
 	LPs.push_back(pr);
 }

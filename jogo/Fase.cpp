@@ -19,6 +19,7 @@ void Fase::executar()
 }
 void Fase::setPontos()
 {
+	memoria.lerArquivo();
 	string nome;
 	int flag=0;
 	cout << "Insira o nome do jogador 1:";
@@ -34,4 +35,5 @@ void Fase::setPontos()
 		memoria.salvarPontos((*it).first, (*it).second);
 	}
 	//inserir função de salvamento de arquivo
+	memoria.atualizaArq();
 }

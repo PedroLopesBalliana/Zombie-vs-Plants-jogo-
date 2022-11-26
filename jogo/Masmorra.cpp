@@ -227,6 +227,12 @@ void Masmorra::executar()
 		if (Inimigo::getQuant() == 0)
 		{
 			setPontos();
+			geren_graf->getWindow()->close();
+		}
+		if (j1->getNumVidas() <= 0 && j2->getNumVidas() <= 0)
+		{
+			setPontos();
+			geren_graf->getWindow()->close();
 		}
 	}
 }

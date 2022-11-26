@@ -19,5 +19,10 @@ public:
 	void executar(float deltaTempo);
 	void atacar();
 	bool getAtacando();
+	float getPontuacao();
 	void setMovimento(bool mov);
+	void incrementaPontos();
+	int getNumVidas();
+	void operator--();
+	void operator--(int dan);
 };

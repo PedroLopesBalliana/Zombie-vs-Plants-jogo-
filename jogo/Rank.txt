@@ -1,0 +1,4 @@
+brasil 10000 
+mexico 10000 
+testandoooo 4000 
+b 4000 

@@ -42,12 +42,7 @@ void Entidade::setSpeed(const float v)
 	if(velocidade > 0)
 		velocidade = velocidade - (v/50);
 }
-int Entidade::getPontuacao()
-{
-	return pontuacao;
-}
 void Entidade::danificar()
 {
 
 }
-int Entidade::pontuacao = 0;

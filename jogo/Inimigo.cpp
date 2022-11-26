@@ -32,7 +32,6 @@ void Inimigo::operator--()
 {
 	num_vidas--;
 	quant--;
-	pontuacao = pontuacao + 1000;
 }
 void Inimigo::danificar(Jogador* jog)
 {

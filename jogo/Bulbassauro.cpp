@@ -54,10 +54,7 @@ void Bulbassauro::setLimites(float esq, float dir)
 void Bulbassauro::danificar(Jogador* jog)
 {
 	raiva = raiva + 0.5f;
-	for (int i = 0; i < 3; i++)
-	{
-		jog->operator--();
-	}
+	jog->operator--(3);
 	if (raiva > 3.0)
 		raiva = 1.0;
 	if (jog->getSentido())

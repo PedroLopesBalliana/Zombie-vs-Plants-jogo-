@@ -29,7 +29,6 @@ int Espinho::getTipo()
 void Espinho::danificar(Jogador* jog)
 {
 	ferrao++;
-	for (int i = 0; i < ferrao; i++)
-		jog->operator--();
+	jog->operator--(ferrao);
 	jog->corrigir(20.f, 0.f);
 }

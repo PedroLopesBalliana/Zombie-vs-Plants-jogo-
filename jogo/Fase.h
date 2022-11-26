@@ -16,7 +16,7 @@ using namespace std;
 class Fase : public Ente
 {
 protected:
-	GerenciadorColisoes gerenciadorColisoes;
+	Gerenciadores::GerenciadorColisoes gerenciadorColisoes;
 	ListaEntidades *listaEntidades;
 	Atirador* ati;
 	Jogador* j1;
@@ -26,6 +26,7 @@ protected:
 	map<string, float> pontuacoes;
 	Fogo* fogo;
 	virtual void inicializaElementos();
+	Memoria memoria;
 public:
 	Fase();
 	~Fase();

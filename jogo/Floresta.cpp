@@ -282,11 +282,15 @@ void Floresta::executar()
 		geren_graf->displayJanela();
 		if (Inimigo::getQuant() == 0)
 		{
-			setPontos();
 			j1->setPosi(100.f, 700.f);
 			j2->setPosi(100.f, 700.f);
 			fase2 = new Masmorra(j1, j2, geren_graf);
 		}
-		printf("pontuacao %d\n", j1->getPontuacao());
+		if (j1->getNumVidas() <= 0 && j2->getNumVidas() <= 0)
+		{
+			setPontos();
+			geren_graf->getWindow()->close();
+
+		}
 	}
 }

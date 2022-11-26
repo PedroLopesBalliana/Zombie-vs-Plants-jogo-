@@ -121,10 +121,7 @@ void Arvore::bossImprimirSe()
 }
 void Arvore::danificar(Jogador* jog)
 {
-	for (int i = 0; i < 10; i++)
-	{
-		jog->operator--();
-	}
+		jog->operator--(10);
 	if (jog->getSentido())
 		jog->corrigir(20.f, 50.f);
 	else

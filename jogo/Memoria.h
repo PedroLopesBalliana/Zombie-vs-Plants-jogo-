@@ -1,5 +1,8 @@
 #include <String>
 #include <vector>
+#include <iostream>
+#include <fstream>
+
 using namespace std;
 	
 struct info
@@ -10,13 +13,14 @@ struct info
 class Memoria
 {
 private:
-	FILE* arquivo;
+	ofstream gravador;
+	ifstream leitor;
 	vector<info> informations;
 public:
 	Memoria();
 	~Memoria();
-	void lerArq();
 	void salvarPontos(string nm, float pt);
 	void atualizaArq();
 	void ordenaVet();
+	void lerArquivo();
 };

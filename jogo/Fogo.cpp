@@ -35,10 +35,7 @@ void Fogo::danificar(Jogador* jog)
 		labareda = 0.5f;
 		sprite.setScale(sf::Vector2f(1.0, 0.40));
 	}
-	for (int i = 0; i < 5; i++)
-	{
-		jog->operator--();
-	}
+	jog->operator--(5);
 	if (jog->getSentido())
 		jog->corrigir(40.f, 10.f);
 	else

@@ -24,7 +24,6 @@ Jogador::~Jogador()
 void Jogador::move(float deltaTempo)
 {
 	velocidadeV.x = 0.5f;
-
 	if (movimento)
 	{
 
@@ -103,6 +102,8 @@ void Jogador::corrigir(float height, float side)
 }
 void Jogador::executar(float deltaTempo)
 {
+	if (num_vidas > 0)
+	{
 		move(deltaTempo);
 		imprimirSe();
 		gravidade(deltaTempo);
@@ -115,6 +116,11 @@ void Jogador::executar(float deltaTempo)
 			sprite.setTexture(texture);
 			atacando = false;
 		}
+	}
+	else
+	{
+		setPosi(1000.f, 1000.f);
+	}
 }
 void Jogador::atacar()
 {
@@ -129,4 +135,29 @@ bool Jogador::getAtacando()
 void Jogador::setMovimento(bool mov)
 {
 	movimento = mov;
+}
+float Jogador::getPontuacao()
+{
+	return pontos;
+}
+void Jogador::incrementaPontos()
+{
+	pontos += 1000.f;
+}
+int Jogador::getNumVidas()
+{
+	return num_vidas;
+}
+void Jogador::operator--()
+{
+	num_vidas--;
+	printf("vida restante: %d \n", num_vidas);
+}
+void Jogador::operator--(int dan)
+{
+	for (int i = 0; i < dan; i++)
+	{
+		num_vidas--;
+		printf("vida restante: %d \n", num_vidas);
+	}
 }

@@ -1,41 +1,41 @@
 #include "GerenciadorGrafico.h"
 
-GerenciadorGrafico::GerenciadorGrafico():
+Gerenciadores::GerenciadorGrafico::GerenciadorGrafico():
 	window(sf::VideoMode(1000, 800), "Jogo")
 {
 	limpaJanela();
 	window.setFramerateLimit(60);
 }
-GerenciadorGrafico::~GerenciadorGrafico()
+Gerenciadores::GerenciadorGrafico::~GerenciadorGrafico()
 {
 
 }
 
-GerenciadorGrafico* GerenciadorGrafico::getGgr()
+Gerenciadores::GerenciadorGrafico* Gerenciadores::GerenciadorGrafico::getGgr()
 {
 	if (pGrafico == nullptr)
 	{
-		return new GerenciadorGrafico();
+		return new Gerenciadores::GerenciadorGrafico();
 	}
 	return pGrafico;
 }
-void GerenciadorGrafico::desenharEntidades(sf::Sprite sp)
+void Gerenciadores::GerenciadorGrafico::desenharEntidades(sf::Sprite sp)
 {
 	window.draw(sp);
 }
-sf::RenderWindow  *GerenciadorGrafico::getWindow()
+sf::RenderWindow  *Gerenciadores::GerenciadorGrafico::getWindow()
 {
 	return &window;
 }
-void GerenciadorGrafico::limpaJanela()
+void Gerenciadores::GerenciadorGrafico::limpaJanela()
 {
 	window.clear();
 }
-void GerenciadorGrafico::displayJanela()
+void Gerenciadores::GerenciadorGrafico::displayJanela()
 {
 	window.display();
 }
-bool GerenciadorGrafico::pegarJanela()
+bool Gerenciadores::GerenciadorGrafico::pegarJanela()
 {
 	if (window.isOpen() == true)
 	{
@@ -46,6 +46,6 @@ bool GerenciadorGrafico::pegarJanela()
 		return false;
 	}
 }
-GerenciadorGrafico* GerenciadorGrafico::pGrafico = nullptr;
+Gerenciadores::GerenciadorGrafico* Gerenciadores::GerenciadorGrafico::pGrafico = nullptr;
 
 

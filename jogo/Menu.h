@@ -30,6 +30,9 @@ private:
 
 		}
 	};
+	sf::Texture rankText;
+	sf::Text posicoesRank;
+	sf::Font posicoesFont;
 	sf::Vector2i posi_mouse;
 	sf::Vector2f mouse_coord;
 	sf::Vector2f corrigir_coord;
@@ -41,9 +44,11 @@ private:
 	Jogador* jogador2;
 	Floresta* fase1;
 	Masmorra* fase2;
+	bool rankBool;
 public:
-	Menu(GerenciadorGrafico* ge);
+	Menu(Gerenciadores::GerenciadorGrafico* ge);
 	~Menu();
 	void desenharBotoes();
 	void executar();
+	void mostrarRank();
 };

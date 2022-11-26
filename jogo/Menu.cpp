@@ -2,10 +2,18 @@
 #include <iostream>
 
 
-Menu::Menu(GerenciadorGrafico* ge):botaoFase1(), 
-botaoFase2(), botaoRanking(), corrigir_coord(), aux(0.f,30.f)
+Menu::Menu(Gerenciadores::GerenciadorGrafico* ge) :botaoFase1(),
+botaoFase2(), botaoRanking(), corrigir_coord(), aux(0.f, 30.f), rankBool(false)
 {
 	if (!texture.loadFromFile("assets/Menu/MenuBg1.png"))
+	{
+		std::cout << "falhou a textura :(" << std::endl;
+	}
+	if (!rankText.loadFromFile("assets/Menu/MenuBg.png"))
+	{
+		std::cout << "falhou a textura :(" << std::endl;
+	}
+	if (!posicoesFont.loadFromFile("assets/Menu/calibri.ttf"))
 	{
 		std::cout << "falhou a textura :(" << std::endl;
 	}
@@ -70,11 +78,61 @@ void Menu::executar()
 		}
 		if (botaoRanking.getRect().getGlobalBounds().contains(mouse_coord))
 		{
-			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-				printf("Laçando um aramelco\n");
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && !rankBool)
+			{
+				mostrarRank();
+				rankBool = true;
+			}
 		}
 		imprimirSe();
 		desenharBotoes();
 		geren_graf->displayJanela();
+	}
+}
+void Menu::mostrarRank()
+{
+	bool voltar = true;
+	ifstream leitor;
+	sprite.setTexture(rankText);
+	try 
+	{
+		leitor.open("Rank.txt");
+		if (leitor)
+		{
+			imprimirSe();
+			for (int i = 0; i < 10; i++)
+			{
+				info aux;
+				leitor >> aux.nome >> aux.pont;
+				cout << aux.nome << aux.pont << endl;
+				posicoesRank.setFont(posicoesFont);
+				posicoesRank.setCharacterSize(25);
+				posicoesRank.setFillColor(sf::Color::White);
+				posicoesRank.setString(aux.nome + "  " + to_string(aux.pont));
+				posicoesRank.setPosition(sf::Vector2f(500, 100 + (30.0f * i)));
+				geren_graf->getWindow()->draw(posicoesRank);
+			}
+			posicoesRank.setString("pressione P para voltar");
+			posicoesRank.setPosition(sf::Vector2f(300, 500));
+			geren_graf->getWindow()->draw(posicoesRank);
+			geren_graf->getWindow()->display();
+			while (voltar)
+			{
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+				{
+					voltar = false;
+				}
+			}
+		}
+
+		else
+		{
+			cout << "falhou abertura arquivo :(" << endl;
+		}
+		sprite.setTexture(texture);
+	}
+	catch (std::exception const& e)
+	{
+		cout << "erro na gravada" << e.what() << endl;
 	}
 }
