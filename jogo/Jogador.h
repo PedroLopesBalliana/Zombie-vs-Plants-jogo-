@@ -10,6 +10,7 @@ private:
 	bool atacando;
 	sf::Texture ataque;
 	bool movimento;
+	float pontos;
 public:
 	Jogador();
 	~Jogador();

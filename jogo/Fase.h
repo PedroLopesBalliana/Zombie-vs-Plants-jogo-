@@ -9,6 +9,7 @@
 #include "Grama.h"
 #include "Espinho.h"
 #include "Fogo.h"
+#include <map>
 
 using namespace std;
 
@@ -22,6 +23,7 @@ protected:
 	Jogador* j2;
 	Bulbassauro* bulb;
 	Projetil* pr;
+	map<string, float> pontuacoes;
 	Fogo* fogo;
 	virtual void inicializaElementos();
 public:
@@ -29,4 +31,5 @@ public:
 	~Fase();
 	ListaEntidades* getListaEntidades();
 	void executar()=0;
+	void setPontos();
 };

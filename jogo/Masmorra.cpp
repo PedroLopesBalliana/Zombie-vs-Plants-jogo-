@@ -222,8 +222,7 @@ void Masmorra::executar()
 		geren_graf->displayJanela();
 		if (Inimigo::getQuant() == 0)
 		{
-			//printf("venceu! \n");
+			setPontos();
 		}
-		//printf("pontuacao %d\n", j1->getPontuacao());
 	}
 }

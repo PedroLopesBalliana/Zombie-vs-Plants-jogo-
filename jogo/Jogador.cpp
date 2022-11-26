@@ -1,5 +1,7 @@
 #include "Jogador.h"
-Jogador::Jogador() :Personagem(), pulou(false), charge(50), atacando(false), movimento(true)
+Jogador::Jogador() :Personagem(), pulou(false), 
+charge(50), atacando(false), movimento(true),
+pontos(0)
 {
 	if (!texture.loadFromFile("assets/Zumbi_Jogador/zombieSprite.png"))
 	{
@@ -114,7 +116,6 @@ void Jogador::executar(float deltaTempo)
 			atacando = false;
 		}
 }
-
 void Jogador::atacar()
 {
 	sprite.setTexture(ataque);
