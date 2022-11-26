@@ -14,7 +14,7 @@ void Ente::imprimirSe()
 {
 	geren_graf->desenharEntidades(sprite);
 }
-void Ente::setGerenciadorGrafico(GerenciadorGrafico* gR)
+void Ente::setGerenciadorGrafico(Gerenciadores::GerenciadorGrafico* gR)
 {
 	geren_graf = gR;
 }
@@ -22,4 +22,4 @@ sf::Sprite Ente::getSprite() const
 {
 	return sprite;
 }
-GerenciadorGrafico* Ente::geren_graf = NULL;
+Gerenciadores::GerenciadorGrafico* Ente::geren_graf = NULL;

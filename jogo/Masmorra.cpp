@@ -1,6 +1,6 @@
 #include "Masmorra.h"
 
-Masmorra::Masmorra(Jogador* j1, Jogador* j2, GerenciadorGrafico* GE): Fase()
+Masmorra::Masmorra(Jogador* j1, Jogador* j2, Gerenciadores::GerenciadorGrafico* GE): Fase()
 {
 	if (!texture.loadFromFile("assets/Bloco_Texturas/Dungeon/Fornalha.png"))
 	{
