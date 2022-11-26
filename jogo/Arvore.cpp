@@ -17,7 +17,7 @@ Arvore::Arvore() : Inimigo(), Bulbassauro(), Atirador()
 	Personagem::facingLeft=false;
 	Entidade::velocidadeV.y = 50.f;
 	Entidade::velocidade = 300.f;
-	Personagem::num_vidas = 5;
+	Personagem::num_vidas = 1;
 	raiva = 1;
 }
 Arvore::~Arvore()

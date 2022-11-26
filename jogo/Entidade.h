@@ -7,7 +7,7 @@
 		sf::Vector2f velocidadeV;
 		float velocidade;
 		static int pontuacao;
-		float gravid;
+		const float gravid;
 	public:
 		Entidade();
 		~Entidade();
@@ -16,8 +16,8 @@
 		sf::FloatRect getSpriteBounds();
 		virtual void gravidade(float DeltaTempo);
 		virtual void executar(float deltaTempo);
-		void setPosi(float x, float y);
-		void setSpeed(float v);
+		void setPosi(const float x, const float y);
+		void setSpeed(const float v);
 		int getPontuacao();
 		virtual void danificar();
 	};
