@@ -120,3 +120,10 @@ void Arvore::bossImprimirSe()
 {
 	geren_graf->desenharEntidades(sprite);
 }
+void Arvore::danificar(Jogador* jog)
+{
+	for (int i = 0; i < 10; i++)
+	{
+		jog->operator--();
+	}
+}

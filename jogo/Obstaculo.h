@@ -1,5 +1,6 @@
 #pragma once
 #include "Entidade.h"
+#include "Jogador.h"
 class Obstaculo : public Entidade
 {
 protected:
@@ -11,4 +12,5 @@ public:
 	virtual void executar(float deltaTempo);
 	virtual bool getDanoso();
 	virtual int getTipo();
+	virtual void danificar(Jogador* jog);
 };

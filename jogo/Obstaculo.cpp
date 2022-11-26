@@ -25,3 +25,7 @@ int Obstaculo::getTipo()
 {
 	return 1;
 }
+void Obstaculo::danificar(Jogador* jog)
+{
+
+}

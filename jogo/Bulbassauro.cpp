@@ -18,15 +18,10 @@ void Bulbassauro::executar(float deltaTempo)
 {
 	if (num_vidas > 0)
 	{
-		if (deltaTempo == 1.0f)
-		{
-			raiva = raiva + 0.5f;
-		}
 		gravidade(deltaTempo);
 		imprimirSe();
 		mover();
-		if (raiva > 3.0)
-			raiva = 1.0;
+		raiva += 0.01;
 	}
 	else
 	{
@@ -55,5 +50,15 @@ void Bulbassauro::setLimites(float esq, float dir)
 {
 	limEsq = esq;
 	limDir = dir;
+}
+void Bulbassauro::danificar(Jogador* jog)
+{
+	raiva = raiva + 0.5f;
+	for (int i = 0; i < 3; i++)
+	{
+		jog->operator--();
+	}
+	if (raiva > 3.0)
+		raiva = 1.0;
 }
 

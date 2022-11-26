@@ -12,4 +12,5 @@ public:
 	virtual void executar(float deltaTempo);
 	virtual void setLimites(float esq, float dir);
 	virtual void mover();
+	virtual void danificar(Jogador* jog);
  };

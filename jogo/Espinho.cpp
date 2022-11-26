@@ -17,15 +17,16 @@ Espinho::~Espinho()
 }
 void Espinho::executar(float deltaTempo)
 {
-	if (deltaTempo == 1.0f)
-	{
-		ferrao++;
-	}
 	gravidade(deltaTempo);
 	imprimirSe();
 	flutua(deltaTempo);
+	ferrao += 0.01;
 }
 int Espinho::getTipo()
 {
 	return ferrao;
+}
+void Espinho::danificar(Jogador* jog)
+{
+	ferrao++;
 }

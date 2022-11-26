@@ -18,4 +18,5 @@ public:
 	void pular();
 	void mover();
 	void operator--();
+	void danificar(Jogador* jog);
 };

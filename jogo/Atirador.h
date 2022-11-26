@@ -10,5 +10,6 @@ public:
 	~Atirador();
 	virtual void executar(float deltaTempo);
 	virtual void mover();
+	virtual void danificar(Jogador* jog);
 	void setProjetil(Projetil* pr);
 };

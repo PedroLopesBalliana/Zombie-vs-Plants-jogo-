@@ -96,3 +96,7 @@ void Atirador::setProjetil(Projetil* pr)
 {
 	tiro = pr;
 }
+void Atirador::danificar(Jogador* jog)
+{
+	jog->operator--();
+}

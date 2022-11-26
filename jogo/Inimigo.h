@@ -18,4 +18,5 @@ public:
 	void setTipo(int ti);
 	static int getQuant();
 	void operator--();
+	virtual void danificar(Jogador* jog);
 };

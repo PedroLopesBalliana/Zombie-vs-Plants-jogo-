@@ -34,4 +34,8 @@ void Inimigo::operator--()
 	quant--;
 	pontuacao = pontuacao + 1000;
 }
+void Inimigo::danificar(Jogador* jog)
+{
+
+}
 int Inimigo::quant = 0;
