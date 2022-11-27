@@ -287,7 +287,6 @@ void Fases::Floresta::executar()
 		}
 		if (j1->getNumVidas() <= 0 && j2->getNumVidas() <= 0)
 		{
-			cout << "oi" << endl;
 			setPontos();
 			geren_graf->getWindow()->close();
 

@@ -5,7 +5,7 @@ Listas::ListaEntidades::ListaEntidades()
 }
 Listas::ListaEntidades::~ListaEntidades()
 {
-
+	LEs.limpaLista();
 }
 void Listas::ListaEntidades::percorrerSe(float deltaTempo)
 {

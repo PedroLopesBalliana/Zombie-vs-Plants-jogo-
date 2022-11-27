@@ -103,6 +103,14 @@ namespace Listas
 			delete temp;
 			len--;
 		}
+		void limpaLista()
+		{
+			int i;
+			for (i = 0; i != this->getLen(); i++)
+			{
+				pop(getItem(i));
+			}
+		}
 	private:
 		Elemento <TL>* pPrimeiro;
 		Elemento <TL>* pUltimo;
