@@ -30,6 +30,10 @@ namespace Fases
 		Entidades::Obstaculos::Fogo* fogo;
 		virtual void inicializaElementos();
 		Memoria memoria;
+		sf::Text texto;
+		sf::Event evento;
+		sf::Font pontuacaoFonte;
+		sf::Texture pontuacaoTela;
 	public:
 		Fase();
 		~Fase();
