@@ -1,6 +1,6 @@
 #include "Fogo.h"
 
-Fogo::Fogo() : labareda(0.5)
+Entidades::Obstaculos::Fogo::Fogo() : labareda(0.5)
 {
 	if (!texture.loadFromFile("assets/Obstaculos/Floresta/fogo2.png"))
 	{
@@ -11,22 +11,22 @@ Fogo::Fogo() : labareda(0.5)
 	sprite.setPosition(sf::Vector2f(700.f, 450.f));
 	danoso = true;
 }
-Fogo::~Fogo()
+Entidades::Obstaculos::Fogo::~Fogo()
 {
 
 }
-void Fogo::executar(float deltaTempo)
+void Entidades::Obstaculos::Fogo::executar(const float deltaTempo)
 {
 	gravidade(deltaTempo);
 	imprimirSe();
 	flutua(deltaTempo);
 	labareda += 0.001;
 }
-int Fogo::getTipo()
+const float Entidades::Obstaculos::Fogo::getTipo()
 {
 	return labareda;
 }
-void Fogo::danificar(Jogador* jog)
+void Entidades::Obstaculos::Fogo::danificar(Entidades::Personagens::Jogador* jog)
 {
 	labareda = labareda + 0.5f;
 	sprite.setScale(sf::Vector2f(labareda, 0.40));

@@ -1,23 +1,23 @@
 #include "Fase.h"
 
-Fase::Fase():Ente()
+Fases::Fase::Fase():Ente()
 {
 }
-Fase::~Fase()
+Fases::Fase::~Fase()
 {
 }
-void Fase::inicializaElementos()
+void Fases::Fase::inicializaElementos()
 {
 }
-ListaEntidades* Fase::getListaEntidades()
+Listas::ListaEntidades* Fases::Fase::getListaEntidades()
 {
 	return listaEntidades;
 }
-void Fase::executar()
+void Fases::Fase::executar()
 {
 
 }
-void Fase::setPontos()
+void Fases::Fase::setPontos()
 {
 	memoria.lerArquivo();
 	string nome;

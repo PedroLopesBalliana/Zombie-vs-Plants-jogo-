@@ -1,6 +1,6 @@
 #include "Masmorra.h"
 
-Masmorra::Masmorra(Jogador* j1, Jogador* j2, Gerenciadores::GerenciadorGrafico* GE): Fase()
+Fases::Masmorra::Masmorra(Entidades::Personagens::Jogador* j1, Entidades::Personagens::Jogador* j2, Gerenciadores::GerenciadorGrafico* GE): Fase()
 {
 	if (!texture.loadFromFile("assets/Bloco_Texturas/Dungeon/Fornalha.png"))
 	{
@@ -13,80 +13,80 @@ Masmorra::Masmorra(Jogador* j1, Jogador* j2, Gerenciadores::GerenciadorGrafico* 
 	Ente::setGerenciadorGrafico(geren_graf);
 	this->j1 = j1;
 	this->j2 = j2;
-	listaEntidades = new ListaEntidades();
+	listaEntidades = new Listas::ListaEntidades();
 	srand(time(NULL));
 	inicializaElementos();
 	executar();
 }
-Masmorra::~Masmorra()
+Fases::Masmorra::~Masmorra()
 {
 
 }
-void Masmorra::inicializaPedra()
+void Fases::Masmorra::inicializaPedra()
 {
 	for (int i = 0; i <= 20; i++)
 	{
-		pe = new Pedra();
+		pe = new Entidades::Obstaculos::Pedra();
 		pe->setPosi((float)i * (50), 750.f);
 		listaEntidades->LEs.push(pe);
 		gerenciadorColisoes.pushObstaculo(pe);
 	}
 
-	pe = new Pedra();
+	pe = new Entidades::Obstaculos::Pedra();
 	pe->scaleSprite(1.f, 0.5f);
 	pe->setPosi(0.f, 200.f);
 	listaEntidades->LEs.push(pe);
 	gerenciadorColisoes.pushObstaculo(pe);
 
-	pe = new Pedra();
+	pe = new Entidades::Obstaculos::Pedra();
 	pe->scaleSprite(1.f, 0.5f);
 	pe->setPosi(900.f, 200.f);
 	listaEntidades->LEs.push(pe);
 	gerenciadorColisoes.pushObstaculo(pe);
 
-	pe = new Pedra();
+	pe = new Entidades::Obstaculos::Pedra();
 	pe->scaleSprite(1.5f, 0.5f);
 	pe->setPosi(0.f, 350.f);
 	listaEntidades->LEs.push(pe);
 	gerenciadorColisoes.pushObstaculo(pe);
 
-	pe = new Pedra();
+	pe = new Entidades::Obstaculos::Pedra();
 	pe->scaleSprite(1.5f, 0.5f);
 	pe->setPosi(850.f, 350.f);
 	listaEntidades->LEs.push(pe);
 	gerenciadorColisoes.pushObstaculo(pe);
 
-	pe = new Pedra();
+	pe = new Entidades::Obstaculos::Pedra();
 	pe->scaleSprite(2.0f, 0.5f);
 	pe->setPosi(0.f, 500.f);
 	listaEntidades->LEs.push(pe);
 	gerenciadorColisoes.pushObstaculo(pe);
 
-	pe = new Pedra();
+	pe = new Entidades::Obstaculos::Pedra();
 	pe->scaleSprite(2.0f, 0.5f);
 	pe->setPosi(800.f, 500.f);
 	listaEntidades->LEs.push(pe);
 	gerenciadorColisoes.pushObstaculo(pe);
 
-	pe = new Pedra();
+	pe = new Entidades::Obstaculos::Pedra();
 	pe->scaleSprite(2.5f, 0.5f);
 	pe->setPosi(0.f, 650.f);
 	listaEntidades->LEs.push(pe);
 	gerenciadorColisoes.pushObstaculo(pe);
 
-	pe = new Pedra();
+	pe = new Entidades::Obstaculos::Pedra();
 	pe->scaleSprite(2.5f, 0.5f);
 	pe->setPosi(750.f, 650.f);
 	listaEntidades->LEs.push(pe);
 	gerenciadorColisoes.pushObstaculo(pe);
 
-	pe = new Pedra();
+	pe = new Entidades::Obstaculos::Pedra();
 	pe->scaleSprite(3.f, 0.5f);
 	pe->setPosi(0.f, 800.f);
 	listaEntidades->LEs.push(pe);
 	gerenciadorColisoes.pushObstaculo(pe);
 
-	pe = new Pedra();
+	pe = new Entidades::Obstaculos::Pedra();
 	pe->scaleSprite(3.f, 0.5f);
 	pe->setPosi(700.f, 800.f);
 	listaEntidades->LEs.push(pe);
@@ -94,13 +94,13 @@ void Masmorra::inicializaPedra()
 
 	if (rand() % 2)
 	{
-		pe = new Pedra();
+		pe = new Entidades::Obstaculos::Pedra();
 		pe->scaleSprite(2.f, 0.3f);
 		pe->setPosi(200.f, 125.f);
 		listaEntidades->LEs.push(pe);
 		gerenciadorColisoes.pushObstaculo(pe);
 
-		pe = new Pedra();
+		pe = new Entidades::Obstaculos::Pedra();
 		pe->scaleSprite(2.f, 0.3f);
 		pe->setPosi(550.f, 125.f);
 		listaEntidades->LEs.push(pe);
@@ -108,19 +108,19 @@ void Masmorra::inicializaPedra()
 	}
 	else
 	{
-		pe = new Pedra();
+		pe = new Entidades::Obstaculos::Pedra();
 		pe->scaleSprite(1.f, 0.3f);
 		pe->setPosi(200.f, 125.f);
 		listaEntidades->LEs.push(pe);
 		gerenciadorColisoes.pushObstaculo(pe);
 
-		pe = new Pedra();
+		pe = new Entidades::Obstaculos::Pedra();
 		pe->scaleSprite(1.f, 0.3f);
 		pe->setPosi(400.f, 125.f);
 		listaEntidades->LEs.push(pe);
 		gerenciadorColisoes.pushObstaculo(pe);
 
-		pe = new Pedra();
+		pe = new Entidades::Obstaculos::Pedra();
 		pe->scaleSprite(1.f, 0.3f);
 		pe->setPosi(600.f, 125.f);
 		listaEntidades->LEs.push(pe);
@@ -128,22 +128,21 @@ void Masmorra::inicializaPedra()
 	}
 }
 
-void Masmorra::inicializaElementos()
+void Fases::Masmorra::inicializaElementos()
 {
 	listaEntidades->LEs.push(j1);
-	j2->setMovimento(false);
 	listaEntidades->LEs.push(j2);
 	inicializaPedra();
 	inicializaArvore();
 	inicializaAtirador();
 	inicializaFogo();
 }
-void Masmorra::inicializaAtirador()
+void Fases::Masmorra::inicializaAtirador()
 {
 	for (int i = 1; i < 4; i++)
 	{
-		ati = new Atirador();
-		pr = new Projetil();
+		ati = new Entidades::Personagens::Atirador();
+		pr = new Entidades::Projetil();
 		ati->setProjetil(pr);
 		ati->setTipo(1);
 		ati->setPosi(100.f + (300.f * i), 20.f);
@@ -153,8 +152,8 @@ void Masmorra::inicializaAtirador()
 
 		if (rand() % 2)
 		{
-			ati = new Atirador();
-			pr = new Projetil();
+			ati = new Entidades::Personagens::Atirador();
+			pr = new Entidades::Projetil();
 			ati->setProjetil(pr);
 			ati->setTipo(1);
 			ati->setPosi((200.f * i), 20.f);
@@ -164,45 +163,45 @@ void Masmorra::inicializaAtirador()
 		}
 	}
 }
-void Masmorra::inicializaFogo()
+void Fases::Masmorra::inicializaFogo()
 {
-	fogo = new Fogo();
+	fogo = new Entidades::Obstaculos::Fogo();
 	fogo->setPosi(800.f - (rand() % 2) * 650.f, 600.f);
 	listaEntidades->LEs.push(fogo);
 	gerenciadorColisoes.pushObstaculo(fogo);
 
-	fogo = new Fogo();
+	fogo = new Entidades::Obstaculos::Fogo();
 	fogo->setPosi(850.f - (rand() % 2) * 750.f, 450.f);
 	listaEntidades->LEs.push(fogo);
 	gerenciadorColisoes.pushObstaculo(fogo);
 
-	fogo = new Fogo();
+	fogo = new Entidades::Obstaculos::Fogo();
 	fogo->setPosi(900.f - (rand() % 2) * 850.f, 300.f);
 	listaEntidades->LEs.push(fogo);
 	gerenciadorColisoes.pushObstaculo(fogo);
 
-	fogo = new Fogo();
+	fogo = new Entidades::Obstaculos::Fogo();
 	fogo->setPosi(950.f - (rand() % 2) * 950.f, 150.f);
 	listaEntidades->LEs.push(fogo);
 	gerenciadorColisoes.pushObstaculo(fogo);
 }
-void Masmorra::inicializaArvore()
+void Fases::Masmorra::inicializaArvore()
 {
 	for (int i = 0; i < (rand() % 2) + 3; i++)
 	{
-		arvore = new Arvore();
-		maca = new Projetil();
+		arvore = new Entidades::Personagens::Arvore();
+		maca = new Entidades::Projetil();
 		maca->setMaca();
 		arvore->setPosi(300.f + (150.f * i), 325.f);
 		arvore->setProjetil(maca);
 		listaEntidades->LEs.push(maca);
 		gerenciadorColisoes.pushProjetil(maca);
-		arvore->setLimites(200.f, 800.f);
-		listaEntidades->LEs.push(static_cast<Entidade*>(arvore));
-		gerenciadorColisoes.pushInimigo(static_cast<Inimigo*>(arvore));
+		arvore->setLimites(300.f, 700.f);
+		listaEntidades->LEs.push(static_cast<Entidades::Entidade*>(arvore));
+		gerenciadorColisoes.pushInimigo(static_cast<Entidades::Personagens::Inimigo*>(arvore));
 	}
 }
-void Masmorra::executar()
+void Fases::Masmorra::executar()
 {
 	float deltaTempo = 0.0f;
 	sf::Clock clock;
@@ -224,7 +223,7 @@ void Masmorra::executar()
 		gerenciadorColisoes.percorrer();
 		listaEntidades->percorrerSe(deltaTempo);
 		geren_graf->displayJanela();
-		if (Inimigo::getQuant() == 0)
+		if (Entidades::Personagens::Inimigo::getQuant() == 0)
 		{
 			setPontos();
 			geren_graf->getWindow()->close();

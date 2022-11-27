@@ -1,6 +1,6 @@
 #include "Grama.h"
 
-Grama::Grama(): aderencia(0)
+Entidades::Obstaculos::Grama::Grama(): aderencia(0)
 {
 	if (!texture.loadFromFile("assets/Bloco_Texturas/Floresta/Grama3.png"))
 	{
@@ -11,21 +11,21 @@ Grama::Grama(): aderencia(0)
 	sprite.setPosition(sf::Vector2f(300.f, 100.f));
 
 }
-Grama::~Grama()
+Entidades::Obstaculos::Grama::~Grama()
 {
 }
-void Grama::executar(float deltaTempo)
+void Entidades::Obstaculos::Grama::executar(const float deltaTempo)
 {
 	gravidade(deltaTempo);
 	imprimirSe();
 	flutua(deltaTempo);
 	aderencia += 0.001;
 }
-int Grama::getTipo()
+const float Entidades::Obstaculos::Grama::getTipo()
 {
 	return aderencia;
 }
-void Grama::danificar(Jogador* jog)
+void Entidades::Obstaculos::Grama::danificar(Entidades::Personagens::Jogador* jog)
 {
 	aderencia++;
 	jog->setSpeed(aderencia);

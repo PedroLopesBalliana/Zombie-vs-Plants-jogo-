@@ -1,31 +1,28 @@
 #include "Obstaculo.h"
 
-Obstaculo::Obstaculo(): danoso(false)
+
+Entidades::Obstaculos::Obstaculo::Obstaculo(): danoso(false)
 {
 	
 }
-Obstaculo::~Obstaculo()
+Entidades::Obstaculos::Obstaculo::~Obstaculo()
 {
 }
-void Obstaculo::flutua(float deltaTempo)
+void Entidades::Obstaculos::Obstaculo::flutua(float deltaTempo)
 {
 	velocidadeV.y -= 981.0f * deltaTempo;
 }
-void Obstaculo::executar(float deltaTempo)
+void Entidades::Obstaculos::Obstaculo::executar(float deltaTempo)
 {
 	gravidade(deltaTempo);
 	imprimirSe();
 	flutua(deltaTempo);
 }
-bool Obstaculo::getDanoso()
+bool Entidades::Obstaculos::Obstaculo::getDanoso()
 {
 	return danoso;
 }
-int Obstaculo::getTipo()
+const float Entidades::Obstaculos::Obstaculo::getTipo()
 {
 	return 1;
-}
-void Obstaculo::danificar(Jogador* jog)
-{
-
 }

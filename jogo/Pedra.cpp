@@ -1,7 +1,7 @@
 #pragma once
 #include "Pedra.h"
 
-Pedra::Pedra()
+Entidades::Obstaculos::Pedra::Pedra()
 {
 	if (!texture.loadFromFile("assets/Bloco_Texturas/Dungeon/Pedra2.png"))
 	{
@@ -14,11 +14,11 @@ Pedra::Pedra()
 	sprite.setTexture(texture);
 	sprite.scale(0.2f, 0.2f);
 }
-Pedra::~Pedra()
+Entidades::Obstaculos::Pedra::~Pedra()
 {
 
 }
-void Pedra::executar(float deltaTempo)
+void Entidades::Obstaculos::Pedra::executar(const float deltaTempo)
 {
 	gravidade(deltaTempo);
 	imprimirSe();
@@ -34,15 +34,15 @@ void Pedra::executar(float deltaTempo)
 		danoso = false;
 	}
 }
-int Pedra::getTipo()
+const float Entidades::Obstaculos::Pedra::getTipo()
 {
 	return envenenado;
 }
-void Pedra::setVeneno(bool ven)
+void Entidades::Obstaculos::Pedra::setVeneno(bool ven)
 {
 	envenenado = ven;
 }
-void Pedra::danificar(Jogador* jog)
+void Entidades::Obstaculos::Pedra::danificar(Entidades::Personagens::Jogador* jog)
 {
 	if (danoso)
 	{
@@ -50,4 +50,4 @@ void Pedra::danificar(Jogador* jog)
 		jog->corrigir(10.f, 0.f);
 	}
 }
-bool Pedra::envenenado = false;
+bool Entidades::Obstaculos::Pedra::envenenado = false;

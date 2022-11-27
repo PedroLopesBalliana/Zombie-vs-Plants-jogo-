@@ -2,21 +2,28 @@
 #include "Personagem.h"
 #include "Projetil.h"
 #include "Jogador.h"
-class Inimigo : public Personagem
+
+namespace Entidades
 {
-private:
-protected:
-	static int quant;
-	bool goingUp;
-	int tipo;
-public:
-	Inimigo();
-	~Inimigo();
-	virtual void flutua();
-	virtual void executar(float deltaTempo);
-	virtual void mover(int tipo);
-	void setTipo(int ti);
-	static int getQuant();
-	void operator--();
-	virtual void danificar(Jogador* jog);
-};
+	namespace Personagens
+	{
+		class Inimigo : public Personagem
+		{
+		private:
+		protected:
+			static int quant;
+			bool goingUp;
+			int tipo;
+		public:
+			Inimigo();
+			~Inimigo();
+			virtual void flutua();
+			virtual void executar(const float deltaTempo);
+			virtual void mover();
+			void setTipo(int ti);
+			static int getQuant();
+			void operator--();
+			virtual void danificar(Jogador* jog) = 0;
+	};
+}	
+}

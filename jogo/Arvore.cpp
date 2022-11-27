@@ -1,7 +1,7 @@
 #pragma once
 #include "Arvore.h"
 
-Arvore::Arvore() : Inimigo(), Bulbassauro(), Atirador()
+Entidades::Personagens::Arvore::Arvore() : Inimigo(), Bulbassauro(), Atirador()
 {
 	if (!texture.loadFromFile("assets/Inimigos/Arvoreee.png"))
 	{
@@ -20,15 +20,15 @@ Arvore::Arvore() : Inimigo(), Bulbassauro(), Atirador()
 	Personagem::num_vidas = 1;
 	raiva = 1;
 }
-Arvore::~Arvore()
+Entidades::Personagens::Arvore::~Arvore()
 {
 
 }
-void Arvore::pular()
+void Entidades::Personagens::Arvore::pular()
 {
 	Entidade::velocidadeV.y = -sqrtf(2.0f * gravid * (raiva * 100.0f));
 }
-void Arvore::mover()
+void Entidades::Personagens::Arvore::mover()
 {
 	if (sprite.getPosition().x < limEsq && !Personagem::facingLeft)
 	{
@@ -52,7 +52,7 @@ void Arvore::mover()
 	}
 
 }
-void Arvore::executar(float deltaTempo)
+void Entidades::Personagens::Arvore::executar(const float deltaTempo)
 {
 	if (Personagem::num_vidas > 0)
 	{
@@ -60,7 +60,7 @@ void Arvore::executar(float deltaTempo)
 		float centroX, centroY;
 		sf::Vector2f posi;
 		Entidade::gravidade(deltaTempo);
-		bossImprimirSe();
+		imprimirSe();
 		mover();
 		sprite.move(Entidade::velocidadeV * 0.01f);
 		aux = rand() % 500;
@@ -86,13 +86,13 @@ void Arvore::executar(float deltaTempo)
 		if (charge == 500)
 		{
 			sprite.setTexture(envenenar);
-			Pedra::setVeneno(true);
+			Entidades::Obstaculos::Pedra::setVeneno(true);
 			charge = 0;
 		}
 		if (charge == 100)
 		{
 			sprite.setTexture(texture);
-			Pedra::setVeneno(false);
+			Entidades::Obstaculos::Pedra::setVeneno(false);
 		}
 	}
 	else
@@ -102,12 +102,12 @@ void Arvore::executar(float deltaTempo)
 	}
 }
 
-void Arvore::operator--()
+void Entidades::Personagens::Arvore::operator--()
 {
 	if (quant > 4)
 	{
 		sprite.setTexture(envenenar);
-		Pedra::setVeneno(true);
+		Entidades::Obstaculos::Pedra::setVeneno(true);
 	}
 	else
 	{
@@ -115,11 +115,7 @@ void Arvore::operator--()
 		quant--;
 	}
 }
-void Arvore::bossImprimirSe()
-{
-	geren_graf->desenharEntidades(sprite);
-}
-void Arvore::danificar(Jogador* jog)
+void Entidades::Personagens::Arvore::danificar(Jogador* jog)
 {
 		jog->operator--(10);
 	if (jog->getSentido())

@@ -1,15 +1,18 @@
 #include "Obstaculo.h"
-
-class Fogo : public Obstaculo
+namespace Entidades
 {
-private:
-	float labareda;
-public:
-	Fogo();
-	~Fogo();
-	void executar(float deltaTempo);
-	int getTipo();
-	void danificar(Jogador* jog);
-
-
-};
+	namespace Obstaculos
+	{
+		class Fogo : public Obstaculo
+		{
+		private:
+			float labareda;
+		public:
+			Fogo();
+			~Fogo();
+			void executar(const float deltaTempo);
+			const float getTipo();
+			void danificar(Entidades::Personagens::Jogador* jog);
+		};
+	}
+}
