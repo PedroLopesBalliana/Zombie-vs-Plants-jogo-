@@ -6,6 +6,55 @@ Gerenciadores::GerenciadorColisoes::GerenciadorColisoes() : jogador(NULL)
 }
 Gerenciadores::GerenciadorColisoes::~GerenciadorColisoes()
 {
+	std::vector<Entidades::Personagens::Inimigo*>::iterator it;
+	std::list<Entidades::Projetil*>::iterator it2;
+	std::list<Entidades::Obstaculos::Obstaculo*>::iterator it3;
+
+	Entidades::Personagens::Inimigo* pAux;
+	LIs.pop_back();
+	it = LIs.begin();
+	while (it != LIs.end())
+	{
+		pAux = *it;
+		if (pAux != NULL)
+		{
+			delete pAux;
+		}
+		pAux = NULL;
+		it++;
+	}
+	LIs.clear();
+
+	Entidades::Obstaculos::Obstaculo*  pAux2;
+	LOs.pop_back();
+	it3 = LOs.begin();
+	while (it3 != LOs.end())
+	{
+		pAux2 = *it3;
+		if (pAux2 != NULL)
+		{
+			delete pAux2;
+		}
+		pAux2 = NULL;
+		it3++;
+	}
+	LOs.clear();
+
+	Entidades::Projetil* pAux3;
+	LPs.pop_back();
+	it2 = LPs.begin();
+	while (it2 != LPs.end())
+	{
+		pAux3 = *it2;
+		if (pAux3 != NULL)
+		{
+			delete pAux3;
+		}
+		pAux3 = NULL;
+		it2++;
+	}
+	LPs.clear();
+
 
 }
 std::vector<Entidades::Personagens::Inimigo*> Gerenciadores::GerenciadorColisoes::getLIs()
