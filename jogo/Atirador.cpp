@@ -1,7 +1,7 @@
 #pragma once
 #include "Atirador.h"
 
-Atirador::Atirador(): Inimigo()
+Entidades::Personagens::Atirador::Atirador(): Inimigo()
 {
 	if (!texture.loadFromFile("assets/Inimigos/AtiradorSprite.png"))
 	{
@@ -11,11 +11,11 @@ Atirador::Atirador(): Inimigo()
 	sprite.scale(sf::Vector2f(1, 1));
 	sprite.setPosition(sf::Vector2f(200.f, 150.f));
 }
-Atirador::~Atirador()
+Entidades::Personagens::Atirador::~Atirador()
 {
 
 }
-void Atirador::executar(float deltaTempo)
+void Entidades::Personagens::Atirador::executar(const float deltaTempo)
 {
 	if (num_vidas > 0)
 	{
@@ -45,7 +45,7 @@ void Atirador::executar(float deltaTempo)
 		tiro->executar(deltaTempo, sprite.getPosition());
 	}
 }
-void Atirador::mover()
+void Entidades::Personagens::Atirador::mover()
 {
 	if (tipo == 1)
 	{
@@ -92,11 +92,11 @@ void Atirador::mover()
 			sprite.move(sf::Vector2f(0.f, -1.5f));
 	}
 }
-void Atirador::setProjetil(Projetil* pr)
+void Entidades::Personagens::Atirador::setProjetil(Projetil* pr)
 {
 	tiro = pr;
 }
-void Atirador::danificar(Jogador* jog)
+void Entidades::Personagens::Atirador::danificar(Jogador* jog)
 {
 	jog->operator--();
 	if (jog->getSentido())

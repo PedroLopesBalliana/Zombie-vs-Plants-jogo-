@@ -2,16 +2,22 @@
 #include "Entidade.h"
 #include <windows.h>
 
-class Personagem :public Entidade
+namespace Entidades
 {
-protected:
-	bool facingLeft;
-	int num_vidas;
-public:
-	Personagem();
-	~Personagem();
-	virtual void move(float deltaTime);
-	virtual void executar(float deltaTempo);
-	bool getSentido();
-	virtual void operator--();
-};
+	namespace Personagens
+	{
+		class Personagem :public Entidade
+		{
+		protected:
+			bool facingLeft;
+			int num_vidas;
+		public:
+			Personagem();
+			~Personagem();
+			virtual void move(float deltaTime);
+			virtual void executar(const float deltaTempo);
+			bool getSentido();
+			virtual void operator--();
+		};
+	}
+}

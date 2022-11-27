@@ -15,7 +15,7 @@ namespace Gerenciadores
 		GerenciadorGrafico* getGgr();
 		void limpaJanela();
 		void displayJanela();
-		bool pegarJanela();
+		const bool pegarJanela();
 	};
 }
 

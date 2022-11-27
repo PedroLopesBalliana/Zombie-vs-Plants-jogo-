@@ -2,20 +2,23 @@
 #include "Fase.h"
 #include "Pedra.h"
 #include "Arvore.h"
-
-class Masmorra : public Fase
+namespace Fases
 {
-private:
-	Pedra* pe;
-	Arvore* arvore;
-	Projetil* maca;
-public:
-	Masmorra(Jogador* j1, Jogador* j2, Gerenciadores::GerenciadorGrafico* GE);
-	~Masmorra();
-	void inicializaAtirador();
-	void inicializaFogo();
-	void inicializaArvore();
-	void inicializaPedra();
-	void inicializaElementos();
-	void executar();
-};
+
+	class Masmorra : public Fase
+	{
+	private:
+		Entidades::Obstaculos::Pedra* pe;
+		Entidades::Personagens::Arvore* arvore;
+		Entidades::Projetil* maca;
+	public:
+		Masmorra(Entidades::Personagens::Jogador* j1, Entidades::Personagens::Jogador* j2, Gerenciadores::GerenciadorGrafico* GE);
+		~Masmorra();
+		void inicializaAtirador();
+		void inicializaFogo();
+		void inicializaArvore();
+		void inicializaPedra();
+		void inicializaElementos();
+		void executar();
+	};
+}

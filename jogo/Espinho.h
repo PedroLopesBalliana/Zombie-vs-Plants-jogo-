@@ -1,14 +1,21 @@
 #pragma once
 #include "Obstaculo.h"
 
-class Espinho : public Obstaculo
+
+namespace Entidades
 {
-private:
-	int ferrao;
-public:
-	Espinho();
-	~Espinho();
-	void executar(float deltaTempo);
-	int getTipo();
-	void danificar(Jogador* jog);
-};
+	namespace Obstaculos
+	{
+		class Espinho : public Obstaculo
+		{
+		private:
+			float ferrao;
+		public:
+			Espinho();
+			~Espinho();
+			void executar(const float deltaTempo);
+			const float getTipo();
+			void danificar(Entidades::Personagens::Jogador* jog);
+		};
+	}
+}

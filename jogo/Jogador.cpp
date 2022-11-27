@@ -1,7 +1,6 @@
 #include "Jogador.h"
-Jogador::Jogador() :Personagem(), pulou(false), 
-charge(50), atacando(false), movimento(true),
-pontos(0)
+Entidades::Personagens::Jogador::Jogador() :Personagem(), pulou(false),
+charge(50), atacando(false), movimento(true), pontos(0)
 {
 	if (!texture.loadFromFile("assets/Zumbi_Jogador/zombieSprite.png"))
 	{
@@ -18,10 +17,28 @@ pontos(0)
 	velocidade = 300.f;
 	num_vidas = 100;
 }
-Jogador::~Jogador()
+Entidades::Personagens::Jogador::Jogador(bool movi) :Personagem(), pulou(false),
+charge(50), atacando(false), movimento(false), pontos(0)
+{
+	if (!texture.loadFromFile("assets/Zumbi_Jogador/zombieSprite.png"))
+	{
+		std::cout << "falhou a textura :(" << std::endl;
+	}
+	if (!ataque.loadFromFile("assets/Zumbi_Jogador/zombieattack.png"))
+	{
+		std::cout << "falhou a textura :(" << std::endl;
+	}
+	sprite.setTexture(texture);
+	sprite.scale(sf::Vector2f(1, 1));
+	sprite.setPosition(sf::Vector2f(100.f, 700.f));
+	facingLeft = true;
+	velocidade = 300.f;
+	num_vidas = 100;
+}
+Entidades::Personagens::Jogador::~Jogador()
 {
 }
-void Jogador::move(float deltaTempo)
+void Entidades::Personagens::Jogador::move(float deltaTempo)
 {
 	velocidadeV.x = 0.5f;
 	if (movimento)
@@ -94,13 +111,13 @@ void Jogador::move(float deltaTempo)
 
 	sprite.move(velocidadeV * deltaTempo);
 }
-void Jogador::corrigir(float height, float side)
+void Entidades::Personagens::Jogador::corrigir(float height, float side)
 {
 	sprite.move(sf::Vector2f(side, -height ));
 	velocidadeV.y = 0.f;
 	pulou = false;
 }
-void Jogador::executar(float deltaTempo)
+void Entidades::Personagens::Jogador::executar(const float deltaTempo)
 {
 	if (num_vidas > 0)
 	{
@@ -122,38 +139,34 @@ void Jogador::executar(float deltaTempo)
 		setPosi(1000.f, 1000.f);
 	}
 }
-void Jogador::atacar()
+void Entidades::Personagens::Jogador::atacar()
 {
 	sprite.setTexture(ataque);
 	atacando = true;
 	charge = 0;
 }
-bool Jogador::getAtacando()
+const bool Entidades::Personagens::Jogador::getAtacando() const
 {
 	return atacando;
 }
-void Jogador::setMovimento(bool mov)
-{
-	movimento = mov;
-}
-float Jogador::getPontuacao()
+const float Entidades::Personagens::Jogador::getPontuacao() const
 {
 	return pontos;
 }
-void Jogador::incrementaPontos()
+void Entidades::Personagens::Jogador::incrementaPontos()
 {
 	pontos += 1000.f;
 }
-int Jogador::getNumVidas()
+const int Entidades::Personagens::Jogador::getNumVidas() const
 {
 	return num_vidas;
 }
-void Jogador::operator--()
+void Entidades::Personagens::Jogador::operator--()
 {
 	num_vidas--;
 	printf("vida restante: %d \n", num_vidas);
 }
-void Jogador::operator--(int dan)
+void Entidades::Personagens::Jogador::operator--(int dan)
 {
 	for (int i = 0; i < dan; i++)
 	{

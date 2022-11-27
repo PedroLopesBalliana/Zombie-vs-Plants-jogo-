@@ -40,10 +40,10 @@ private:
 	Botao botaoFase1;
 	Botao botaoFase2;
 	Botao botaoRanking;
-	Jogador *jogador1;
-	Jogador* jogador2;
-	Floresta* fase1;
-	Masmorra* fase2;
+	Entidades::Personagens::Jogador *jogador1;
+	Entidades::Personagens::Jogador* jogador2;
+	Fases::Floresta* fase1;
+	Fases::Masmorra* fase2;
 	bool rankBool;
 public:
 	Menu(Gerenciadores::GerenciadorGrafico* ge);

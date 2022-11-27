@@ -1,16 +1,23 @@
 #pragma once
 #include "Entidade.h"
 #include "Jogador.h"
-class Obstaculo : public Entidade
+
+namespace Entidades
 {
-protected:
-	bool danoso;
-public:
-	Obstaculo();
-	~Obstaculo();
-	virtual void flutua(float deltaTempo);
-	virtual void executar(float deltaTempo);
-	virtual bool getDanoso();
-	virtual int getTipo();
-	virtual void danificar(Jogador* jog);
-};
+	namespace Obstaculos
+	{
+		class Obstaculo : public Entidade
+		{
+		protected:
+			bool danoso;
+		public:
+			Obstaculo();
+			~Obstaculo();
+			virtual void flutua(float deltaTempo);
+			virtual void executar(const float deltaTempo);
+			virtual bool getDanoso();
+			virtual const float getTipo();
+			virtual void danificar(Entidades::Personagens::Jogador* jog) = 0;
+		};
+	}
+}

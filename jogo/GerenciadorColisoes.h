@@ -10,28 +10,28 @@ namespace Gerenciadores
 	class GerenciadorColisoes
 	{
 	private:
-		std::vector<Inimigo*> LIs;
-		std::list<Obstaculo*> LOs;
-		std::list<Projetil*> LPs;
-		Jogador* jogador;
+		std::vector<Entidades::Personagens::Inimigo*> LIs;
+		std::list<Entidades::Obstaculos::Obstaculo*> LOs;
+		std::list<Entidades::Projetil*> LPs;
+		Entidades::Personagens::Jogador* jogador;
 		sf::FloatRect sect;
 
 	public:
 		GerenciadorColisoes();
 		~GerenciadorColisoes();
-		std::vector<Inimigo*> getLIs();
-		std::list<Obstaculo*> getLOs();
-		std::list<Projetil*> getLPs();
-		void setJogador(Jogador* jog);
-		void checaColisao(Obstaculo* ob);
-		void checaColisaoInimigo(Inimigo* ob);
-		void checaColisaoProjetil(Projetil* ob);
+		std::vector<Entidades::Personagens::Inimigo*> getLIs();
+		std::list<Entidades::Obstaculos::Obstaculo*> getLOs();
+		std::list<Entidades::Projetil*> getLPs();
+		void setJogador(Entidades::Personagens::Jogador* jog);
+		void checaColisao(Entidades::Obstaculos::Obstaculo* ob);
+		void checaColisaoInimigo(Entidades::Personagens::Inimigo* ob);
+		void checaColisaoProjetil(Entidades::Projetil* ob);
 		void percorrer();
 		void percorrerObstaculo();
 		void percorrerInimigo();
 		void percorrerProjetil();
-		void pushObstaculo(Obstaculo* ob);
-		void pushInimigo(Inimigo* in);
-		void pushProjetil(Projetil* pr);
+		void pushObstaculo(Entidades::Obstaculos::Obstaculo* ob);
+		void pushInimigo(Entidades::Personagens::Inimigo* in);
+		void pushProjetil(Entidades::Projetil* pr);
 	};
 }

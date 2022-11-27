@@ -1,5 +1,5 @@
 #include "Espinho.h"
-Espinho::Espinho()
+Entidades::Obstaculos::Espinho::Espinho()
 {
 	danoso = true;
 	if (!texture.loadFromFile("assets/Obstaculos/Floresta/espinhos.png"))
@@ -9,24 +9,24 @@ Espinho::Espinho()
 	sprite.setTexture(texture);
 	sprite.scale(sf::Vector2f(0.5, 0.40));
 	sprite.setPosition(sf::Vector2f(300.f, 100.f));
-	ferrao = 2;
+	ferrao = 2.0;
 }
-Espinho::~Espinho()
+Entidades::Obstaculos::Espinho::~Espinho()
 {
 
 }
-void Espinho::executar(float deltaTempo)
+void Entidades::Obstaculos::Espinho::executar(const float deltaTempo)
 {
 	gravidade(deltaTempo);
 	imprimirSe();
 	flutua(deltaTempo);
 	ferrao += 0.001;
 }
-int Espinho::getTipo()
+const float Entidades::Obstaculos::Espinho::getTipo()
 {
 	return ferrao;
 }
-void Espinho::danificar(Jogador* jog)
+void Entidades::Obstaculos::Espinho::danificar(Entidades::Personagens::Jogador* jog)
 {
 	ferrao++;
 	jog->operator--(ferrao);

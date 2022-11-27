@@ -1,14 +1,19 @@
 #pragma once
 #include "Obstaculo.h"
-
-class Grama : public Obstaculo
+namespace Entidades
 {
-private:
-	int aderencia;
-public:
-	Grama();
-	~Grama();
-	void executar(float deltaTempo);
-	int getTipo();
-	void danificar(Jogador* jog);
-};
+	namespace Obstaculos
+	{
+		class Grama : public Obstaculo
+		{
+		private:
+			float aderencia;
+		public:
+			Grama();
+			~Grama();
+			void executar(const float deltaTempo);
+			const float getTipo();
+			void danificar(Entidades::Personagens::Jogador* jog);
+		};
+	}
+}

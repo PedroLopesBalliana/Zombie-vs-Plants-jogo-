@@ -1,6 +1,6 @@
 #include "Projetil.h"
 
-Projetil::Projetil()
+Entidades::Projetil::Projetil()
 {
 	if (!texture.loadFromFile("assets/Inimigos/projetil5.png"))
 	{
@@ -15,11 +15,11 @@ Projetil::Projetil()
 	sprite.setPosition(sf::Vector2f(700.f, 100.f));
 	velocidadeV.y = 50.0f;
 }
-Projetil::~Projetil()
+Entidades::Projetil::~Projetil()
 {
 
 }
-void Projetil::executar(float deltaTempo, sf::Vector2f posicao)
+void Entidades::Projetil::executar(const float deltaTempo, sf::Vector2f posicao)
 {
 	//sprite.setTexture(maca);
 	gravidade(deltaTempo);
@@ -32,16 +32,16 @@ void Projetil::executar(float deltaTempo, sf::Vector2f posicao)
 	sprite.move(velocidadeV * deltaTempo);
 	imprimirSe();
 }
-void Projetil::setForca(float f)
+void Entidades::Projetil::setForca(float f)
 {
 	forca = f;
 }
-void Projetil::setMaca()
+void Entidades::Projetil::setMaca()
 {
 	sprite.setTexture(maca);
 	sprite.setScale(sf::Vector2f(0.5, 0.5));
 }
-void Projetil::danificar(Jogador* jog)
+void Entidades::Projetil::danificar(Entidades::Personagens::Jogador* jog)
 {
 	jog->operator--();
 	if (jog->getSentido())

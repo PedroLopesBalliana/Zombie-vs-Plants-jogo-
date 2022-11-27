@@ -1,13 +1,16 @@
 #pragma once
 #include "Lista.h"
 #include "Entidade.h"
-class ListaEntidades
+namespace Listas
 {
-public:
-	Entidade* getEntidade(int p);
-	int getTam();
-	void percorrerSe(float deltaTempo );
-	Lista<Entidade> LEs;
-	ListaEntidades();
-	~ListaEntidades();
-};
+	class ListaEntidades
+	{
+	public:
+		Entidades::Entidade* getEntidade(int p);
+		int getTam();
+		void percorrerSe(float deltaTempo);
+		Listas::Lista<Entidades::Entidade> LEs;
+		ListaEntidades();
+		~ListaEntidades();
+	};
+}

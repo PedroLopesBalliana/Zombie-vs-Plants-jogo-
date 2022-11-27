@@ -1,27 +1,27 @@
 #include "ListaEntidades.h"
-ListaEntidades::ListaEntidades()
+Listas::ListaEntidades::ListaEntidades()
 {
 
 }
-ListaEntidades::~ListaEntidades()
+Listas::ListaEntidades::~ListaEntidades()
 {
 
 }
-void ListaEntidades::percorrerSe(float deltaTempo)
+void Listas::ListaEntidades::percorrerSe(float deltaTempo)
 {
 	for (int i = 0; i < getTam(); i++)
 	{
-		Entidade* temp = getEntidade(i);
+		Entidades::Entidade* temp = getEntidade(i);
 		temp->executar(deltaTempo);
 	}
 }
-int ListaEntidades::getTam()
+int Listas::ListaEntidades::getTam()
 {
 	return this->LEs.getLen();
 }
-Entidade* ListaEntidades::getEntidade(int p)
+Entidades::Entidade* Listas::ListaEntidades::getEntidade(int p)
 {
-	return static_cast<Entidade*>(this->LEs.getItem(p));
+	return static_cast<Entidades::Entidade*>(this->LEs.getItem(p));
 }
 
 

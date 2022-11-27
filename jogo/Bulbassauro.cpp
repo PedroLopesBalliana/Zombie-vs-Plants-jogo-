@@ -1,5 +1,5 @@
 #include "Bulbassauro.h"
-Bulbassauro::Bulbassauro(): Inimigo()
+Entidades::Personagens::Bulbassauro::Bulbassauro(): Inimigo()
 {
 	if (!texture.loadFromFile("assets/Inimigos/bublbassauroSprite.png"))
 	{
@@ -10,11 +10,11 @@ Bulbassauro::Bulbassauro(): Inimigo()
 	sprite.setPosition(sf::Vector2f(700.f, 685.f));
 	raiva = 1.0;
 }
-Bulbassauro::~Bulbassauro()
+Entidades::Personagens::Bulbassauro::~Bulbassauro()
 {
 
 }
-void Bulbassauro::executar(float deltaTempo)
+void Entidades::Personagens::Bulbassauro::executar(const float deltaTempo)
 {
 	if (num_vidas > 0)
 	{
@@ -28,7 +28,7 @@ void Bulbassauro::executar(float deltaTempo)
 		sprite.move(sf::Vector2f(1000, 1000));
 	}
 }
-void Bulbassauro::mover()
+void Entidades::Personagens::Bulbassauro::mover()
 {
 	if (sprite.getPosition().x < limEsq && !facingLeft)
 	{
@@ -46,12 +46,12 @@ void Bulbassauro::mover()
 		sprite.move(sf::Vector2f(3.0f * raiva, 0.f));
 }
 
-void Bulbassauro::setLimites(float esq, float dir)
+void Entidades::Personagens::Bulbassauro::setLimites(float esq, float dir)
 {
 	limEsq = esq;
 	limDir = dir;
 }
-void Bulbassauro::danificar(Jogador* jog)
+void Entidades::Personagens::Bulbassauro::danificar(Jogador* jog)
 {
 	raiva = raiva + 0.5f;
 	jog->operator--(3);

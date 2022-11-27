@@ -1,20 +1,23 @@
 #pragma once
 #include "Fase.h"
 #include "Masmorra.h"
-class Floresta : public Fase
+namespace Fases
 {
-private:
-	Grama* gr;
-	Espinho* esp;
-	Masmorra* fase2;
-public:
-	Floresta(Jogador* j1, Jogador* j2, Gerenciadores::GerenciadorGrafico* GE);
-	~Floresta();
-	void inicializaGrama();
-	void inicializaEspinhos();
-	void inicializaBulbassauro();
-	void inicializaAtirador();
-	void inicializaFogo();
-	void inicializaElementos();
-	void executar();
-};
+	class Floresta : public Fase
+	{
+	private:
+		Entidades::Obstaculos::Grama* gr;
+		Entidades::Obstaculos::Espinho* esp;
+		Masmorra* fase2;
+	public:
+		Floresta(Entidades::Personagens::Jogador* j1, Entidades::Personagens::Jogador* j2, Gerenciadores::GerenciadorGrafico* GE);
+		~Floresta();
+		void inicializaGrama();
+		void inicializaEspinhos();
+		void inicializaBulbassauro();
+		void inicializaAtirador();
+		void inicializaFogo();
+		void inicializaElementos();
+		void executar();
+	};
+}

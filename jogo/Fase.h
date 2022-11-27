@@ -13,24 +13,32 @@
 
 using namespace std;
 
-class Fase : public Ente
+namespace Fases
 {
-protected:
-	Gerenciadores::GerenciadorColisoes gerenciadorColisoes;
-	ListaEntidades *listaEntidades;
-	Atirador* ati;
-	Jogador* j1;
-	Jogador* j2;
-	Bulbassauro* bulb;
-	Projetil* pr;
-	map<string, float> pontuacoes;
-	Fogo* fogo;
-	virtual void inicializaElementos();
-	Memoria memoria;
-public:
-	Fase();
-	~Fase();
-	ListaEntidades* getListaEntidades();
-	void executar()=0;
-	void setPontos();
-};
+
+	class Fase : public Ente
+	{
+	protected:
+		Gerenciadores::GerenciadorColisoes gerenciadorColisoes;
+		Listas::ListaEntidades* listaEntidades;
+		Entidades::Personagens::Atirador* ati;
+		Entidades::Personagens::Jogador* j1;
+		Entidades::Personagens::Jogador* j2;
+		Entidades::Personagens::Bulbassauro* bulb;
+		Entidades::Projetil* pr;
+		map<string, float> pontuacoes;
+		Entidades::Obstaculos::Fogo* fogo;
+		virtual void inicializaElementos();
+		Memoria memoria;
+		sf::Text texto;
+		sf::Event evento;
+		sf::Font pontuacaoFonte;
+		sf::Texture pontuacaoTela;
+	public:
+		Fase();
+		~Fase();
+		Listas::ListaEntidades* getListaEntidades();
+		void executar() = 0;
+		void setPontos();
+	};
+}

@@ -61,9 +61,9 @@ void Menu::executar()
 		{
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{ 
-				jogador1 = new Jogador();
-				jogador2 = new Jogador();
-				fase1 = new Floresta(jogador1, jogador2, geren_graf);
+				jogador1 = new Entidades::Personagens::Jogador();
+				jogador2 = new Entidades::Personagens::Jogador(true);
+				fase1 = new Fases::Floresta(jogador1, jogador2, geren_graf);
 			}
 				
 		}
@@ -71,9 +71,9 @@ void Menu::executar()
 		{
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
-				jogador1 = new Jogador();
-				jogador2 = new Jogador();
-				fase2 = new Masmorra(jogador1, jogador2, geren_graf);
+				jogador1 = new Entidades::Personagens::Jogador();
+				jogador2 = new Entidades::Personagens::Jogador(true);
+				fase2 = new Fases::Masmorra(jogador1, jogador2, geren_graf);
 			}
 		}
 		if (botaoRanking.getRect().getGlobalBounds().contains(mouse_coord))

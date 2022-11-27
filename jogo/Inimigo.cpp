@@ -1,40 +1,36 @@
 #include "Inimigo.h"
-Inimigo::Inimigo(): Personagem(), goingUp(false), tipo(0)
+Entidades::Personagens::Inimigo::Inimigo(): Personagem(), goingUp(false), tipo(0)
 {
 	num_vidas = 1;
 	quant++;
 }
-Inimigo::~Inimigo()
+Entidades::Personagens::Inimigo::~Inimigo()
 {
 
 }
-void Inimigo::flutua()
+void Entidades::Personagens::Inimigo::flutua()
 {
 	sprite.move(sf::Vector2f(0.f, -0.15f));
 }
-void Inimigo::executar(float deltaTempo)
+void Entidades::Personagens::Inimigo::executar(const float deltaTempo)
 {
 	//flutua();
 }
-void Inimigo::mover(int tipo)
+void Entidades::Personagens::Inimigo::mover()
 {
 	
 }
-void Inimigo::setTipo(int ti)
+void Entidades::Personagens::Inimigo::setTipo(int ti)
 {
 	tipo = ti;
 }
-int Inimigo::getQuant()
+int Entidades::Personagens::Inimigo::getQuant()
 {
 	return quant;
 }
-void Inimigo::operator--()
+void Entidades::Personagens::Inimigo::operator--()
 {
 	num_vidas--;
 	quant--;
 }
-void Inimigo::danificar(Jogador* jog)
-{
-
-}
-int Inimigo::quant = 0;
+int Entidades::Personagens::Inimigo::quant = 0;

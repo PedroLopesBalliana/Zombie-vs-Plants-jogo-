@@ -35,7 +35,7 @@ void Gerenciadores::GerenciadorGrafico::displayJanela()
 {
 	window.display();
 }
-bool Gerenciadores::GerenciadorGrafico::pegarJanela()
+const bool Gerenciadores::GerenciadorGrafico::pegarJanela()
 {
 	if (window.isOpen() == true)
 	{

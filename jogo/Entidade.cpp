@@ -1,11 +1,11 @@
 #pragma once
 #include "Entidade.h"
  // ficou muito estranho Entidades::Entidade::Entidade() por exemplo
-Entidade::Entidade():Ente(), gravid(981.f)
+Entidades::Entidade::Entidade():Ente(), gravid(981.f)
 {
 
 }
-Entidade::~Entidade()
+Entidades::Entidade::~Entidade()
 {
 
 }
@@ -13,36 +13,36 @@ Entidade::~Entidade()
 //{
 //	return sprite.getPosition();
 //}
-sf::Sprite Entidade::getSprite()
+sf::Sprite Entidades::Entidade::getSprite()
 {
 	return sprite;
 }
-sf::FloatRect Entidade::getSpriteBounds()
+sf::FloatRect Entidades::Entidade::getSpriteBounds()
 {
 	return sprite.getGlobalBounds();
 }
-void Entidade::gravidade(float deltaTempo)
+void Entidades::Entidade::gravidade(float deltaTempo)
 {
 	velocidadeV.y += gravid * deltaTempo;
 }
-void Entidade::executar(float deltaTempo)
+void Entidades::Entidade::executar(float deltaTempo)
 {
 
 }
-void Entidade::scaleSprite(const float x, const float y)
+void Entidades::Entidade::scaleSprite(const float x, const float y)
 {
 	sprite.scale(x, y);
 }
-void Entidade::setPosi(const float x, const float y)
+void Entidades::Entidade::setPosi(const float x, const float y)
 {
 	sprite.setPosition(sf::Vector2f(x, y));
 }
-void Entidade::setSpeed(const float v)
+void Entidades::Entidade::setSpeed(const float v)
 {
 	if(velocidade > 0)
 		velocidade = velocidade - (v/50);
 }
-void Entidade::danificar()
+void Entidades::Entidade::danificar()
 {
 
 }

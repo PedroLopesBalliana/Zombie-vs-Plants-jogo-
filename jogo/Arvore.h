@@ -4,19 +4,23 @@
 #include "Pedra.h"
 #include "Atirador.h"
 #include "Bulbassauro.h"
-
-class Arvore : public Atirador, public Bulbassauro
+namespace Entidades
 {
-private:
-	int charge;
-	sf::Texture envenenar;
-public:
-	Arvore();
-	~Arvore();
-	void executar(float deltaTempo);
-	void bossImprimirSe();
-	void pular();
-	void mover();
-	void operator--();
-	void danificar(Jogador* jog);
-};
+	namespace Personagens
+	{
+		class Arvore : public Atirador, public Bulbassauro
+		{
+		private:
+			int charge;
+			sf::Texture envenenar;
+		public:
+			Arvore();
+			~Arvore();
+			void executar(float deltaTempo);
+			void pular();
+			void mover();
+			void operator--();
+			void danificar(Jogador* jog);
+		};
+	}
+}

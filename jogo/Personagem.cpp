@@ -1,26 +1,26 @@
 #include "Personagem.h"
 
-Personagem::Personagem(): Entidade()
+Entidades::Personagens::Personagem::Personagem(): Entidade()
 {
 
 }
-Personagem::~Personagem()
+Entidades::Personagens::Personagem::~Personagem()
 {
 
 }
-void Personagem::move(float deltaTempo)
+void Entidades::Personagens::Personagem::move(float deltaTempo)
 {
 
 }
-void Personagem::executar(float deltaTempo)
+void Entidades::Personagens::Personagem::executar(float deltaTempo)
 {
 
 }
-bool Personagem::getSentido()
+bool Entidades::Personagens::Personagem::getSentido()
 {
 	return facingLeft;
 }
-void Personagem::operator--()
+void Entidades::Personagens::Personagem::operator--()
 {
 	num_vidas--;
 	//printf(" personagem vida %d \n", num_vidas);
