@@ -21,7 +21,7 @@ int Listas::ListaEntidades::getTam()
 }
 Entidades::Entidade* Listas::ListaEntidades::getEntidade(int p)
 {
-	return static_cast<Entidades::Entidade*>(this->LEs.getItem(p));
+	return static_cast<Entidades::Entidade*>(this->LEs[p]);
 }
 
 

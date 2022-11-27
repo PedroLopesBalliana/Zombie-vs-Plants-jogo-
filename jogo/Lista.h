@@ -43,7 +43,7 @@ namespace Listas
 		{
 			return len;
 		}
-		TL* getItem(int posi)
+		TL* operator[](int posi)
 		{
 			Elemento <TL>* temp = pPrimeiro;
 			if (posi == 0)

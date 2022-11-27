@@ -10,9 +10,6 @@ Fases::Fase::Fase():Ente()
 Fases::Fase::~Fase()
 {
 }
-void Fases::Fase::inicializaElementos()
-{
-}
 Listas::ListaEntidades* Fases::Fase::getListaEntidades()
 {
 	return listaEntidades;
