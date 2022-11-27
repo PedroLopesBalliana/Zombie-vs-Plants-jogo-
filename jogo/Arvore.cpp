@@ -81,7 +81,7 @@ void Entidades::Personagens::Arvore::executar(const float deltaTempo)
 		}
 		posi.x = centroX;
 		posi.y = centroY;
-		tiro->executar(deltaTempo);
+		tiro->executar(0.001);
 		charge++;
 		if (charge == 500)
 		{
