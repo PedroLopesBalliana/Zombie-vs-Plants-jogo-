@@ -45,6 +45,8 @@ void Menu::executar()
 	{
 		geren_graf->limpaJanela();
 		sf::Event event;
+		jogador1 = new Entidades::Personagens::Jogador();
+		jogador2 = new Entidades::Personagens::Jogador(true);
 		while (geren_graf->getWindow()->pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
@@ -61,8 +63,6 @@ void Menu::executar()
 		{
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{ 
-				jogador1 = new Entidades::Personagens::Jogador();
-				jogador2 = new Entidades::Personagens::Jogador(true);
 				fase1 = new Fases::Floresta(jogador1, jogador2, geren_graf);
 			}
 				
@@ -71,8 +71,6 @@ void Menu::executar()
 		{
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
-				jogador1 = new Entidades::Personagens::Jogador();
-				jogador2 = new Entidades::Personagens::Jogador(true);
 				fase2 = new Fases::Masmorra(jogador1, jogador2, geren_graf);
 			}
 		}

@@ -107,6 +107,12 @@ void Fases::Floresta::inicializaEspinhos()
 		listaEntidades->LEs.push(esp);
 		gerenciadorColisoes.pushObstaculo(esp);
 	}
+
+	esp = new Entidades::Obstaculos::Espinho();
+	esp->scaleSprite(0.7f, 1.f);
+	esp->setPosi(840.f, 580.f);
+	listaEntidades->LEs.push(esp);
+	gerenciadorColisoes.pushObstaculo(esp);
 }
 void Fases::Floresta::inicializaFogo()
 {
@@ -129,7 +135,7 @@ void Fases::Floresta::inicializaFogo()
 	if (rand() % 2)
 	{
 		fogo = new Entidades::Obstaculos::Fogo();
-		fogo->setPosi(800.f, 600.f);
+		fogo->setPosi(750.f, 600.f);
 		listaEntidades->LEs.push(fogo);
 		gerenciadorColisoes.pushObstaculo(fogo);
 
@@ -185,8 +191,7 @@ void Fases::Floresta::inicializaBulbassauro()
 void Fases::Floresta::inicializaAtirador()
 {
 	ati = new Entidades::Personagens::Atirador();
-	pr = new Entidades::Projetil();
-	ati->setProjetil(pr);
+	pr = new Entidades::Projetil(ati);
 	ati->setTipo(1);
 	listaEntidades->LEs.push(ati);
 	gerenciadorColisoes.pushInimigo(ati);
@@ -195,8 +200,7 @@ void Fases::Floresta::inicializaAtirador()
 	if (rand() % 2)
 	{
 		ati = new Entidades::Personagens::Atirador();
-		pr = new Entidades::Projetil();
-		ati->setProjetil(pr);
+		pr = new Entidades::Projetil(ati);
 		ati->setTipo(1);
 		ati->setPosi(600.f, 150.f);
 		listaEntidades->LEs.push(ati);
@@ -205,9 +209,8 @@ void Fases::Floresta::inicializaAtirador()
 	}
 
 	ati = new Entidades::Personagens::Atirador();
-	pr = new Entidades::Projetil();
+	pr = new Entidades::Projetil(ati);
 	ati->setPosi(50.f, 200.f);
-	ati->setProjetil(pr);
 	ati->setTipo(2);
 	listaEntidades->LEs.push(ati);
 	gerenciadorColisoes.pushInimigo(ati);
@@ -216,9 +219,8 @@ void Fases::Floresta::inicializaAtirador()
 	if (rand() % 2)
 	{
 		ati = new Entidades::Personagens::Atirador();
-		pr = new Entidades::Projetil();
+		pr = new Entidades::Projetil(ati);
 		ati->setPosi(50.f, 700.f);
-		ati->setProjetil(pr);
 		ati->setTipo(2);
 		listaEntidades->LEs.push(ati);
 		gerenciadorColisoes.pushInimigo(ati);
@@ -226,9 +228,8 @@ void Fases::Floresta::inicializaAtirador()
 	}
 
 	ati = new Entidades::Personagens::Atirador();
-	pr = new Entidades::Projetil();
+	pr = new Entidades::Projetil(ati);
 	ati->setPosi(950.f, 200.f);
-	ati->setProjetil(pr);
 	ati->setTipo(3);
 	gerenciadorColisoes.pushInimigo(ati);
 	listaEntidades->LEs.push(ati);
@@ -237,9 +238,8 @@ void Fases::Floresta::inicializaAtirador()
 	if (rand() % 2)
 	{
 		ati = new Entidades::Personagens::Atirador();
-		pr = new Entidades::Projetil();
+		pr = new Entidades::Projetil(ati);
 		ati->setPosi(950.f, 700.f);
-		ati->setProjetil(pr);
 		ati->setTipo(3);
 		gerenciadorColisoes.pushInimigo(ati);
 		listaEntidades->LEs.push(ati);
