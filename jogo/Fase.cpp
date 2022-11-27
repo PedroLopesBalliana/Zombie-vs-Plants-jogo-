@@ -1,6 +1,6 @@
 #include "Fase.h"
 
-Fases::Fase::Fase():Ente()
+Fases::Fase::Fase():Ente(), ati(nullptr), bulb(nullptr), j1(nullptr), j2(nullptr), pr(nullptr), listaEntidades(nullptr), fogo(nullptr), evento()
 {
 	if (!pontuacaoFonte.loadFromFile("assets/Menu/calibri.ttf"))
 	{
@@ -9,7 +9,15 @@ Fases::Fase::Fase():Ente()
 }
 Fases::Fase::~Fase()
 {
+	ati = nullptr;
+	bulb = nullptr; 
+	j1 = nullptr; 
+	j2 = nullptr; 
+	pr = nullptr;
+	listaEntidades = nullptr;
+	fogo = nullptr;
 }
+
 Listas::ListaEntidades* Fases::Fase::getListaEntidades()
 {
 	return listaEntidades;
@@ -29,8 +37,14 @@ void Fases::Fase::setPontos()
 	texto.setFillColor(sf::Color::Red);
 	texto.setCharacterSize(40);
 	std::cout << "Insira o nome do jogador 1:" << endl;
+	geren_graf->getWindow()->clear();
+	texto.setString("digite nome do jogador 1  " + nome1);
+	geren_graf->getWindow()->draw(texto);
+	geren_graf->getWindow()->display();
+
 	while (!(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)) || flag == 0)
 	{
+		geren_graf->getWindow()->clear();
 		if (geren_graf->getWindow()->pollEvent(evento))
 		{
 			if (evento.type == sf::Event::TextEntered)
@@ -41,6 +55,14 @@ void Fases::Fase::setPontos()
 					nome1 += static_cast<char>(digito);
 					texto.setString("digite nome do jogador 1  " + nome1);
 					flag = 1;
+					geren_graf->getWindow()->draw(texto);
+					geren_graf->getWindow()->display();
+				}
+				if (evento.text.unicode == 8)
+				{
+					nome1 = nome1.substr(0, nome1.size() - 1);
+					texto.setString("digite nome do jogador 1  " + nome1);
+					geren_graf->getWindow()->clear();
 					geren_graf->getWindow()->draw(texto);
 					geren_graf->getWindow()->display();
 				}
@@ -56,11 +78,20 @@ void Fases::Fase::setPontos()
 		{
 			if (evento.type == sf::Event::TextEntered)
 			{
+				geren_graf->getWindow()->clear();
 				digito = evento.text.unicode;
 				if (evento.text.unicode < 128 && evento.text.unicode != 8)
 				{
 					nome2 += static_cast<char>(digito);
 					texto.setString("digite nome do jogador 2" + nome2);
+					geren_graf->getWindow()->draw(texto);
+					geren_graf->getWindow()->display();
+				}
+				if (evento.text.unicode == 8)
+				{
+					nome2 = nome2.substr(0, nome2.size() - 1);
+					texto.setString("digite nome do jogador 2  " + nome2);
+					geren_graf->getWindow()->clear();
 					geren_graf->getWindow()->draw(texto);
 					geren_graf->getWindow()->display();
 				}

@@ -1,7 +1,7 @@
 #pragma once
 #include "Entidade.h"
  // ficou muito estranho Entidades::Entidade::Entidade() por exemplo
-Entidades::Entidade::Entidade():Ente(), gravid(981.f)
+Entidades::Entidade::Entidade():Ente(), gravid(981.f), velocidade(100.f)
 {
 
 }

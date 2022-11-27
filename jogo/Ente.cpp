@@ -1,11 +1,11 @@
 #include "Ente.h"
 
-Ente::Ente() 
+Ente::Ente(): id(0)
 {
 }
 Ente::~Ente()
 {
-
+	geren_graf = nullptr;
 }
 void Ente::executar()
 {

@@ -1,7 +1,7 @@
 #pragma once
 #include "Atirador.h"
 
-Entidades::Personagens::Atirador::Atirador(): Inimigo()
+Entidades::Personagens::Atirador::Atirador(): Inimigo(), tiro(nullptr)
 {
 	if (!texture.loadFromFile("assets/Inimigos/AtiradorSprite.png"))
 	{
@@ -13,7 +13,7 @@ Entidades::Personagens::Atirador::Atirador(): Inimigo()
 }
 Entidades::Personagens::Atirador::~Atirador()
 {
-
+	tiro = nullptr;
 }
 void Entidades::Personagens::Atirador::executar(const float deltaTempo)
 {

@@ -1,5 +1,5 @@
 #include "Bulbassauro.h"
-Entidades::Personagens::Bulbassauro::Bulbassauro(): Inimigo()
+Entidades::Personagens::Bulbassauro::Bulbassauro() : Inimigo(), limEsq(300.f), limDir(300.f)
 {
 	if (!texture.loadFromFile("assets/Inimigos/bublbassauroSprite.png"))
 	{
@@ -21,7 +21,7 @@ void Entidades::Personagens::Bulbassauro::executar(const float deltaTempo)
 		gravidade(deltaTempo);
 		imprimirSe();
 		mover();
-		raiva += 0.001;
+		raiva += 0.001f;
 	}
 	else
 	{

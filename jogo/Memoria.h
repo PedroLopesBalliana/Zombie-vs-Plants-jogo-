@@ -19,7 +19,7 @@ private:
 public:
 	Memoria();
 	~Memoria();
-	void salvarPontos(string nm, float pt);
+	void salvarPontos(string nm, int pt);
 	void atualizaArq();
 	void ordenaVet();
 	void lerArquivo();

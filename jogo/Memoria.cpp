@@ -13,15 +13,17 @@ Memoria::~Memoria()
 void Memoria::ordenaVet()
 {
 	//bubble sort
+	int proximo;
 	for (int i = 0; i < (informations.size() - 1); i++) 
 	{
 		for (int j = 0; j < (informations.size() - i - 1); j++)
 		{
-			if (informations[j].pont < informations[j + 1].pont)
+			proximo = j + 1;
+			if (informations[j].pont < informations[proximo].pont)
 			{
-				info temp= informations[j];
-				informations[j] = informations[j + 1];
-				informations[j + 1] = temp;
+				info temp = informations[j];
+				informations[j] = informations[proximo];
+				informations[proximo] = temp;
 			}
 		}
 	}
@@ -31,7 +33,7 @@ void Memoria::ordenaVet()
 	}
 	atualizaArq();
 }
-void Memoria::salvarPontos(string nm, float pt)
+void Memoria::salvarPontos(string nm, int pt)
 {
 	info aux;
 	aux.nome = nm;

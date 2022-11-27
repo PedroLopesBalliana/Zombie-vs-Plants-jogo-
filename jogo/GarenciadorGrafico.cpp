@@ -8,7 +8,8 @@ Gerenciadores::GerenciadorGrafico::GerenciadorGrafico():
 }
 Gerenciadores::GerenciadorGrafico::~GerenciadorGrafico()
 {
-
+	delete pGrafico;
+	pGrafico = nullptr;
 }
 
 Gerenciadores::GerenciadorGrafico* Gerenciadores::GerenciadorGrafico::getGgr()

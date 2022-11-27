@@ -17,7 +17,7 @@ private:
 			botao.setSize(sf::Vector2f(300.f, 100.f));
 			botao.setFillColor(sf::Color::Transparent);
 		}
-		void mudarPosi(int x, int y)
+		void mudarPosi(float x, float y)
 		{
 			botao.setPosition(x, y);
 		}
