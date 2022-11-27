@@ -36,7 +36,7 @@ namespace Fases
 		sf::Texture pontuacaoTela;
 	public:
 		Fase();
-		~Fase();
+		virtual ~Fase();
 		Listas::ListaEntidades* getListaEntidades();
 		void executar() = 0;
 		void setPontos();

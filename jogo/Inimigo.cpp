@@ -14,7 +14,7 @@ void Entidades::Personagens::Inimigo::flutua()
 }
 void Entidades::Personagens::Inimigo::executar(const float deltaTempo)
 {
-	//flutua();
+
 }
 void Entidades::Personagens::Inimigo::mover()
 {

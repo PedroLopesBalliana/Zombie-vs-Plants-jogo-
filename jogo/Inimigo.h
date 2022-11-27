@@ -16,7 +16,7 @@ namespace Entidades
 			int tipo;
 		public:
 			Inimigo();
-			~Inimigo();
+			virtual ~Inimigo();
 			virtual void flutua();
 			virtual void executar(const float deltaTempo);
 			virtual void mover();
