@@ -29,6 +29,8 @@ namespace Fases
 		map<string, float> pontuacoes;
 		Entidades::Obstaculos::Fogo* fogo;
 		virtual void inicializaElementos() = 0;
+		virtual void inicializaFogo() = 0;
+		virtual void inicializaAtirador() = 0;
 		Memoria memoria;
 		sf::Text texto;
 		sf::Event evento;
@@ -40,7 +42,5 @@ namespace Fases
 		Listas::ListaEntidades* getListaEntidades();
 		void executar() = 0;
 		void setPontos();
-		virtual void inicializaFogo() = 0;
-		virtual void inicializaAtirador() = 0;
 	};
 }
