@@ -108,7 +108,7 @@ namespace Listas
 			int i;
 			for (i = 0; i != this->getLen(); i++)
 			{
-				pop(getItem(i));
+				pop(operator[](i));
 			}
 		}
 	private:
