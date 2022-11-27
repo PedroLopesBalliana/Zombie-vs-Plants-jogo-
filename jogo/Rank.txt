@@ -1,4 +1,10 @@
-brasil 10000 
-mexico 10000 
-testandoooo 4000 
-b 4000 
+Pedro 10000
+Ian 2000
+Jesus 456
+Kratos 444
+Narima 322
+Jesus2 319
+Socorr 300
+Sim 250
+blza 225
+aham 111
