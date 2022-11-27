@@ -8,14 +8,14 @@ namespace Entidades
 		class Atirador : virtual public Inimigo
 		{
 		protected:
-			Projetil* tiro;
+			Entidades::Projetil* tiro;
 		public:
 			Atirador();
 			~Atirador();
 			virtual void executar(float deltaTempo);
 			virtual void mover();
 			virtual void danificar(Jogador* jog);
-			void setProjetil(Projetil* pr);
+			void setProjetil(Entidades::Projetil* pr);
 		};
 	}
 }

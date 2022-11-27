@@ -1,6 +1,7 @@
 #include "Projetil.h"
+#include "Atirador.h"
 
-Entidades::Projetil::Projetil()
+Entidades::Projetil::Projetil(Personagens::Atirador* don)
 {
 	if (!texture.loadFromFile("assets/Inimigos/projetil5.png"))
 	{
@@ -14,18 +15,20 @@ Entidades::Projetil::Projetil()
 	sprite.scale(sf::Vector2f(0.17, 0.17));
 	sprite.setPosition(sf::Vector2f(700.f, 100.f));
 	velocidadeV.y = 50.0f;
+	dono = don;
+	dono->setProjetil(this);
 }
 Entidades::Projetil::~Projetil()
 {
 
 }
-void Entidades::Projetil::executar(const float deltaTempo, sf::Vector2f posicao)
+void Entidades::Projetil::executar(const float deltaTempo)
 {
 	//sprite.setTexture(maca);
 	gravidade(deltaTempo);
 	if (sprite.getPosition().y > 750.f)
 	{
-		sprite.setPosition(posicao);
+		sprite.setPosition(dono->getSprite().getPosition());
 		velocidadeV.y = -(abs(forca)/2);
 		velocidadeV.x = forca;
 	}

@@ -142,8 +142,7 @@ void Fases::Masmorra::inicializaAtirador()
 	for (int i = 1; i < 4; i++)
 	{
 		ati = new Entidades::Personagens::Atirador();
-		pr = new Entidades::Projetil();
-		ati->setProjetil(pr);
+		pr = new Entidades::Projetil(ati);
 		ati->setTipo(1);
 		ati->setPosi(100.f + (300.f * i), 20.f);
 		listaEntidades->LEs.push(ati);
@@ -153,8 +152,7 @@ void Fases::Masmorra::inicializaAtirador()
 		if (rand() % 2)
 		{
 			ati = new Entidades::Personagens::Atirador();
-			pr = new Entidades::Projetil();
-			ati->setProjetil(pr);
+			pr = new Entidades::Projetil(ati);
 			ati->setTipo(1);
 			ati->setPosi((200.f * i), 20.f);
 			listaEntidades->LEs.push(ati);
@@ -190,10 +188,9 @@ void Fases::Masmorra::inicializaArvore()
 	for (int i = 0; i < (rand() % 2) + 3; i++)
 	{
 		arvore = new Entidades::Personagens::Arvore();
-		maca = new Entidades::Projetil();
+		maca = new Entidades::Projetil(static_cast<Entidades::Personagens::Atirador*>(arvore));
 		maca->setMaca();
 		arvore->setPosi(300.f + (150.f * i), 325.f);
-		arvore->setProjetil(maca);
 		listaEntidades->LEs.push(maca);
 		gerenciadorColisoes.pushProjetil(maca);
 		arvore->setLimites(300.f, 700.f);

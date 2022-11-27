@@ -25,24 +25,24 @@ void Entidades::Personagens::Atirador::executar(const float deltaTempo)
 		if (tipo == 1)
 		{
 			tiro->setForca(0.f);
-			tiro->executar(deltaTempo, sprite.getPosition());
+			tiro->executar(deltaTempo);
 		}
 		else if(tipo == 2)
 		{
 			tiro->setForca(250.f);
-			tiro->executar(deltaTempo, sprite.getPosition());
+			tiro->executar(deltaTempo);
 		}
 		else if (tipo == 3)
 		{
 			tiro->setForca(-250.f);
-			tiro->executar(deltaTempo, sprite.getPosition());
+			tiro->executar(deltaTempo);
 		}
 	}
 	else
 	{
 		sprite.move(sf::Vector2f(1000, 1000));
 		tiro->setForca(-250.f);
-		tiro->executar(deltaTempo, sprite.getPosition());
+		tiro->executar(deltaTempo);
 	}
 }
 void Entidades::Personagens::Atirador::mover()

@@ -81,7 +81,7 @@ void Entidades::Personagens::Arvore::executar(const float deltaTempo)
 		}
 		posi.x = centroX;
 		posi.y = centroY;
-		tiro->executar(deltaTempo, posi);
+		tiro->executar(deltaTempo);
 		charge++;
 		if (charge == 500)
 		{
@@ -98,7 +98,7 @@ void Entidades::Personagens::Arvore::executar(const float deltaTempo)
 	else
 	{
 		sprite.move(1000.f, 1000.f);
-		tiro->executar(deltaTempo, sprite.getPosition());
+		tiro->executar(deltaTempo);
 	}
 }
 
