@@ -12,7 +12,7 @@ namespace Entidades
 			bool danoso;
 		public:
 			Obstaculo();
-			~Obstaculo();
+			virtual ~Obstaculo();
 			virtual void flutua(float deltaTempo);
 			virtual void executar(const float deltaTempo);
 			virtual bool getDanoso();

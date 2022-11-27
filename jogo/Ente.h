@@ -11,7 +11,7 @@ protected:
 	static Gerenciadores::GerenciadorGrafico* geren_graf;
 public:
 	Ente();
-	~Ente();
+	virtual ~Ente();
 	virtual void executar();
 	void imprimirSe();
 	void static setGerenciadorGrafico(Gerenciadores::GerenciadorGrafico* gR);

@@ -21,7 +21,7 @@ Fases::Floresta::Floresta(Entidades::Personagens::Jogador* j1, Entidades::Person
 }
 Fases::Floresta::~Floresta()
 {
-
+	
 }
 void Fases::Floresta::inicializaGrama()
 {

@@ -11,7 +11,7 @@ namespace Entidades
 		const float gravid;
 	public:
 		Entidade();
-		~Entidade();
+		virtual ~Entidade();
 		sf::Sprite getSprite();
 		void scaleSprite(float x, float y);
 		sf::FloatRect getSpriteBounds();

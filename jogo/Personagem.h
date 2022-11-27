@@ -13,7 +13,7 @@ namespace Entidades
 			int num_vidas;
 		public:
 			Personagem();
-			~Personagem();
+			virtual ~Personagem();
 			virtual void move(float deltaTime);
 			virtual void executar(const float deltaTempo);
 			bool getSentido();
